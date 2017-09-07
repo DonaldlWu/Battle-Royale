@@ -7,13 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		167A29D388D24EF4FDD4A809 /* Pods_Battle_Royale.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 064F06316B4D915CFE5313B2 /* Pods_Battle_Royale.framework */; };
+		58D1EB1D97EC6438089BFE83 /* Pods_Battle_RoyaleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5DB1C9D34CE9D3F2985761F /* Pods_Battle_RoyaleTests.framework */; };
 		C05ACC1F1F5FC4030082B0E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05ACC1E1F5FC4030082B0E2 /* AppDelegate.swift */; };
-		C05ACC211F5FC4030082B0E2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05ACC201F5FC4030082B0E2 /* ViewController.swift */; };
+		C05ACC211F5FC4030082B0E2 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05ACC201F5FC4030082B0E2 /* MapViewController.swift */; };
 		C05ACC241F5FC4030082B0E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C05ACC221F5FC4030082B0E2 /* Main.storyboard */; };
 		C05ACC271F5FC4030082B0E2 /* Battle_Royale.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C05ACC251F5FC4030082B0E2 /* Battle_Royale.xcdatamodeld */; };
 		C05ACC291F5FC4030082B0E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C05ACC281F5FC4030082B0E2 /* Assets.xcassets */; };
 		C05ACC2C1F5FC4030082B0E2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C05ACC2A1F5FC4030082B0E2 /* LaunchScreen.storyboard */; };
 		C05ACC371F5FC4030082B0E2 /* Battle_RoyaleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05ACC361F5FC4030082B0E2 /* Battle_RoyaleTests.swift */; };
+		C064D5BC1F5FCC4700FF763A /* MapViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C064D5BB1F5FCC4700FF763A /* MapViewControllerExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,9 +30,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		064F06316B4D915CFE5313B2 /* Pods_Battle_Royale.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Battle_Royale.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1497A6E0721312EAE8ABA43B /* Pods-Battle Royale.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Battle Royale.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Battle Royale/Pods-Battle Royale.debug.xcconfig"; sourceTree = "<group>"; };
+		3C48C10E07F8D51AC0073EF8 /* Pods-Battle RoyaleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Battle RoyaleTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Battle RoyaleTests/Pods-Battle RoyaleTests.release.xcconfig"; sourceTree = "<group>"; };
+		6C499DA9C7064C17F3C42CAB /* Pods-Battle RoyaleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Battle RoyaleTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Battle RoyaleTests/Pods-Battle RoyaleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C05ACC1B1F5FC4030082B0E2 /* Battle Royale.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Battle Royale.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C05ACC1E1F5FC4030082B0E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C05ACC201F5FC4030082B0E2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C05ACC201F5FC4030082B0E2 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		C05ACC231F5FC4030082B0E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C05ACC261F5FC4030082B0E2 /* Battle_Royale.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Battle_Royale.xcdatamodel; sourceTree = "<group>"; };
 		C05ACC281F5FC4030082B0E2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -38,6 +45,9 @@
 		C05ACC321F5FC4030082B0E2 /* Battle RoyaleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Battle RoyaleTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C05ACC361F5FC4030082B0E2 /* Battle_RoyaleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Battle_RoyaleTests.swift; sourceTree = "<group>"; };
 		C05ACC381F5FC4030082B0E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C064D5BB1F5FCC4700FF763A /* MapViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewControllerExtension.swift; sourceTree = "<group>"; };
+		D5DB1C9D34CE9D3F2985761F /* Pods_Battle_RoyaleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Battle_RoyaleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED49B0456941629CF3A3050C /* Pods-Battle Royale.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Battle Royale.release.xcconfig"; path = "Pods/Target Support Files/Pods-Battle Royale/Pods-Battle Royale.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				167A29D388D24EF4FDD4A809 /* Pods_Battle_Royale.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,18 +63,32 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58D1EB1D97EC6438089BFE83 /* Pods_Battle_RoyaleTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		128CB357D2133B8DDBA1E0CD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1497A6E0721312EAE8ABA43B /* Pods-Battle Royale.debug.xcconfig */,
+				ED49B0456941629CF3A3050C /* Pods-Battle Royale.release.xcconfig */,
+				6C499DA9C7064C17F3C42CAB /* Pods-Battle RoyaleTests.debug.xcconfig */,
+				3C48C10E07F8D51AC0073EF8 /* Pods-Battle RoyaleTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		C05ACC121F5FC4030082B0E2 = {
 			isa = PBXGroup;
 			children = (
 				C05ACC1D1F5FC4030082B0E2 /* Battle Royale */,
 				C05ACC351F5FC4030082B0E2 /* Battle RoyaleTests */,
 				C05ACC1C1F5FC4030082B0E2 /* Products */,
+				128CB357D2133B8DDBA1E0CD /* Pods */,
+				C781237427AD92E349850842 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,8 +104,9 @@
 		C05ACC1D1F5FC4030082B0E2 /* Battle Royale */ = {
 			isa = PBXGroup;
 			children = (
+				C064D5BA1F5FCC2D00FF763A /* Extension */,
 				C05ACC1E1F5FC4030082B0E2 /* AppDelegate.swift */,
-				C05ACC201F5FC4030082B0E2 /* ViewController.swift */,
+				C05ACC201F5FC4030082B0E2 /* MapViewController.swift */,
 				C05ACC221F5FC4030082B0E2 /* Main.storyboard */,
 				C05ACC281F5FC4030082B0E2 /* Assets.xcassets */,
 				C05ACC2A1F5FC4030082B0E2 /* LaunchScreen.storyboard */,
@@ -99,6 +125,23 @@
 			path = "Battle RoyaleTests";
 			sourceTree = "<group>";
 		};
+		C064D5BA1F5FCC2D00FF763A /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				C064D5BB1F5FCC4700FF763A /* MapViewControllerExtension.swift */,
+			);
+			name = Extension;
+			sourceTree = "<group>";
+		};
+		C781237427AD92E349850842 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				064F06316B4D915CFE5313B2 /* Pods_Battle_Royale.framework */,
+				D5DB1C9D34CE9D3F2985761F /* Pods_Battle_RoyaleTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -106,9 +149,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C05ACC3B1F5FC4030082B0E2 /* Build configuration list for PBXNativeTarget "Battle Royale" */;
 			buildPhases = (
+				EC5A1C3144BF8C44BE616F6D /* [CP] Check Pods Manifest.lock */,
 				C05ACC171F5FC4030082B0E2 /* Sources */,
 				C05ACC181F5FC4030082B0E2 /* Frameworks */,
 				C05ACC191F5FC4030082B0E2 /* Resources */,
+				D65911645C216BA8306328D9 /* [CP] Embed Pods Frameworks */,
+				0F214F4B044C928935BE7E38 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -123,9 +169,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C05ACC3E1F5FC4030082B0E2 /* Build configuration list for PBXNativeTarget "Battle RoyaleTests" */;
 			buildPhases = (
+				E84190D878C3231A90E424D3 /* [CP] Check Pods Manifest.lock */,
 				C05ACC2E1F5FC4030082B0E2 /* Sources */,
 				C05ACC2F1F5FC4030082B0E2 /* Frameworks */,
 				C05ACC301F5FC4030082B0E2 /* Resources */,
+				B00DD1C5C3B8C24952A480D7 /* [CP] Embed Pods Frameworks */,
+				5E5F4D02B9504DAAD0BE2892 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -197,13 +246,107 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0F214F4B044C928935BE7E38 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Battle Royale/Pods-Battle Royale-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5E5F4D02B9504DAAD0BE2892 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Battle RoyaleTests/Pods-Battle RoyaleTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B00DD1C5C3B8C24952A480D7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Battle RoyaleTests/Pods-Battle RoyaleTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D65911645C216BA8306328D9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Battle Royale/Pods-Battle Royale-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E84190D878C3231A90E424D3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		EC5A1C3144BF8C44BE616F6D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C05ACC171F5FC4030082B0E2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C05ACC211F5FC4030082B0E2 /* ViewController.swift in Sources */,
+				C05ACC211F5FC4030082B0E2 /* MapViewController.swift in Sources */,
 				C05ACC271F5FC4030082B0E2 /* Battle_Royale.xcdatamodeld in Sources */,
+				C064D5BC1F5FCC4700FF763A /* MapViewControllerExtension.swift in Sources */,
 				C05ACC1F1F5FC4030082B0E2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -355,36 +498,41 @@
 		};
 		C05ACC3C1F5FC4030082B0E2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1497A6E0721312EAE8ABA43B /* Pods-Battle Royale.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TN3V3KVJB9;
 				INFOPLIST_FILE = "Battle Royale/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.BattleRoyale.Battle-Royale";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		C05ACC3D1F5FC4030082B0E2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED49B0456941629CF3A3050C /* Pods-Battle Royale.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TN3V3KVJB9;
 				INFOPLIST_FILE = "Battle Royale/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.BattleRoyale.Battle-Royale";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 		C05ACC3F1F5FC4030082B0E2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6C499DA9C7064C17F3C42CAB /* Pods-Battle RoyaleTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -402,6 +550,7 @@
 		};
 		C05ACC401F5FC4030082B0E2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3C48C10E07F8D51AC0073EF8 /* Pods-Battle RoyaleTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
