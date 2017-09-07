@@ -44,5 +44,21 @@
             </objects>
             <point key="canvasLocation" x="-502" y="95"/>
         </scene>
+        <!--Map View Controller-->
+        <scene sceneID="4ph-5V-zSO">
+            <objects>
+                <viewController id="FU2-f7-tku" customClass="MapViewController" customModule="Battle_Royale" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ffY-Sy-58S">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="Mk4-3m-bwE"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="fYi-hy-PiK"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v9o-vv-h4r" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="479" y="95"/>
+        </scene>
     </scenes>
 </document>
