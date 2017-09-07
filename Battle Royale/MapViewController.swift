@@ -95,8 +95,7 @@ class MapViewController: UIViewController {
             circ.strokeColor = .red
             circ.strokeWidth = 5
             circ.map = mapView
-            
-            
+
         }
     }
     
@@ -104,12 +103,8 @@ class MapViewController: UIViewController {
     @objc func nextCircle() {
         let nextController = NextCircleViewController()
         if let nextCircleCorordinate = self.nextCircleCorordinate {
-            
             nextController.coordinator = nextCircleCorordinate
-           
-            
             show(nextController, sender: nil)
-            
         }
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -76,7 +76,8 @@ class NextCircleViewController: MapViewController {
         let polyline = GMSPolyline(path: path)
         polyline.map = mapView
         let distance =  polyline.path?.length(of: .geodesic) ?? 0
-        if distance <= 100 {
+        print(distance)
+        if distance <= 200 {
             showAlertController(title: "SUCCESS")
         } else {
             showAlertController(title: "FAILD")
@@ -92,14 +93,27 @@ class NextCircleViewController: MapViewController {
     }
     
     func showAlertController(title: String) {
-        let alertController = UIAlertController(title: title, message: nil, preferredStyle: .alert)
-        let top = UIAlertAction(title: "OK", style: .destructive, handler: {
-            alert -> Void in
-            self.navigationController?.popViewController(animated: true)
-        })
-        
-        alertController.addAction(top)
-        self.present(alertController, animated: true, completion: nil)
+        if title == "SUCCESS" {
+            let alertController = UIAlertController(title: title, message: nil, preferredStyle: .alert)
+            let top = UIAlertAction(title: "OK", style: .destructive, handler: {
+                alert -> Void in
+                let mapViewController = self.navigationController?.viewControllers[0] as! MapViewController
+                mapViewController.setCircle()
+                self.navigationController?.popViewController(animated: true)
+            })
+            
+            alertController.addAction(top)
+            self.present(alertController, animated: true, completion: nil)
+        } else {
+            let alertController = UIAlertController(title: title, message: nil, preferredStyle: .alert)
+            let top = UIAlertAction(title: "OK", style: .destructive, handler: {
+                alert -> Void in
+                self.navigationController?.popViewController(animated: true)
+            })
+            
+            alertController.addAction(top)
+            self.present(alertController, animated: true, completion: nil)
+        }
     }
     
     override func didReceiveMemoryWarning() {
