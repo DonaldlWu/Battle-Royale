@@ -124,8 +124,8 @@ class MapViewController: UIViewController {
         let angleRandom = GKRandomDistribution(lowestValue: 0, highestValue: 360)
         let newaAngleRandom = angleRandom.nextInt()
         
-        let nextLat = Double(lat) + sin(Double(newaAngleRandom) / 180 * Double.pi) * 0.0013
-        let nextLon = Double(lon) + cos(Double(newaAngleRandom) / 180 * Double.pi) * 0.0013
+        let nextLat = Double(lat) + sin(Double(newaAngleRandom) / 180 * Double.pi) * 0.0005
+        let nextLon = Double(lon) + cos(Double(newaAngleRandom) / 180 * Double.pi) * 0.0005
         return (nextLat, nextLon)
     }
     

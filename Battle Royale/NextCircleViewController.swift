@@ -44,6 +44,8 @@ class NextCircleViewController: MapViewController {
         mapView.translatesAutoresizingMaskIntoConstraints = false
         mapView.isMyLocationEnabled = true
         
+        
+        
         // Add the map to the view, hide it until we've got a location update.
         view.addSubview(mapView)
         
@@ -76,10 +78,11 @@ class NextCircleViewController: MapViewController {
         let polyline = GMSPolyline(path: path)
         polyline.map = mapView
         let distance =  polyline.path?.length(of: .geodesic) ?? 0
-        if distance <= 100 {
+        print(distance)
+        if distance <= 50 {
             showAlertController(title: "SUCCESS")
         } else {
-            showAlertController(title: "FAILD")
+            showAlertController(title: "FAILED")
         }
     }
     
@@ -93,12 +96,12 @@ class NextCircleViewController: MapViewController {
     
     func showAlertController(title: String) {
         let alertController = UIAlertController(title: title, message: nil, preferredStyle: .alert)
-        let top = UIAlertAction(title: "OK", style: .destructive, handler: {
+        let tap = UIAlertAction(title: "OK", style: .destructive, handler: {
             alert -> Void in
             self.navigationController?.popViewController(animated: true)
         })
         
-        alertController.addAction(top)
+        alertController.addAction(tap)
         self.present(alertController, animated: true, completion: nil)
     }
     
