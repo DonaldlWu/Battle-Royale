@@ -97,7 +97,7 @@ class MapViewController: UIViewController {
             mapView.clear()
             mapView.reloadInputViews()
             circ = GMSCircle(position: nextCircleCorordinate!, radius: 50)
-            circ.fillColor = UIColor(red:0.35, green:0, blue:0, alpha:0.05)
+            circ.fillColor = UIColor(red:0.30, green:0, blue:0, alpha:0.05)
             circ.strokeColor = .red
             circ.strokeWidth = 5
             circ.map = mapView
