@@ -114,7 +114,7 @@ class MapViewController: UIViewController {
                 self.addCircle(with: nextCircleCorordinate, circleColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1).withAlphaComponent(0.1), strokeColor: #colorLiteral(red: 1, green: 0, blue: 0, alpha: 1))
                 self.allCoordinates = allNewCoordinates
                 for otherCoordinate in self.allCoordinates {
-                    self.addCircle(with: otherCoordinate, circleColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1).withAlphaComponent(0.05), strokeColor: #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1))
+                    self.addCircle(with: otherCoordinate, circleColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1).withAlphaComponent(0.1), strokeColor: #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1))
                     
                     
                 }
