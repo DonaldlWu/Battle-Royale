@@ -10,4 +10,5 @@ import Foundation
 
 struct PropertKeys {
     static let nextCircle = "NextCircle"
+    static let navigationControllerOfMapView = "NavigationControllerOfMapView"
 }

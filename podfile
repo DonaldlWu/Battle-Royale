@@ -12,6 +12,9 @@ target 'Battle Royale' do
 	pod 'GoogleMaps'
   	pod 'GooglePlaces'
   	pod 'GooglePlacePicker'
+	pod 'Firebase/Auth'
+	pod 'GoogleSignIn'
+	pod 'Firebase/Database'
 
   target 'Battle RoyaleTests' do
     inherit! :search_paths

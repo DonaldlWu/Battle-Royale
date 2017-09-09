@@ -49,6 +49,10 @@ class NextCircleViewController: MapViewController {
         // Add the map to the view, hide it until we've got a location update.
         view.addSubview(mapView)
         
+        
+        
+        
+        
         mapView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         mapView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         mapView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
