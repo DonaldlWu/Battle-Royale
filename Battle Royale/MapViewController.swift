@@ -100,23 +100,23 @@ class MapViewController: UIViewController {
     @objc func setCircle() {
         if let lat = currentLocation?.coordinate.latitude , let lon = currentLocation?.coordinate.longitude {
             
-           ref = Database.database().reference()
+            ref = Database.database().reference()
             let user = Auth.auth().currentUser
             ref.child("coordinates").updateChildValues([(user?.uid)!: [lat, lon]])
             
-           let nextCircleCorordinate = randomCoordinate(lat: lat, lon: lon)
-            
-            
-            
-            mapView.clear()
-            addCircle(with: nextCircleCorordinate, circleColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1).withAlphaComponent(0.1), strokeColor: #colorLiteral(red: 1, green: 0, blue: 0, alpha: 1))
+            let nextCircleCorordinate = randomCoordinate(lat: lat, lon: lon)
             
             
             fetchAllPlayersCoordinates(completion: { (allNewCoordinates) in
-                self.allCoordinates = allNewCoordinates
+                
                 print(self.allCoordinates)
+                self.mapView.clear()
+                self.addCircle(with: nextCircleCorordinate, circleColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1).withAlphaComponent(0.1), strokeColor: #colorLiteral(red: 1, green: 0, blue: 0, alpha: 1))
+                self.allCoordinates = allNewCoordinates
                 for otherCoordinate in self.allCoordinates {
                     self.addCircle(with: otherCoordinate, circleColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1).withAlphaComponent(0.05), strokeColor: #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1))
+                    
+                    
                 }
             })
             
@@ -174,20 +174,20 @@ class MapViewController: UIViewController {
     
     func fetchAllPlayersCoordinates(completion: @escaping ([CLLocationCoordinate2D]) -> ()) {
         var allNewCoordinates = [CLLocationCoordinate2D]()
-       ref = Database.database().reference()
+        ref = Database.database().reference()
         let userUid = Auth.auth().currentUser?.uid
         ref.child("coordinates").observe(.value) { (snapshot) in
             let coordinates = snapshot.children
             for player in coordinates {
                 if let player = player as? DataSnapshot {
                     if player.key != userUid {
-                    if let playerCoordinate = player.value as? [Double] {
-                    
-                    allNewCoordinates.append(CLLocationCoordinate2D(latitude: playerCoordinate[0], longitude: playerCoordinate[1]))
-                    completion(allNewCoordinates)
+                        if let playerCoordinate = player.value as? [Double] {
+                            
+                            allNewCoordinates.append(CLLocationCoordinate2D(latitude: playerCoordinate[0], longitude: playerCoordinate[1]))
+                            completion(allNewCoordinates)
+                        }
                     }
                 }
-            }
             }
         }
         
@@ -204,7 +204,7 @@ class MapViewController: UIViewController {
         } catch let signOutError as NSError {
             print ("Error signing out: %@", signOutError)
         }
-         GIDSignIn.sharedInstance().signOut()
+        GIDSignIn.sharedInstance().signOut()
         dismiss(animated: true, completion: nil)
         
     }
