@@ -31,7 +31,7 @@ class MapViewController: UIViewController {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("START", for: .normal)
-        button.backgroundColor = .cyan
+        button.backgroundColor = #colorLiteral(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1)
         button.addTarget(self, action: #selector(setCircle), for: .touchUpInside)
         return button
     }()
@@ -40,7 +40,7 @@ class MapViewController: UIViewController {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Next", for: .normal)
-        button.backgroundColor = #colorLiteral(red: 0.9601936936, green: 0.4837267399, blue: 0.5332353115, alpha: 1)
+        button.backgroundColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
         button.addTarget(self, action: #selector(nextCircle), for: .touchUpInside)
         return button
     }()
