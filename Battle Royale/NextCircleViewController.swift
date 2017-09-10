@@ -46,7 +46,10 @@ class NextCircleViewController: MapViewController {
         
         // Add the map to the view, hide it until we've got a location update.
         view.addSubview(mapView)
-        
+
+        // Add the map to the view, hide it until we've got a location update.
+        view.addSubview(mapView)
+
         mapView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         mapView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         mapView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
@@ -77,10 +80,16 @@ class NextCircleViewController: MapViewController {
         polyline.map = mapView
         let distance =  polyline.path?.length(of: .geodesic) ?? 0
         print(distance)
+
         if distance <= 200 {
             showAlertController(title: "SUCCESS")
         } else {
             showAlertController(title: "FAILD")
+
+        if distance <= 50 {
+            showAlertController(title: "SUCCESS")
+        } else {
+            showAlertController(title: "FAILED")
         }
     }
     
@@ -114,14 +123,21 @@ class NextCircleViewController: MapViewController {
             alertController.addAction(top)
             self.present(alertController, animated: true, completion: nil)
         }
+        let alertController = UIAlertController(title: title, message: nil, preferredStyle: .alert)
+        let tap = UIAlertAction(title: "OK", style: .destructive, handler: {
+            alert -> Void in
+            self.navigationController?.popViewController(animated: true)
+        })
+        
+        alertController.addAction(tap)
+        self.present(alertController, animated: true, completion: nil)
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
 }
+
 
 
