@@ -37,7 +37,7 @@
 		064F06316B4D915CFE5313B2 /* Pods_Battle_Royale.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Battle_Royale.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1497A6E0721312EAE8ABA43B /* Pods-Battle Royale.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Battle Royale.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Battle Royale/Pods-Battle Royale.debug.xcconfig"; sourceTree = "<group>"; };
 		3C48C10E07F8D51AC0073EF8 /* Pods-Battle RoyaleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Battle RoyaleTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Battle RoyaleTests/Pods-Battle RoyaleTests.release.xcconfig"; sourceTree = "<group>"; };
-		568F40B91F62539400E7610F /* NextCircleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NextCircleViewController.swift; path = "../../../Desktop/Battle-Royale/Battle Royale/NextCircleViewController.swift"; sourceTree = "<group>"; };
+		568F40B91F62539400E7610F /* NextCircleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextCircleViewController.swift; sourceTree = "<group>"; };
 		56BC313A1F62A1B80036B97B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		56BC313C1F62A39D0036B97B /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		56BC31411F630C440036B97B /* PropertyKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyKeys.swift; sourceTree = "<group>"; };
@@ -518,9 +518,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = G9JF9YBU33;
+				DEVELOPMENT_TEAM = TN3V3KVJB9;
 				INFOPLIST_FILE = "Battle Royale/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.BattleRoyale.Battle-Royale";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -535,9 +535,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = G9JF9YBU33;
+				DEVELOPMENT_TEAM = TN3V3KVJB9;
 				INFOPLIST_FILE = "Battle Royale/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.BattleRoyale.Battle-Royale";
 				PRODUCT_NAME = "$(TARGET_NAME)";
