@@ -80,12 +80,6 @@ class NextCircleViewController: MapViewController {
         polyline.map = mapView
         let distance =  polyline.path?.length(of: .geodesic) ?? 0
         print(distance)
-
-        if distance <= 200 {
-            showAlertController(title: "SUCCESS")
-        } else {
-            showAlertController(title: "FAILD")
-
         if distance <= 50 {
             showAlertController(title: "SUCCESS")
         } else {

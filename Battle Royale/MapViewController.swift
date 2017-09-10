@@ -102,10 +102,10 @@ class MapViewController: UIViewController {
 
             //let circleCenter = CLLocationCoordinate2D(latitude: lat, longitude: lon)
             let nextLat = Double(lat) + 0.0013
-            nextCircleCorordinate = CLLocationCoordinate2D(latitude: nextLat, longitude: lon)
+            var nextCircleCorordinate = CLLocationCoordinate2D(latitude: nextLat, longitude: lon)
             mapView.clear()
             mapView.reloadInputViews()
-            circ = GMSCircle(position: nextCircleCorordinate!, radius: 50)
+            circ = GMSCircle(position: nextCircleCorordinate, radius: 50)
             circ.fillColor = UIColor(red:0.35, green:0, blue:0, alpha:0.05)
             circ.strokeColor = .red
             circ.strokeWidth = 5
@@ -115,7 +115,7 @@ class MapViewController: UIViewController {
             let user = Auth.auth().currentUser
             ref.child("coordinates").updateChildValues([(user?.uid)!: [lat, lon]])
             
-            let nextCircleCorordinate = randomCoordinate(lat: lat, lon: lon)
+            nextCircleCorordinate = randomCoordinate(lat: lat, lon: lon)
             
             
             fetchAllPlayersCoordinates(completion: { (allNewCoordinates) in
@@ -216,10 +216,6 @@ class MapViewController: UIViewController {
         
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let nextCircleController = segue.destination as? NextCircleViewController
-        nextCircleController?.nextCircleCorordinate = self.nextCircleCorordinate!
-    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let nextCircleController = segue.destination as? NextCircleViewController
         nextCircleController?.nextCircleCorordinate = self.nextCircleCorordinate!
