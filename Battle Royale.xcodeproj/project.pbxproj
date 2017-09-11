@@ -10,6 +10,7 @@
 		167A29D388D24EF4FDD4A809 /* Pods_Battle_Royale.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 064F06316B4D915CFE5313B2 /* Pods_Battle_Royale.framework */; };
 		567B6D271F66644100E849D4 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567B6D261F66644100E849D4 /* TabBarController.swift */; };
 		567B6D2B1F66696F00E849D4 /* RankTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567B6D2A1F66696F00E849D4 /* RankTableViewController.swift */; };
+		567B6D2D1F668C3600E849D4 /* PlayerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567B6D2C1F668C3600E849D4 /* PlayerInfo.swift */; };
 		568F40BA1F62539400E7610F /* NextCircleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568F40B91F62539400E7610F /* NextCircleViewController.swift */; };
 		56BC313B1F62A1B80036B97B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BC313A1F62A1B80036B97B /* LoginViewController.swift */; };
 		56BC313D1F62A3AE0036B97B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 56BC313C1F62A39D0036B97B /* GoogleService-Info.plist */; };
@@ -41,6 +42,7 @@
 		3C48C10E07F8D51AC0073EF8 /* Pods-Battle RoyaleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Battle RoyaleTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Battle RoyaleTests/Pods-Battle RoyaleTests.release.xcconfig"; sourceTree = "<group>"; };
 		567B6D261F66644100E849D4 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		567B6D2A1F66696F00E849D4 /* RankTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankTableViewController.swift; sourceTree = "<group>"; };
+		567B6D2C1F668C3600E849D4 /* PlayerInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerInfo.swift; sourceTree = "<group>"; };
 		568F40B91F62539400E7610F /* NextCircleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextCircleViewController.swift; sourceTree = "<group>"; };
 		56BC313A1F62A1B80036B97B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		56BC313C1F62A39D0036B97B /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -120,9 +122,10 @@
 				C05ACC1E1F5FC4030082B0E2 /* AppDelegate.swift */,
 				56BC313A1F62A1B80036B97B /* LoginViewController.swift */,
 				C05ACC201F5FC4030082B0E2 /* MapViewController.swift */,
+				567B6D2A1F66696F00E849D4 /* RankTableViewController.swift */,
 				568F40B91F62539400E7610F /* NextCircleViewController.swift */,
 				567B6D261F66644100E849D4 /* TabBarController.swift */,
-				567B6D2A1F66696F00E849D4 /* RankTableViewController.swift */,
+				567B6D2C1F668C3600E849D4 /* PlayerInfo.swift */,
 				C05ACC221F5FC4030082B0E2 /* Main.storyboard */,
 				C05ACC281F5FC4030082B0E2 /* Assets.xcassets */,
 				C05ACC2A1F5FC4030082B0E2 /* LaunchScreen.storyboard */,
@@ -368,6 +371,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				567B6D2D1F668C3600E849D4 /* PlayerInfo.swift in Sources */,
 				56BC313B1F62A1B80036B97B /* LoginViewController.swift in Sources */,
 				567B6D271F66644100E849D4 /* TabBarController.swift in Sources */,
 				C05ACC211F5FC4030082B0E2 /* MapViewController.swift in Sources */,
