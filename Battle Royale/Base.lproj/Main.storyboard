@@ -24,7 +24,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="479.19999999999999" y="94.902548725637189"/>
+            <point key="canvasLocation" x="818.39999999999998" y="94.902548725637189"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="3T2-JE-uwL">
@@ -39,12 +39,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fuK-88-8m4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1283" y="98"/>
+            <point key="canvasLocation" x="-2354" y="370"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Item-->
         <scene sceneID="UVY-JM-Q00">
             <objects>
                 <navigationController storyboardIdentifier="NavigationControllerOfMapView" automaticallyAdjustsScrollViewInsets="NO" id="3cP-2N-dXn" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="e0S-V2-c3i"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kd6-W7-8PQ">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -57,7 +58,54 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8sh-Xj-tvz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-502" y="95"/>
+            <point key="canvasLocation" x="-164" y="94.902548725637189"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="dHn-Vh-ujH">
+            <objects>
+                <tableViewController id="20V-oR-PKv" customClass="RankTableViewController" customModule="Battle_Royale" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="hpe-aT-3i1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="rankCell" selectionStyle="default" indentationWidth="10" id="qiX-sT-mUj">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qiX-sT-mUj" id="uvj-DV-sq3">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="20V-oR-PKv" id="1Cn-e6-PVM"/>
+                            <outlet property="delegate" destination="20V-oR-PKv" id="TrA-uv-MYc"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Item" id="NaN-sM-wuI"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="etH-wC-7cN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-318" y="797"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="hNP-j2-qcB">
+            <objects>
+                <tabBarController storyboardIdentifier="TabBarController" automaticallyAdjustsScrollViewInsets="NO" id="G7n-uG-w1E" customClass="TabBarController" customModule="Battle_Royale" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="pQN-US-RkL">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="3cP-2N-dXn" kind="relationship" relationship="viewControllers" id="77f-RJ-1fh"/>
+                        <segue destination="20V-oR-PKv" kind="relationship" relationship="viewControllers" id="B1T-tV-YB0"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DmE-2Y-hCn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1628" y="421"/>
         </scene>
     </scenes>
 </document>

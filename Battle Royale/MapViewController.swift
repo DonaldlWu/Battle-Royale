@@ -119,14 +119,15 @@ class MapViewController: UIViewController {
         
         
         view.addSubview(button)
-        button.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        button.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -60).isActive = true
         button.leftAnchor.constraint(equalTo: mapView.leftAnchor).isActive = true
         button.rightAnchor.constraint(equalTo: mapView.rightAnchor)
             .isActive = true
         button.heightAnchor.constraint(equalToConstant: 64).isActive = true
         
         view.addSubview(nextButton)
-        nextButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -64).isActive = true
+        nextButton.isHidden = true
+        nextButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -128).isActive = true
         nextButton.leftAnchor.constraint(equalTo: mapView.leftAnchor).isActive = true
         nextButton.rightAnchor.constraint(equalTo: mapView.rightAnchor).isActive = true
         nextButton.heightAnchor.constraint(equalToConstant: 64).isActive = true

@@ -72,7 +72,7 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
     }()
     
     @objc func presentMapView() {
-        let controller = storyboard?.instantiateViewController(withIdentifier: PropertKeys.navigationControllerOfMapView)
+        let controller = storyboard?.instantiateViewController(withIdentifier: PropertKeys.tabBarController)
        
         if let user = Auth.auth().currentUser {
            
