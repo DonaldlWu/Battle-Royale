@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		167A29D388D24EF4FDD4A809 /* Pods_Battle_Royale.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 064F06316B4D915CFE5313B2 /* Pods_Battle_Royale.framework */; };
-		568F40BA1F62539400E7610F /* NextCircleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568F40B91F62539400E7610F /* NextCircleViewController.swift */; };
+		567B6D271F66644100E849D4 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		567B6D2B1F66696F00E849D4 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		56BC313B1F62A1B80036B97B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BC313A1F62A1B80036B97B /* LoginViewController.swift */; };
 		56BC313D1F62A3AE0036B97B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 56BC313C1F62A39D0036B97B /* GoogleService-Info.plist */; };
 		56BC31421F630C440036B97B /* PropertyKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BC31411F630C440036B97B /* PropertyKeys.swift */; };
@@ -37,12 +38,9 @@
 		064F06316B4D915CFE5313B2 /* Pods_Battle_Royale.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Battle_Royale.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1497A6E0721312EAE8ABA43B /* Pods-Battle Royale.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Battle Royale.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Battle Royale/Pods-Battle Royale.debug.xcconfig"; sourceTree = "<group>"; };
 		3C48C10E07F8D51AC0073EF8 /* Pods-Battle RoyaleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Battle RoyaleTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Battle RoyaleTests/Pods-Battle RoyaleTests.release.xcconfig"; sourceTree = "<group>"; };
-
-		568F40B91F62539400E7610F /* NextCircleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextCircleViewController.swift; sourceTree = "<group>"; };
 		56BC313A1F62A1B80036B97B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		56BC313C1F62A39D0036B97B /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		56BC31411F630C440036B97B /* PropertyKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyKeys.swift; sourceTree = "<group>"; };
-
 		6C499DA9C7064C17F3C42CAB /* Pods-Battle RoyaleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Battle RoyaleTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Battle RoyaleTests/Pods-Battle RoyaleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C05ACC1B1F5FC4030082B0E2 /* Battle Royale.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Battle Royale.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C05ACC1E1F5FC4030082B0E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -118,9 +116,7 @@
 				C05ACC1E1F5FC4030082B0E2 /* AppDelegate.swift */,
 				56BC313A1F62A1B80036B97B /* LoginViewController.swift */,
 				C05ACC201F5FC4030082B0E2 /* MapViewController.swift */,
-				568F40B91F62539400E7610F /* NextCircleViewController.swift */,
 				C05ACC221F5FC4030082B0E2 /* Main.storyboard */,
-				56E87FAA1F61210800B68C0E /* PropertyKeys.swift */,
 				C05ACC281F5FC4030082B0E2 /* Assets.xcassets */,
 				C05ACC2A1F5FC4030082B0E2 /* LaunchScreen.storyboard */,
 				56BC31411F630C440036B97B /* PropertyKeys.swift */,
@@ -214,6 +210,11 @@
 					C05ACC1A1F5FC4030082B0E2 = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 0;
+							};
+						};
 					};
 					C05ACC311F5FC4030082B0E2 = {
 						CreatedOnToolsVersion = 9.0;
@@ -361,10 +362,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				56BC313B1F62A1B80036B97B /* LoginViewController.swift in Sources */,
+				567B6D271F66644100E849D4 /* (null) in Sources */,
 				C05ACC211F5FC4030082B0E2 /* MapViewController.swift in Sources */,
 				C05ACC271F5FC4030082B0E2 /* Battle_Royale.xcdatamodeld in Sources */,
-				568F40BA1F62539400E7610F /* NextCircleViewController.swift in Sources */,
 				56BC31421F630C440036B97B /* PropertyKeys.swift in Sources */,
+				567B6D2B1F66696F00E849D4 /* (null) in Sources */,
 				C064D5BC1F5FCC4700FF763A /* MapViewControllerExtension.swift in Sources */,
 				C05ACC1F1F5FC4030082B0E2 /* AppDelegate.swift in Sources */,
 			);

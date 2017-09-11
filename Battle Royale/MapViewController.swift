@@ -36,15 +36,6 @@ class MapViewController: UIViewController {
         button.addTarget(self, action: #selector(setCircle), for: .touchUpInside)
         return button
     }()
-    
-    let nextButton: UIButton = {
-        let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Next", for: .normal)
-        button.backgroundColor = #colorLiteral(red: 0.9601936936, green: 0.4837267399, blue: 0.5332353115, alpha: 1)
-        button.addTarget(self, action: #selector(nextCircle), for: .touchUpInside)
-        return button
-    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -85,13 +76,6 @@ class MapViewController: UIViewController {
         button.rightAnchor.constraint(equalTo: mapView.rightAnchor).isActive = true
         button.heightAnchor.constraint(equalToConstant: 64).isActive = true
         
-        view.addSubview(nextButton)
-
-        nextButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -64).isActive = true
-        nextButton.leftAnchor.constraint(equalTo: mapView.leftAnchor).isActive = true
-        nextButton.rightAnchor.constraint(equalTo: mapView.rightAnchor).isActive = true
-        nextButton.heightAnchor.constraint(equalToConstant: 64).isActive = true
-        
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(logout))
         
 
@@ -129,16 +113,6 @@ class MapViewController: UIViewController {
   
                 }
             })
-        }
-    }
-    
-    
-    @objc func nextCircle() {
-        let nextController = NextCircleViewController()
-        if let nextCircleCorordinate = self.nextCircleCorordinate {
-            nextController.coordinator = nextCircleCorordinate
-            show(nextController, sender: nil)
-
         }
     }
     
@@ -197,11 +171,6 @@ class MapViewController: UIViewController {
                 }
             }
         }
-        
-        
-        
-        
-        
     }
     
     @objc func logout() {
@@ -214,11 +183,6 @@ class MapViewController: UIViewController {
         GIDSignIn.sharedInstance().signOut()
         dismiss(animated: true, completion: nil)
         
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let nextCircleController = segue.destination as? NextCircleViewController
-        nextCircleController?.nextCircleCorordinate = self.nextCircleCorordinate!
     }
     
     override func didReceiveMemoryWarning() {

@@ -22,10 +22,9 @@ extension MapViewController: CLLocationManagerDelegate {
         let camera = GMSCameraPosition.camera(withLatitude: location.coordinate.latitude,
                                               longitude: location.coordinate.longitude,
                                               zoom: zoomLevel)
-        
         if mapView.isHidden {
             mapView.isHidden = false
-            mapView.camera = camera
+            
         } else {
             mapView.animate(to: camera)
         }
