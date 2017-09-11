@@ -7,12 +7,17 @@
 //
 
 import UIKit
+import Firebase
 
 class RankTableViewController: UITableViewController {
-
+    
+    var ref: DatabaseReference!
+    var players: [Player] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        fetchAllPlayerSocre()
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -20,6 +25,25 @@ class RankTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
+    func fetchAllPlayerSocre() {
+        var newPlayers = [Player]()
+        ref = Database.database().reference()
+         ref.child("users").observe(.value, with: { (snapshot) in
+            let allUsers = snapshot.children
+            for user in allUsers {
+                if let user = user as? DataSnapshot {
+                    let player = Player(snapshot: user)
+                    newPlayers.append(player)
+                    self.players = newPlayers
+                    self.tableView.reloadData()
+                    }
+                    }
+                }
+            )}
+    
+        
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -27,25 +51,23 @@ class RankTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
+    
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return players.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: PropertKeys.rankCell, for: indexPath)
 
-        // Configure the cell...
+        cell.textLabel?.text = players[indexPath.row].username
+        cell.detailTextLabel?.text = "\(players[indexPath.row].score!)"
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
