@@ -16,7 +16,33 @@ import GoogleSignIn
 class MapViewController: UIViewController {
     
     var locationManager = CLLocationManager()
-    var currentLocation: CLLocation?
+    var currentLocation: CLLocation? {
+        didSet {
+            print(currentLocation!)
+            
+        var allScoreCoordinatesIndex = -1
+            
+        for scoreCoordinate in allScoreCoordinates {
+            allScoreCoordinatesIndex += 1
+            let path = GMSMutablePath()
+            path.add((currentLocation?.coordinate)!)
+            path.add(scoreCoordinate)
+            let polyline = GMSPolyline(path: path)
+            polyline.map = mapView
+            let distance =  polyline.path?.length(of: .geodesic) ?? 0
+            if distance < 100 {
+                score += 1
+                scoreLabel.text = "score = \(score)"
+                allScoreCoordinates.remove(at: allScoreCoordinatesIndex)
+                allScoreCoordinates.insert(self.randomCoordinate(from: (currentLocation?.coordinate)!), at: allScoreCoordinatesIndex)
+                ref = Database.database().reference()
+                let allScoreCoordinatesDoubleType = allScoreCoordinates.map{ [$0.latitude, $0.longitude]}
+                ref.child("coordinates").child("scoreCoordinates").setValue(allScoreCoordinatesDoubleType)
+                
+            }
+            }
+    }
+    }
     var mapView: GMSMapView!
     var placesClient: GMSPlacesClient!
     var zoomLevel: Float = 18.0
@@ -24,8 +50,9 @@ class MapViewController: UIViewController {
     var nextCircleCorordinate: CLLocationCoordinate2D?
     var ref: DatabaseReference!
     var allUid = [String]()
-    var allCoordinates = [CLLocationCoordinate2D]()
-    
+    var allOtherPlayerCoordinates = [CLLocationCoordinate2D]()
+    var allScoreCoordinates = [CLLocationCoordinate2D]()
+    var score = 0
     
     let button: UIButton = {
         let button = UIButton()
@@ -45,7 +72,17 @@ class MapViewController: UIViewController {
         return button
     }()
     
-    
+    let scoreLabel: UILabel = {
+       let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.backgroundColor = #colorLiteral(red: 0.1960784346, green: 0.3411764801, blue: 0.1019607857, alpha: 1)
+        label.text = "score = 0"
+        label.textAlignment = .center
+        label.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        label.layer.cornerRadius = 0.15
+        label.clipsToBounds = true
+        return label
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,8 +94,8 @@ class MapViewController: UIViewController {
         locationManager.delegate = self
         
         placesClient = GMSPlacesClient.shared()
-        let camera = GMSCameraPosition.camera(withLatitude: 25.039016,
-                                              longitude: 121.376042,
+        let camera = GMSCameraPosition.camera(withLatitude: 25.057203,
+                                              longitude: 121.552778,
                                               zoom: zoomLevel)
         mapView = GMSMapView.map(withFrame: view.bounds, camera: camera)
         mapView.settings.myLocationButton = true
@@ -83,7 +120,8 @@ class MapViewController: UIViewController {
         view.addSubview(button)
         button.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         button.leftAnchor.constraint(equalTo: mapView.leftAnchor).isActive = true
-        button.rightAnchor.constraint(equalTo: mapView.rightAnchor).isActive = true
+        button.rightAnchor.constraint(equalTo: mapView.rightAnchor)
+            .isActive = true
         button.heightAnchor.constraint(equalToConstant: 64).isActive = true
         
         view.addSubview(nextButton)
@@ -94,35 +132,41 @@ class MapViewController: UIViewController {
         
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(logout))
+    
+        view.addSubview(scoreLabel)
+        scoreLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 64).isActive = true
+        scoreLabel.leftAnchor.constraint(equalTo: mapView.leftAnchor).isActive = true
+        scoreLabel.rightAnchor.constraint(equalTo: mapView.rightAnchor, constant: -50).isActive = true
+        scoreLabel.heightAnchor.constraint(equalToConstant: 64).isActive = true
         
     }
+    
+    
     
     @objc func setCircle() {
         if let lat = currentLocation?.coordinate.latitude , let lon = currentLocation?.coordinate.longitude {
             
             ref = Database.database().reference()
             let user = Auth.auth().currentUser
-            ref.child("coordinates").updateChildValues([(user?.uid)!: [lat, lon]])
+            ref.child("coordinates").child("players").updateChildValues([(user?.uid)!: [lat, lon]])
             
-            let nextCircleCorordinate = randomCoordinate(lat: lat, lon: lon)
+            let nextCircleCorordinate = randomCoordinate(from: (currentLocation?.coordinate)!)
             
             
-            fetchAllPlayersCoordinates(completion: { (allNewCoordinates) in
+            fetchAllPlayersCoordinates(completion: { (allOtherPlayerCoordinates, allScoreCoordinates)  in
                 
-                print(self.allCoordinates)
                 self.mapView.clear()
                 self.addCircle(with: nextCircleCorordinate, circleColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1).withAlphaComponent(0.1), strokeColor: #colorLiteral(red: 1, green: 0, blue: 0, alpha: 1))
-                self.allCoordinates = allNewCoordinates
-                for otherCoordinate in self.allCoordinates {
-                    self.addCircle(with: otherCoordinate, circleColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1).withAlphaComponent(0.1), strokeColor: #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1))
-                    
-                    
-                }
+                self.addOtherPlayersCirclesAfterCompletion(with: allOtherPlayerCoordinates)
+            self.addScoreCirclesAfterCompletion(with:allScoreCoordinates)
+                
             })
-            
-            
-            
-            
+//            fetchAllScorePoints(completion: { (allNewCoordinates) in
+//
+//
+//
+//
+//            })
         }
     }
     
@@ -135,12 +179,12 @@ class MapViewController: UIViewController {
         }
     }
     
-    func randomCoordinate(lat: CLLocationDegrees, lon: CLLocationDegrees ) -> (CLLocationCoordinate2D) {
+    func randomCoordinate(from coordinate: CLLocationCoordinate2D) -> (CLLocationCoordinate2D) {
         
         let angleRandom = GKRandomDistribution(lowestValue: 0, highestValue: 360)
         let newaAngleRandom = angleRandom.nextInt()
-        let nextLat = Double(lat) + sin(Double(newaAngleRandom) / 180 * Double.pi) * 0.0005
-        let nextLon = Double(lon) + cos(Double(newaAngleRandom) / 180 * Double.pi) * 0.0005
+        let nextLat = Double(coordinate.latitude) + sin(Double(newaAngleRandom) / 180 * Double.pi) * 0.0012
+        let nextLon = Double(coordinate.longitude) + cos(Double(newaAngleRandom) / 180 * Double.pi) * 0.0012
         nextCircleCorordinate = CLLocationCoordinate2D(latitude: nextLat, longitude: nextLon)
         return nextCircleCorordinate!
     }
@@ -172,11 +216,45 @@ class MapViewController: UIViewController {
         })
     }
     
-    func fetchAllPlayersCoordinates(completion: @escaping ([CLLocationCoordinate2D]) -> ()) {
-        var allNewCoordinates = [CLLocationCoordinate2D]()
+    func fetchAllPlayersCoordinates(completion: @escaping (_ allOtherPlayerCoordinates: [CLLocationCoordinate2D], _ scoreCoordinates:  [CLLocationCoordinate2D]) -> ()) {
+        
         ref = Database.database().reference()
         let userUid = Auth.auth().currentUser?.uid
         ref.child("coordinates").observe(.value) { (snapshot) in
+            var allOtherPlayerCoordinates = [CLLocationCoordinate2D]()
+            let playersSnapshot = snapshot.childSnapshot(forPath: "players")
+            let playersCoordinates = playersSnapshot.children
+            for player in playersCoordinates {
+                if let player = player as? DataSnapshot {
+                    if player.key != userUid {
+                        if let playerCoordinate = player.value as? [Double] {
+                            allOtherPlayerCoordinates.append(CLLocationCoordinate2D(latitude: playerCoordinate[0], longitude: playerCoordinate[1]))
+//                            completion(allOtherPlayerCoordinates, scoreCoordinates)
+                        }
+                    }
+                }
+            }
+            var newScoreCoordinates = [CLLocationCoordinate2D]()
+            let scoreCoordinatesSnapshot = snapshot.childSnapshot(forPath: "scoreCoordinates")
+            let scoreCoordinates = scoreCoordinatesSnapshot.children
+            for coordinate in scoreCoordinates {
+                
+                if let coordinate = coordinate as? DataSnapshot {
+                    
+                    if let coordinate = coordinate.value as? [Double] {
+                        newScoreCoordinates.append(CLLocationCoordinate2D(latitude: coordinate[0], longitude: coordinate[1]))
+                        completion(allOtherPlayerCoordinates, newScoreCoordinates)
+                    }
+                }
+            }
+        }
+    }
+    
+    func fetchAllScorePoints(completion: @escaping ([CLLocationCoordinate2D]) -> ()) {
+        var allNewCoordinates = [CLLocationCoordinate2D]()
+        ref = Database.database().reference()
+        let userUid = Auth.auth().currentUser?.uid
+        ref.child("scoreCoordinates").observe(.value) { (snapshot) in
             let coordinates = snapshot.children
             for player in coordinates {
                 if let player = player as? DataSnapshot {
@@ -191,10 +269,18 @@ class MapViewController: UIViewController {
             }
         }
         
-        
-        
-        
-        
+    }
+    func addOtherPlayersCirclesAfterCompletion(with allOtherPlayerCoordinates: [CLLocationCoordinate2D]) {
+        self.allOtherPlayerCoordinates = allOtherPlayerCoordinates
+        for otherPlayerCoordinate in self.allOtherPlayerCoordinates {
+            self.addCircle(with: otherPlayerCoordinate, circleColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1).withAlphaComponent(0.1), strokeColor: #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1))
+        }
+    }
+    func addScoreCirclesAfterCompletion(with allScoreCoordinates: [CLLocationCoordinate2D]) {
+        self.allScoreCoordinates = allScoreCoordinates
+        for scoreCoordinate in self.allScoreCoordinates {
+            self.addCircle(with: scoreCoordinate, circleColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1).withAlphaComponent(0.1), strokeColor: #colorLiteral(red: 1, green: 0, blue: 0, alpha: 1))
+        }
     }
     
     @objc func logout() {
@@ -208,6 +294,9 @@ class MapViewController: UIViewController {
         dismiss(animated: true, completion: nil)
         
     }
+    
+   
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let nextCircleController = segue.destination as? NextCircleViewController

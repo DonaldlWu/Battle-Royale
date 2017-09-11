@@ -93,6 +93,7 @@ class NextCircleViewController: MapViewController {
     @objc override func setCircle() {
         circ = GMSCircle(position: coordinator, radius: 50)
         circ.fillColor = UIColor(red:0.35, green:0, blue:0, alpha:0.05)
+        mapView.clear()
         circ.strokeColor = .red
         circ.strokeWidth = 5
         circ.map = mapView
