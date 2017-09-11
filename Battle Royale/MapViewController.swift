@@ -30,7 +30,7 @@ class MapViewController: UIViewController {
             let polyline = GMSPolyline(path: path)
             polyline.map = mapView
             let distance =  polyline.path?.length(of: .geodesic) ?? 0
-            if distance < 100 {
+            if distance < 50 {
                 score += 1
                 scoreLabel.text = "score = \(score)"
                 allScoreCoordinates.remove(at: allScoreCoordinatesIndex)
@@ -80,6 +80,7 @@ class MapViewController: UIViewController {
         label.textAlignment = .center
         label.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         label.layer.cornerRadius = 0.15
+        label.layer.masksToBounds = true
         label.clipsToBounds = true
         return label
     }()
@@ -144,6 +145,10 @@ class MapViewController: UIViewController {
     
     
     @objc func setCircle() {
+        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { (timer) in
+            self.ticker()
+        }
+        
         if let lat = currentLocation?.coordinate.latitude , let lon = currentLocation?.coordinate.longitude {
             
             ref = Database.database().reference()
@@ -169,6 +174,12 @@ class MapViewController: UIViewController {
 //            })
         }
     }
+    func ticker() {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "mm:ss"
+        let whatTime = formatter.string(from: Date())
+        print(whatTime)
+    }
     
     
     @objc func nextCircle() {
@@ -183,8 +194,8 @@ class MapViewController: UIViewController {
         
         let angleRandom = GKRandomDistribution(lowestValue: 0, highestValue: 360)
         let newaAngleRandom = angleRandom.nextInt()
-        let nextLat = Double(coordinate.latitude) + sin(Double(newaAngleRandom) / 180 * Double.pi) * 0.0012
-        let nextLon = Double(coordinate.longitude) + cos(Double(newaAngleRandom) / 180 * Double.pi) * 0.0012
+        let nextLat = Double(coordinate.latitude) + sin(Double(newaAngleRandom) / 180 * Double.pi) * 0.0011
+        let nextLon = Double(coordinate.longitude) + cos(Double(newaAngleRandom) / 180 * Double.pi) * 0.0011
         nextCircleCorordinate = CLLocationCoordinate2D(latitude: nextLat, longitude: nextLon)
         return nextCircleCorordinate!
     }
