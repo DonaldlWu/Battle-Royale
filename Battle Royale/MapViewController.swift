@@ -16,6 +16,9 @@ import GoogleSignIn
 class MapViewController: UIViewController {
     
     var locationManager = CLLocationManager()
+    var seconds = 10
+    var timer = Timer()
+    var isTimerRunning = false
     var currentLocation: CLLocation? {
         didSet {
             print(currentLocation!)
@@ -39,10 +42,11 @@ class MapViewController: UIViewController {
                 let allScoreCoordinatesDoubleType = allScoreCoordinates.map{ [$0.latitude, $0.longitude]}
                 ref.child("coordinates").child("scoreCoordinates").setValue(allScoreCoordinatesDoubleType)
                 
+                }
             }
-            }
+        }
     }
-    }
+    
     var mapView: GMSMapView!
     var placesClient: GMSPlacesClient!
     var zoomLevel: Float = 18.0
@@ -66,14 +70,14 @@ class MapViewController: UIViewController {
     let nextButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Next", for: .normal)
+        button.setTitle("NEXT", for: .normal)
         button.backgroundColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
         button.addTarget(self, action: #selector(nextCircle), for: .touchUpInside)
         return button
     }()
     
     let scoreLabel: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.backgroundColor = #colorLiteral(red: 0.1960784346, green: 0.3411764801, blue: 0.1019607857, alpha: 1)
         label.text = "score = 0"
@@ -81,6 +85,17 @@ class MapViewController: UIViewController {
         label.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         label.layer.cornerRadius = 0.15
         label.layer.masksToBounds = true
+        label.clipsToBounds = true
+        return label
+    }()
+    
+    let timerLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.backgroundColor = .cyan
+        label.text = "10:00"
+        label.textAlignment = .center
+        label.textColor = .red
         label.clipsToBounds = true
         return label
     }()
@@ -115,9 +130,7 @@ class MapViewController: UIViewController {
         mapView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -128).isActive = true
         
         mapView.isHidden = true
-        
-        
-        
+
         view.addSubview(button)
         button.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -60).isActive = true
         button.leftAnchor.constraint(equalTo: mapView.leftAnchor).isActive = true
@@ -132,24 +145,65 @@ class MapViewController: UIViewController {
         nextButton.rightAnchor.constraint(equalTo: mapView.rightAnchor).isActive = true
         nextButton.heightAnchor.constraint(equalToConstant: 64).isActive = true
         
-        
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(logout))
     
         view.addSubview(scoreLabel)
         scoreLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 64).isActive = true
         scoreLabel.leftAnchor.constraint(equalTo: mapView.leftAnchor).isActive = true
-        scoreLabel.rightAnchor.constraint(equalTo: mapView.rightAnchor, constant: -50).isActive = true
+        scoreLabel.rightAnchor.constraint(equalTo: mapView.centerXAnchor).isActive = true
         scoreLabel.heightAnchor.constraint(equalToConstant: 64).isActive = true
+        
+        view.addSubview(timerLabel)
+        timerLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 64).isActive = true
+        timerLabel.leftAnchor.constraint(equalTo: mapView.centerXAnchor).isActive = true
+        timerLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -50).isActive = true
+        timerLabel.heightAnchor.constraint(equalToConstant: 64).isActive = true
         
     }
     
+    func runTimer() {
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(MapViewController.updateTimer)), userInfo: nil, repeats: true)
+    }
     
+    @objc func updateTimer() {
+        seconds -= 1
+        timerLabel.text = timeString(time: TimeInterval(seconds))
+        if seconds == 0 {
+            timer.invalidate()
+            popAlert()
+            seconds = 10
+        }
+    }
+    
+    func popAlert() {
+        timerLabel.text = timeString(time: TimeInterval(seconds))
+        let alertController = UIAlertController(title: "你的成績", message: "\(scoreLabel.text!)分", preferredStyle: .alert)
+        
+        let saveAction = UIAlertAction(title: "UPDATE", style: .default, handler: {
+            alert -> Void in
+//            update to firebase
+        })
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: {
+            (action : UIAlertAction!) -> Void in
+        })
+        
+        alertController.addAction(saveAction)
+        alertController.addAction(cancelAction)
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func timeString(time: TimeInterval) -> String {
+//        let hours = Int(time) / 3600
+        let minutes = Int(time) / 60 % 60
+        let seconds = Int(time) % 60
+        return String(format:"%02i:%02i",  minutes, seconds)
+//        return String(format:"%02i:%02i:%02i",hours ,minutes, seconds)
+    }
     
     @objc func setCircle() {
-        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { (timer) in
-            self.ticker()
-        }
-        
+        runTimer()
         if let lat = currentLocation?.coordinate.latitude , let lon = currentLocation?.coordinate.longitude {
             
             ref = Database.database().reference()
