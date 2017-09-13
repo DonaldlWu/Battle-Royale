@@ -18,39 +18,39 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
     
     var handle: AuthStateDidChangeListenerHandle?
     var ref: DatabaseReference!
-    
+    var displayName: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance().uiDelegate = self
-        GIDSignIn.sharedInstance().signIn()
-        
-        
+        GIDSignIn.sharedInstance().delegate = self
         // TODO(developer) Configure the sign-in button look/feel
         // ...
         view.addSubview(googleButton)
         view.addSubview(mapViewButton)
         
         googleButton.translatesAutoresizingMaskIntoConstraints = false
-        googleButton.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        googleButton.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-        googleButton.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        googleButton.heightAnchor.constraint(equalToConstant: 64).isActive = true
-        
-        
+        NSLayoutConstraint(item: googleButton, attribute: .top, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 0.7, constant: 0).isActive = true
+         NSLayoutConstraint(item: googleButton, attribute: .leading, relatedBy: .equal, toItem: view, attribute: .trailing, multiplier: 0.2, constant: 0).isActive = true
+        NSLayoutConstraint(item: googleButton, attribute: .trailing, relatedBy: .equal, toItem: view, attribute: .trailing, multiplier: 0.8, constant: 0).isActive = true
         
         mapViewButton.translatesAutoresizingMaskIntoConstraints = false
         mapViewButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -64).isActive = true
         mapViewButton.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         mapViewButton.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        googleButton.heightAnchor.constraint(equalToConstant: 64).isActive = true
         
     }
     
     
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         handle = Auth.auth().addStateDidChangeListener { (auth, user) in
+        }
+        if Auth.auth().currentUser != nil {
+            presentTutorial()
+        } else {
+            // No user is signed in.
+            // ...
         }
     }
     
@@ -58,6 +58,9 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
         Auth.auth().removeStateDidChangeListener(handle!)
     }
     
+    @IBAction func unwindToLogin(segue: UIStoryboardSegue) {
+        
+    }
     
     let googleButton = GIDSignInButton()
     
@@ -65,24 +68,15 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("START", for: .normal)
-        button.backgroundColor = .cyan
-        button.addTarget(self, action: #selector(presentMapView), for: .touchUpInside)
+        button.backgroundColor = #colorLiteral(red: 0.9272366166, green: 0.2351297438, blue: 0.103588976, alpha: 1).withAlphaComponent(0.8)
+        button.addTarget(self, action: #selector(presentTutorial), for: .touchUpInside)
         return button
     }()
     
-    @objc func presentMapView() {
-        let controller = storyboard?.instantiateViewController(withIdentifier: PropertKeys.tabBarController)
-       
-        if let user = Auth.auth().currentUser {
-           
-            ref = Database.database().reference()
-        ref.child("users").child(user.uid).updateChildValues(["username": user.displayName!])
-            
-            
-        
-        present(controller!, animated: true, completion: nil)
+    @objc func presentTutorial() {
+        if Auth.auth().currentUser != nil {
+        performSegue(withIdentifier: PropertKeys.loginToTutorialSegue, sender: nil)
         }
-        
     }
     
     override func didReceiveMemoryWarning() {

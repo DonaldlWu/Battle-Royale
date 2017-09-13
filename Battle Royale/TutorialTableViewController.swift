@@ -1,62 +1,45 @@
 //
-//  RankTableViewController.swift
+//  TutorialTableViewController.swift
 //  Battle Royale
 //
-//  Created by Vince Lee on 2017/9/11.
+//  Created by Vince Lee on 2017/9/12.
 //  Copyright © 2017年 吳得人. All rights reserved.
 //
 
 import UIKit
 import Firebase
-import GoogleSignIn
 
-class RankTableViewController: UITableViewController {
+
+class TutorialTableViewController: UITableViewController {
     
-    var ref: DatabaseReference!
-    var players: [Player] = []
+    var displayName: String?
+    var ref: DatabaseReference?
     
+    @IBOutlet weak var nameTextField: UITextField!
+    
+    @IBOutlet weak var playButoon: UIButton!
+    
+    @IBAction func playButtonPressed(_ sender: Any) {
+        ref = Database.database().reference()
+        if let user = Auth.auth().currentUser {
+        ref?.child("users").child(user.uid).updateChildValues(["username" : nameTextField.text!])
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchAllPlayerSocre()
-        
-        
+        if let displayName = Auth.auth().currentUser?.displayName {
+            nameTextField.text = displayName
+        }
+        nameTextField.layer.masksToBounds = true
+        nameTextField.textAlignment = .center
+        playButoon.layer.cornerRadius = 10
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(logout))
+
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
-    func fetchAllPlayerSocre() {
-        var newPlayers = [Player]()
-        ref = Database.database().reference()
-         ref.child("users").observe(.value, with: { (snapshot) in
-            let allUsers = snapshot.children
-            for user in allUsers {
-                if let user = user as? DataSnapshot {
-                    let player = Player(snapshot: user)
-                    newPlayers.append(player)
-                    self.players = newPlayers
-                    
-                    }
-                    }
-            self.players = self.players.sorted(by: { (playerA, playerB) -> Bool in
-                playerA.score! > playerB.score!
-            })
-            self.tableView.reloadData()
-                }
-            )}
-    
-    @objc func logout() {
-        let firebaseAuth = Auth.auth()
-        do {
-            try firebaseAuth.signOut()
-        } catch let signOutError as NSError {
-            print ("Error signing out: %@", signOutError)
-        }
-        GIDSignIn.sharedInstance().signOut()
-        performSegue(withIdentifier: PropertKeys.unwindToLogin, sender: nil)
-    }
-    
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -64,23 +47,17 @@ class RankTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    
+  
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return players.count
-    }
-
-    
+    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: PropertKeys.rankCell, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
-        cell.textLabel?.text = players[indexPath.row].username
-        cell.detailTextLabel?.text = "\(players[indexPath.row].score!)"
+        // Configure the cell...
 
         return cell
     }
-    
+    */
 
     /*
     // Override to support conditional editing of the table view.
