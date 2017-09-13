@@ -10,7 +10,7 @@ import UIKit
 import FirebaseAuth
 import Firebase
 import GoogleSignIn
-
+import FacebookLogin
 
 
 
@@ -20,11 +20,14 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
     var ref: DatabaseReference!
     var displayName: String?
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
          GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance().uiDelegate = self
         GIDSignIn.sharedInstance().delegate = self
+        
+        facebookLoginButton.delegate = self
         // TODO(developer) Configure the sign-in button look/feel
         // ...
         setupView()
@@ -84,6 +87,9 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
         button.addTarget(self, action: #selector(handleRegister), for: .touchUpInside)
         return button
     }()
+    
+    let facebookLoginButton = LoginButton(readPermissions: [ .publicProfile, .email])
+    
     
     let activityView: UIActivityIndicatorView = {
         let activityView = UIActivityIndicatorView()

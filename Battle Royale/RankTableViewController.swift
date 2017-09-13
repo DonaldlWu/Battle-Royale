@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import GoogleSignIn
+import FBSDKLoginKit
 
 class RankTableViewController: UITableViewController {
     
@@ -54,6 +55,7 @@ class RankTableViewController: UITableViewController {
             print ("Error signing out: %@", signOutError)
         }
         GIDSignIn.sharedInstance().signOut()
+        FBSDKLoginManager().logOut()
         performSegue(withIdentifier: PropertKeys.unwindToLogin, sender: nil)
     }
     
