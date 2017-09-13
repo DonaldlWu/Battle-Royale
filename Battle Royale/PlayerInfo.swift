@@ -16,7 +16,7 @@ struct Player {
     init(snapshot: DataSnapshot) {
         
         if let snapshotValue = snapshot.value as? [String: Any] {
-            username = (snapshotValue["username"])! as! String
+            username = ((snapshotValue["username"])! as! String)
             score = (snapshotValue["score"]) as? Int ?? 0
            
             

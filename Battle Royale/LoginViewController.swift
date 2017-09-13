@@ -27,19 +27,7 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
         GIDSignIn.sharedInstance().delegate = self
         // TODO(developer) Configure the sign-in button look/feel
         // ...
-        view.addSubview(googleButton)
-        view.addSubview(mapViewButton)
-        
-        googleButton.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint(item: googleButton, attribute: .top, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 0.7, constant: 0).isActive = true
-         NSLayoutConstraint(item: googleButton, attribute: .leading, relatedBy: .equal, toItem: view, attribute: .trailing, multiplier: 0.2, constant: 0).isActive = true
-        NSLayoutConstraint(item: googleButton, attribute: .trailing, relatedBy: .equal, toItem: view, attribute: .trailing, multiplier: 0.8, constant: 0).isActive = true
-        
-        mapViewButton.translatesAutoresizingMaskIntoConstraints = false
-        mapViewButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -64).isActive = true
-        mapViewButton.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-        mapViewButton.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        
+        setupView()
     }
     
     
@@ -71,6 +59,36 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
         button.backgroundColor = #colorLiteral(red: 0.9272366166, green: 0.2351297438, blue: 0.103588976, alpha: 1).withAlphaComponent(0.8)
         button.addTarget(self, action: #selector(presentTutorial), for: .touchUpInside)
         return button
+    }()
+    
+    let accountTextfield: UITextField = {
+        let textfield = UITextField()
+        textfield.translatesAutoresizingMaskIntoConstraints = false
+        textfield.placeholder = "帳號"
+        textfield.borderStyle = .roundedRect
+        return textfield
+     }()
+    let passwordsTextfield: UITextField = {
+        let textfield = UITextField()
+        textfield.translatesAutoresizingMaskIntoConstraints = false
+        textfield.placeholder = "密碼"
+        textfield.borderStyle = .roundedRect
+        return textfield
+    }()
+    
+    let passwordsLoginButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Login/Register", for: .normal)
+        button.backgroundColor = #colorLiteral(red: 0.9272366166, green: 0.2351297438, blue: 0.103588976, alpha: 1).withAlphaComponent(0.8)
+        button.addTarget(self, action: #selector(handleRegister), for: .touchUpInside)
+        return button
+    }()
+    
+    let activityView: UIActivityIndicatorView = {
+        let activityView = UIActivityIndicatorView()
+        activityView.activityIndicatorViewStyle = .gray
+        return activityView
     }()
     
     @objc func presentTutorial() {

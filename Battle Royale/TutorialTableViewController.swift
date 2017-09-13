@@ -20,11 +20,18 @@ class TutorialTableViewController: UITableViewController {
     @IBOutlet weak var playButoon: UIButton!
     
     @IBAction func playButtonPressed(_ sender: Any) {
+        
+        if (nameTextField.text?.characters.count)! >= 3 {
         ref = Database.database().reference()
         if let user = Auth.auth().currentUser {
         ref?.child("users").child(user.uid).updateChildValues(["username" : nameTextField.text!])
+            performSegue(withIdentifier: PropertKeys.tutorialToTabBarSegue, sender: nil)
+            }
+        } else {
+            nameTooShort()
         }
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         if let displayName = Auth.auth().currentUser?.displayName {
@@ -39,7 +46,16 @@ class TutorialTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-
+    
+    func nameTooShort() {
+        let retryAction = UIAlertAction(title: "再試一次", style: .cancel, handler: nil)
+        let alertController = UIAlertController(title: "Error", message: "名字要三個字以上喔", preferredStyle: .alert)
+        
+        alertController.addAction(retryAction)
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

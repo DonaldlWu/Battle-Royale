@@ -16,10 +16,10 @@ extension MapViewController: CLLocationManagerDelegate {
     // Handle incoming location events.
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location: CLLocation = locations.last!
-        print("Location: \(location)")
-        print("-----------------------------")
-        print(location.coordinate)
-        print("-----------------------------")
+//        print("Location: \(location)")
+//        print("-----------------------------")
+//        print(location.coordinate)
+//        print("-----------------------------")
         let camera = GMSCameraPosition.camera(withLatitude: location.coordinate.latitude,
                                               longitude: location.coordinate.longitude,
                                               zoom: zoomLevel)

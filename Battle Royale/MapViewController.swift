@@ -110,6 +110,8 @@ class MapViewController: UIViewController {
         // firebase otherplayers coordinate update then:
         fetchAllOhterPlayersCoordinates(completion: { (allOtherPlayerCoordinates) in
             self.mapView.clear()
+            print(allOtherPlayerCoordinates)
+
             self.addOtherPlayersCirclesAfterCompletion(with: allOtherPlayerCoordinates)
             self.addScoreCirclesAfterCompletion(with: self.allScoreCoordinates)
         })

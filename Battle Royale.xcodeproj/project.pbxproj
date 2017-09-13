@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		167A29D388D24EF4FDD4A809 /* Pods_Battle_Royale.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 064F06316B4D915CFE5313B2 /* Pods_Battle_Royale.framework */; };
+		566D96401F691DC300FEAEC3 /* LoginUISetupExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566D963F1F691DC300FEAEC3 /* LoginUISetupExtension.swift */; };
 		567B6D271F66644100E849D4 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		567B6D2B1F66696F00E849D4 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		567B6D2F1F6695CA00E849D4 /* RankTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567B6D2E1F6695CA00E849D4 /* RankTableViewController.swift */; };
@@ -18,6 +19,7 @@
 		56BC313B1F62A1B80036B97B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BC313A1F62A1B80036B97B /* LoginViewController.swift */; };
 		56BC313D1F62A3AE0036B97B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 56BC313C1F62A39D0036B97B /* GoogleService-Info.plist */; };
 		56BC31421F630C440036B97B /* PropertyKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BC31411F630C440036B97B /* PropertyKeys.swift */; };
+		56D536061F69277200F4B492 /* PasswordsLoginExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D536051F69277200F4B492 /* PasswordsLoginExtension.swift */; };
 		58D1EB1D97EC6438089BFE83 /* Pods_Battle_RoyaleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5DB1C9D34CE9D3F2985761F /* Pods_Battle_RoyaleTests.framework */; };
 		C05ACC1F1F5FC4030082B0E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05ACC1E1F5FC4030082B0E2 /* AppDelegate.swift */; };
 		C05ACC211F5FC4030082B0E2 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05ACC201F5FC4030082B0E2 /* MapViewController.swift */; };
@@ -43,6 +45,7 @@
 		064F06316B4D915CFE5313B2 /* Pods_Battle_Royale.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Battle_Royale.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1497A6E0721312EAE8ABA43B /* Pods-Battle Royale.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Battle Royale.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Battle Royale/Pods-Battle Royale.debug.xcconfig"; sourceTree = "<group>"; };
 		3C48C10E07F8D51AC0073EF8 /* Pods-Battle RoyaleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Battle RoyaleTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Battle RoyaleTests/Pods-Battle RoyaleTests.release.xcconfig"; sourceTree = "<group>"; };
+		566D963F1F691DC300FEAEC3 /* LoginUISetupExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUISetupExtension.swift; sourceTree = "<group>"; };
 		567B6D2E1F6695CA00E849D4 /* RankTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankTableViewController.swift; sourceTree = "<group>"; };
 		567B6D301F6695DF00E849D4 /* PlayerInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerInfo.swift; sourceTree = "<group>"; };
 		567B6D311F6695DF00E849D4 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
@@ -51,6 +54,7 @@
 		56BC313A1F62A1B80036B97B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		56BC313C1F62A39D0036B97B /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		56BC31411F630C440036B97B /* PropertyKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyKeys.swift; sourceTree = "<group>"; };
+		56D536051F69277200F4B492 /* PasswordsLoginExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordsLoginExtension.swift; sourceTree = "<group>"; };
 		6C499DA9C7064C17F3C42CAB /* Pods-Battle RoyaleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Battle RoyaleTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Battle RoyaleTests/Pods-Battle RoyaleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C05ACC1B1F5FC4030082B0E2 /* Battle Royale.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Battle Royale.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C05ACC1E1F5FC4030082B0E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -103,6 +107,8 @@
 			isa = PBXGroup;
 			children = (
 				56BC313A1F62A1B80036B97B /* LoginViewController.swift */,
+				566D963F1F691DC300FEAEC3 /* LoginUISetupExtension.swift */,
+				56D536051F69277200F4B492 /* PasswordsLoginExtension.swift */,
 				567B6D3C1F68503C00E849D4 /* GoogleLoginDelegate.swift */,
 				567B6D381F681DF300E849D4 /* TutorialTableViewController.swift */,
 			);
@@ -394,6 +400,7 @@
 			files = (
 				567B6D3D1F68503C00E849D4 /* GoogleLoginDelegate.swift in Sources */,
 				567B6D321F6695DF00E849D4 /* PlayerInfo.swift in Sources */,
+				566D96401F691DC300FEAEC3 /* LoginUISetupExtension.swift in Sources */,
 				56BC313B1F62A1B80036B97B /* LoginViewController.swift in Sources */,
 				567B6D331F6695DF00E849D4 /* TabBarController.swift in Sources */,
 				567B6D271F66644100E849D4 /* (null) in Sources */,
@@ -402,6 +409,7 @@
 				C05ACC271F5FC4030082B0E2 /* Battle_Royale.xcdatamodeld in Sources */,
 				56BC31421F630C440036B97B /* PropertyKeys.swift in Sources */,
 				567B6D2B1F66696F00E849D4 /* (null) in Sources */,
+				56D536061F69277200F4B492 /* PasswordsLoginExtension.swift in Sources */,
 				567B6D2F1F6695CA00E849D4 /* RankTableViewController.swift in Sources */,
 				C064D5BC1F5FCC4700FF763A /* MapViewControllerExtension.swift in Sources */,
 				C05ACC1F1F5FC4030082B0E2 /* AppDelegate.swift in Sources */,
