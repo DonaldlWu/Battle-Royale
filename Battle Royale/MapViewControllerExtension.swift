@@ -59,15 +59,15 @@ extension MapViewController: CLLocationManagerDelegate {
         print(currentLocation!)
         
         ref = Database.database().reference()
-        let user = Auth.auth().currentUser
-        
-        if let lat = currentLocation?.coordinate.latitude, let lon = currentLocation?.coordinate.longitude {
-            ref.child("coordinates").child("players").updateChildValues([(user?.uid)!: [lat, lon]])
+        let userUid = Auth.auth().currentUser?.uid
+        let coord = currentLocation?.coordinate
+        if let lat = coord?.latitude, let lon = coord?.longitude {
+            ref.child("coordinates").child("players").updateChildValues([(userUid)!: [lat, lon]])
         }
         
         if start == true {
             var allScoreCoordinatesIndex = -1
-            for scoreCoordinate in allScoreCoordinates {
+            for scoreCoordinate in allScoreCoords {
                 allScoreCoordinatesIndex += 1
                 let path = GMSMutablePath()
                 path.add((currentLocation?.coordinate)!)
@@ -82,10 +82,10 @@ extension MapViewController: CLLocationManagerDelegate {
                     score += 1
                     scoreLabel.text = "\(score)  ⦿"
                     // delete score coordinate and add a random one
-                    allScoreCoordinates.remove(at: allScoreCoordinatesIndex)
-                    allScoreCoordinates.insert(self.randomCoordinate(from: (currentLocation?.coordinate)!), at: allScoreCoordinatesIndex)
+                    allScoreCoords.remove(at: allScoreCoordinatesIndex)
+                    allScoreCoords.insert(self.randomCoordinate(from: (currentLocation?.coordinate)!), at: allScoreCoordinatesIndex)
                     ref = Database.database().reference()
-                    let allScoreCoordinatesDoubleType = allScoreCoordinates.map{ [$0.latitude, $0.longitude]}
+                    let allScoreCoordinatesDoubleType = allScoreCoords.map{ [$0.latitude, $0.longitude]}
                     ref.child("coordinates").child("scoreCoordinates").setValue(allScoreCoordinatesDoubleType)
                     
                 }
@@ -123,56 +123,7 @@ extension MapViewController: CLLocationManagerDelegate {
         timerLabel.heightAnchor.constraint(equalToConstant: 64).isActive = true
     }
     
-    func runTimer() {
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(MapViewController.updateTimer)), userInfo: nil, repeats: true)
-    }
     
-    
-    
-    @objc func updateTimer() {
-        seconds -= 1
-        timerLabel.text = timeString(time: TimeInterval(seconds))
-        if seconds == 0 {
-            timer.invalidate()
-            popAlert()
-            start = false
-            seconds = 300
-            timerLabel.text = timeString(time: TimeInterval(seconds))
-            button.backgroundColor = #colorLiteral(red: 0.9272366166, green: 0.2351297438, blue: 0.103588976, alpha: 1)
-            button.layer.shadowColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
-        }
-    }
-    
-    func popAlert() {
-        let alertController = UIAlertController(title: "你的成績", message: "\(score)分", preferredStyle: .alert)
-        
-        let saveAction = UIAlertAction(title: "UPDATE", style: .default, handler: {
-            alert -> Void in
-            //            update to firebase
-            self.ref = Database.database().reference()
-            let userUid = Auth.auth().currentUser?.uid
-            self.ref.child("users").child(userUid!).updateChildValues(["score" : self.score])
-            self.score = 0
-        })
-        
-        let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: {
-            (action : UIAlertAction!) -> Void in
-            self.score = 0
-        })
-        
-        alertController.addAction(saveAction)
-        alertController.addAction(cancelAction)
-        
-        self.present(alertController, animated: true, completion: nil)
-    }
-    
-    func timeString(time: TimeInterval) -> String {
-        //        let hours = Int(time) / 3600
-        let minutes = Int(time) / 60 % 60
-        let seconds = Int(time) % 60
-        return String(format:"%02i:%02i",  minutes, seconds)
-        //        return String(format:"%02i:%02i:%02i",hours ,minutes, seconds)
-    }
     
 }
 

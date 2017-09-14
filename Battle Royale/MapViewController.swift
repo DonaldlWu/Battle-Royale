@@ -27,16 +27,18 @@ class MapViewController: UIViewController {
     }
     
     var mapView: MGLMapView!
-    
     var zoomLevel: Float = 18.0
     var circ = GMSCircle()
     var nextCircleCorordinate: CLLocationCoordinate2D?
     var ref: DatabaseReference!
     var allUid = [String]()
-    var allOtherPlayerCoordinates = [CLLocationCoordinate2D]()
-    var allScoreCoordinates = [CLLocationCoordinate2D]()
+    var OtherPlayerCoords = [CLLocationCoordinate2D]()
+    var allScoreCoords = [CLLocationCoordinate2D]()
     var score = 0
     var start = false
+    var polygonLayer: MGLStyleLayer?
+    var scoreShapes: [MGLPolygon] = []
+    var otherPlayerShapes: [MGLPolygon] = []
     
     let button: UIButton = {
         let button = UIButton()
@@ -92,18 +94,16 @@ class MapViewController: UIViewController {
         locationManager.startUpdatingLocation()
         locationManager.delegate = self
         
-        
-        let camera = GMSCameraPosition.camera(withLatitude: 25.057203,
-                                              longitude: 121.552778,
-                                              zoom: zoomLevel)
         let url = URL(string: "mapbox://styles/vince9458/cj7j8jyhv6afo2rnitqd3xnmq")
         self.mapView = MGLMapView(frame: view.bounds, styleURL: url)
         mapView.translatesAutoresizingMaskIntoConstraints = false
+        
         mapView.setCenter(CLLocationCoordinate2D(latitude: 25.021293, longitude: 121.538006), zoomLevel: 9, animated: false)
         
         mapView.userTrackingMode = .follow
         mapView.showsUserLocation = true
         mapView.delegate = self
+        
         setupView()
         
         
@@ -111,23 +111,22 @@ class MapViewController: UIViewController {
         // otherPlayers and scorePoints
         
         // firebase otherplayers coordinate update then:
-        fetchAllOhterPlayersCoordinates(completion: { (allOtherPlayerCoordinates) in
+        fetchOhterPlayersCoords(completion: { (allOtherPlayerCoords) in
+            self.mapView.removeAnnotations(self.otherPlayerShapes)
+            self.OtherPlayerCoords = allOtherPlayerCoords
+            self.otherPlayerShapes = self.updateShapes(coords:allOtherPlayerCoords, radiusMeter: 50)
             
-            print(allOtherPlayerCoordinates)
-
-            self.addOtherPlayersCirclesAfterCompletion(with: allOtherPlayerCoordinates)
-            self.addScoreCirclesAfterCompletion(with: self.allScoreCoordinates)
         })
         // firebase score coordinate update then:
-        fetchAllScoreCoordinates(completion: { (allScoreCoordinates) in
-            
-            self.addOtherPlayersCirclesAfterCompletion(with: self.allOtherPlayerCoordinates)
-            self.addScoreCirclesAfterCompletion(with:allScoreCoordinates)
+        fetchAllScoreCoordinates(completion: { (allScoreCoords) in
+            self.mapView.removeAnnotations(self.scoreShapes)
+            self.allScoreCoords = allScoreCoords
+            self.scoreShapes = self.updateShapes(coords:allScoreCoords, radiusMeter: 50)
         })
     }
     
     @objc func setCircle() {
-      
+      print(allScoreCoords)
         if start == false {
             start = true
             button.setTitle("◼︎", for: .normal)
@@ -207,18 +206,18 @@ class MapViewController: UIViewController {
         }
     }
     
-    func fetchAllOhterPlayersCoordinates(completion: @escaping (_ allOtherPlayerCoordinates: [CLLocationCoordinate2D]) -> ()) {
+    func fetchOhterPlayersCoords(completion: @escaping (_ OtherPlayerCoords: [CLLocationCoordinate2D]) -> ()) {
         ref = Database.database().reference()
         let userUid = Auth.auth().currentUser?.uid
         ref.child("coordinates").child("players").observe(.value) { (snapshot) in
-            var allOtherPlayerCoordinates = [CLLocationCoordinate2D]()
+            var OtherPlayerCoords = [CLLocationCoordinate2D]()
             let players = snapshot.children
             for player in players {
                 if let player = player as? DataSnapshot {
                     if player.key != userUid {
                         if let playerValue = player.value as? [Double] {
-                            allOtherPlayerCoordinates.append(CLLocationCoordinate2D(latitude: playerValue[0], longitude: playerValue[1]))
-                            completion(allOtherPlayerCoordinates)
+                            OtherPlayerCoords.append(CLLocationCoordinate2D(latitude: playerValue[0], longitude: playerValue[1]))
+                            completion(OtherPlayerCoords)
                         }
                     }
                 }
