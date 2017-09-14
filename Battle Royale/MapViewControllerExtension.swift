@@ -21,14 +21,12 @@ extension MapViewController: CLLocationManagerDelegate {
 //        print("-----------------------------")
 //        print(location.coordinate)
 //        print("-----------------------------")
-        let camera = GMSCameraPosition.camera(withLatitude: location.coordinate.latitude,
-                                              longitude: location.coordinate.longitude,
-                                              zoom: zoomLevel)
+        
         if mapView.isHidden {
             mapView.isHidden = false
             
         } else {
-            mapView.animate(to: camera)
+            
         }
         currentLocation = location
         
@@ -96,6 +94,7 @@ extension MapViewController: CLLocationManagerDelegate {
     }
     
     func setupView() {
+        
         view.addSubview(mapView)
         mapView.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor).isActive = true
         mapView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true

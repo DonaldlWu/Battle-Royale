@@ -8,7 +8,7 @@
 
 import UIKit
 import GoogleMaps
-
+import Mapbox
 import GameKit
 import Firebase
 import GoogleSignIn
@@ -26,7 +26,7 @@ class MapViewController: UIViewController {
         }
     }
     
-    var mapView: GMSMapView!
+    var mapView: MGLMapView!
     
     var zoomLevel: Float = 18.0
     var circ = GMSCircle()
@@ -96,12 +96,14 @@ class MapViewController: UIViewController {
         let camera = GMSCameraPosition.camera(withLatitude: 25.057203,
                                               longitude: 121.552778,
                                               zoom: zoomLevel)
-        mapView = GMSMapView.map(withFrame: view.bounds, camera: camera)
-        mapView.settings.myLocationButton = true
-        
+        let url = URL(string: "mapbox://styles/vince9458/cj7j8jyhv6afo2rnitqd3xnmq")
+        self.mapView = MGLMapView(frame: view.bounds, styleURL: url)
         mapView.translatesAutoresizingMaskIntoConstraints = false
-        mapView.settings.compassButton = true
-        mapView.isMyLocationEnabled = true
+        mapView.setCenter(CLLocationCoordinate2D(latitude: 25.021293, longitude: 121.538006), zoomLevel: 9, animated: false)
+        
+        mapView.userTrackingMode = .follow
+        mapView.showsUserLocation = true
+        mapView.delegate = self
         setupView()
         
         
@@ -110,7 +112,7 @@ class MapViewController: UIViewController {
         
         // firebase otherplayers coordinate update then:
         fetchAllOhterPlayersCoordinates(completion: { (allOtherPlayerCoordinates) in
-            self.mapView.clear()
+            
             print(allOtherPlayerCoordinates)
 
             self.addOtherPlayersCirclesAfterCompletion(with: allOtherPlayerCoordinates)
@@ -118,7 +120,7 @@ class MapViewController: UIViewController {
         })
         // firebase score coordinate update then:
         fetchAllScoreCoordinates(completion: { (allScoreCoordinates) in
-            self.mapView.clear()
+            
             self.addOtherPlayersCirclesAfterCompletion(with: self.allOtherPlayerCoordinates)
             self.addScoreCirclesAfterCompletion(with:allScoreCoordinates)
         })
@@ -156,15 +158,6 @@ class MapViewController: UIViewController {
         return nextCircleCorordinate!
     }
     
-    func addCircle(with circleCorordinate: CLLocationCoordinate2D, circleColor: UIColor, strokeColor: UIColor) {
-        
-        circ = GMSCircle(position: circleCorordinate, radius: 50)
-        circ.fillColor = circleColor
-        circ.strokeColor = strokeColor
-        circ.strokeWidth = 5
-        circ.map = mapView
-        
-    }
     
     func fetchAllPlayersUid(completion: @escaping ([String]) -> ()) {
         var newAllUid = [String]()
@@ -250,18 +243,7 @@ class MapViewController: UIViewController {
             }
         }
     }
-    func addOtherPlayersCirclesAfterCompletion(with allOtherPlayerCoordinates: [CLLocationCoordinate2D]) {
-        self.allOtherPlayerCoordinates = allOtherPlayerCoordinates
-        for otherPlayerCoordinate in self.allOtherPlayerCoordinates {
-            self.addCircle(with: otherPlayerCoordinate, circleColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1).withAlphaComponent(0.1), strokeColor: #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1))
-        }
-    }
-    func addScoreCirclesAfterCompletion(with allScoreCoordinates: [CLLocationCoordinate2D]) {
-        self.allScoreCoordinates = allScoreCoordinates
-        for scoreCoordinate in self.allScoreCoordinates {
-            self.addCircle(with: scoreCoordinate, circleColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1).withAlphaComponent(0.1), strokeColor: #colorLiteral(red: 0.9272366166, green: 0.2351297438, blue: 0.103588976, alpha: 1))
-        }
-    }
+    
     
     
     

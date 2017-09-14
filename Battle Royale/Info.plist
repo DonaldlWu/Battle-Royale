@@ -27,6 +27,8 @@
 	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>MGLMapboxAccessToken</key>
+	<string>pk.eyJ1IjoidmluY2U5NDU4IiwiYSI6ImNqN2o3a2M0ZDIwOGMzM3Bkd2U1M2gyOGkifQ.mcDGzSAki6PSNB3Rlbt7ng</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>

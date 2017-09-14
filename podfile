@@ -18,6 +18,7 @@ target 'Battle Royale' do
     pod 'FacebookCore'
     pod 'FacebookLogin'
     pod 'FacebookShare'
+    pod 'Mapbox-iOS-SDK', '~> 3.6'
 
 end
 
