@@ -8,8 +8,9 @@
 
 import UIKit
 import GoogleMaps
-import GooglePlaces
+
 import Firebase
+import AudioToolbox
 
 extension MapViewController: CLLocationManagerDelegate {
     
@@ -61,6 +62,7 @@ extension MapViewController: CLLocationManagerDelegate {
         
         ref = Database.database().reference()
         let user = Auth.auth().currentUser
+        
         if let lat = currentLocation?.coordinate.latitude, let lon = currentLocation?.coordinate.longitude {
             ref.child("coordinates").child("players").updateChildValues([(user?.uid)!: [lat, lon]])
         }
@@ -76,8 +78,12 @@ extension MapViewController: CLLocationManagerDelegate {
                 
                 let distance =  polyline.path?.length(of: .geodesic) ?? 0
                 if distance < 55 {
+                    // iphone vibrate
+               AudioServicesPlayAlertSound(kSystemSoundID_Vibrate)
+                    // update score
                     score += 1
                     scoreLabel.text = "\(score)  ⦿"
+                    // delete score coordinate and add a random one
                     allScoreCoordinates.remove(at: allScoreCoordinatesIndex)
                     allScoreCoordinates.insert(self.randomCoordinate(from: (currentLocation?.coordinate)!), at: allScoreCoordinatesIndex)
                     ref = Database.database().reference()

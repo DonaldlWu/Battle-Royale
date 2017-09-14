@@ -8,10 +8,11 @@
 
 import UIKit
 import GoogleMaps
-import GooglePlaces
+
 import GameKit
 import Firebase
 import GoogleSignIn
+
 
 class MapViewController: UIViewController {
     
@@ -26,7 +27,7 @@ class MapViewController: UIViewController {
     }
     
     var mapView: GMSMapView!
-    var placesClient: GMSPlacesClient!
+    
     var zoomLevel: Float = 18.0
     var circ = GMSCircle()
     var nextCircleCorordinate: CLLocationCoordinate2D?
@@ -91,7 +92,7 @@ class MapViewController: UIViewController {
         locationManager.startUpdatingLocation()
         locationManager.delegate = self
         
-        placesClient = GMSPlacesClient.shared()
+        
         let camera = GMSCameraPosition.camera(withLatitude: 25.057203,
                                               longitude: 121.552778,
                                               zoom: zoomLevel)
@@ -124,6 +125,7 @@ class MapViewController: UIViewController {
     }
     
     @objc func setCircle() {
+      
         if start == false {
             start = true
             button.setTitle("◼︎", for: .normal)
