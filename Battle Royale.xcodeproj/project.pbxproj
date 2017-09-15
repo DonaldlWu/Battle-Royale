@@ -11,6 +11,7 @@
 		5665C4161F6A9CE900C49FE2 /* MapBoxDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5665C4151F6A9CE900C49FE2 /* MapBoxDelegate.swift */; };
 		5665C4181F6AAC5F00C49FE2 /* TimerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5665C4171F6AAC5F00C49FE2 /* TimerExtension.swift */; };
 		5665C41C1F6AD1C000C49FE2 /* Shapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5665C41B1F6AD1C000C49FE2 /* Shapes.swift */; };
+		5665C41E1F6B7C8600C49FE2 /* MapUISetupExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5665C41D1F6B7C8600C49FE2 /* MapUISetupExtension.swift */; };
 		566D96401F691DC300FEAEC3 /* LoginUISetupExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566D963F1F691DC300FEAEC3 /* LoginUISetupExtension.swift */; };
 		567B6D271F66644100E849D4 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		567B6D2B1F66696F00E849D4 /* (null) in Sources */ = {isa = PBXBuildFile; };
@@ -50,6 +51,7 @@
 		5665C4151F6A9CE900C49FE2 /* MapBoxDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapBoxDelegate.swift; sourceTree = "<group>"; };
 		5665C4171F6AAC5F00C49FE2 /* TimerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerExtension.swift; sourceTree = "<group>"; };
 		5665C41B1F6AD1C000C49FE2 /* Shapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shapes.swift; sourceTree = "<group>"; };
+		5665C41D1F6B7C8600C49FE2 /* MapUISetupExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapUISetupExtension.swift; sourceTree = "<group>"; };
 		566D963F1F691DC300FEAEC3 /* LoginUISetupExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUISetupExtension.swift; sourceTree = "<group>"; };
 		567B6D2E1F6695CA00E849D4 /* RankTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankTableViewController.swift; sourceTree = "<group>"; };
 		567B6D301F6695DF00E849D4 /* PlayerInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerInfo.swift; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 			children = (
 				C064D5BB1F5FCC4700FF763A /* MapViewControllerExtension.swift */,
 				5665C4151F6A9CE900C49FE2 /* MapBoxDelegate.swift */,
+				5665C41D1F6B7C8600C49FE2 /* MapUISetupExtension.swift */,
 				5665C4171F6AAC5F00C49FE2 /* TimerExtension.swift */,
 				5665C41B1F6AD1C000C49FE2 /* Shapes.swift */,
 			);
@@ -358,6 +361,7 @@
 			files = (
 				567B6D3D1F68503C00E849D4 /* GoogleLoginDelegate.swift in Sources */,
 				5665C41C1F6AD1C000C49FE2 /* Shapes.swift in Sources */,
+				5665C41E1F6B7C8600C49FE2 /* MapUISetupExtension.swift in Sources */,
 				567B6D321F6695DF00E849D4 /* PlayerInfo.swift in Sources */,
 				566D96401F691DC300FEAEC3 /* LoginUISetupExtension.swift in Sources */,
 				56BC313B1F62A1B80036B97B /* LoginViewController.swift in Sources */,

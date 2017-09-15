@@ -85,6 +85,18 @@ class MapViewController: UIViewController {
         return label
     }()
     
+    let moveToCurrentLoactionButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        
+        button.setTitle("◉", for: .normal)
+        button.titleLabel?.font = UIFont(name: "system", size: 70)
+        
+        button.addTarget(self, action: #selector(moveCameraToPlayer), for: .touchUpInside)
+        return button
+        
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         locationManager = CLLocationManager()
@@ -120,7 +132,9 @@ class MapViewController: UIViewController {
         // firebase score coordinate update then:
         fetchAllScoreCoordinates(completion: { (allScoreCoords) in
             self.mapView.removeAnnotations(self.scoreShapes)
+            
             self.allScoreCoords = allScoreCoords
+            
             self.scoreShapes = self.updateShapes(coords:allScoreCoords, radiusMeter: 50)
         })
     }
@@ -145,6 +159,17 @@ class MapViewController: UIViewController {
             button.backgroundColor = #colorLiteral(red: 0.9272366166, green: 0.2351297438, blue: 0.103588976, alpha: 1)
             button.layer.shadowColor = #colorLiteral(red: 0.9272366166, green: 0.2351297438, blue: 0.103588976, alpha: 1)
         }
+    }
+    
+    @objc func moveCameraToPlayer() {
+//        if let coordinate = currentLocation?.coordinate {
+//        mapView.setCenter(CLLocationCoordinate2D(latitude: coordinate.latitude, longitude: coordinate.longitude), zoomLevel: 18, animated: false)
+//        }
+        
+        let camera = MGLMapCamera(lookingAtCenter: (currentLocation?.coordinate)!, fromDistance: 1500, pitch: 30, heading: 0)
+        
+        // Animate the camera movement over 1 seconds.
+        mapView.setCamera(camera, withDuration: 1, animationTimingFunction: CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut))
     }
     
     func randomCoordinate(from coordinate: CLLocationCoordinate2D) -> (CLLocationCoordinate2D) {

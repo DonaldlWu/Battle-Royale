@@ -25,6 +25,7 @@ extension MapViewController: MGLMapViewDelegate {
                 circlesCoords.append(coord)
             }
             let shape = MGLPolygon(coordinates: circlesCoords, count: UInt(circlesCoords.count))
+            
             newScoreShapes.append(shape)
         }
         mapView.addAnnotations(newScoreShapes)
@@ -50,11 +51,15 @@ extension MapViewController: MGLMapViewDelegate {
         
     }
     func addLayer(to style: MGLStyle) {
-        //
-        //            let source = MGLShapeSource(identifier: "fuck", shapes: shapes, options: nil)
-        //            style.addSource(source)
         
         
+        
+        let source = MGLShapeSource(identifier: "fuck", shapes: scoreShapes, options: nil)
+        print(scoreShapes.count)
+        style.addSource(source)
+        let layer = MGLFillStyleLayer(identifier: "fuck", source: source)
+        layer.fillColor = MGLStyleValue(rawValue: .green)
+        style.addLayer(layer)
     }
     
     
