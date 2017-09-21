@@ -24,7 +24,7 @@ extension MapViewController {
             timer.invalidate()
             popAlert()
             start = false
-            seconds = 300
+            seconds = 1200
             timerLabel.text = timeString(time: TimeInterval(seconds))
             button.backgroundColor = #colorLiteral(red: 0.9272366166, green: 0.2351297438, blue: 0.103588976, alpha: 1).withAlphaComponent(0.8)
             button.layer.shadowColor = #colorLiteral(red: 0.9272366166, green: 0.2351297438, blue: 0.103588976, alpha: 1)

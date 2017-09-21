@@ -51,31 +51,66 @@ extension MapViewController: CLLocationManagerDelegate {
         ref = Database.database().reference()
         let coord = currentLocation?.coordinate
         if let lat = coord?.latitude, let lon = coord?.longitude, let userUid = Auth.auth().currentUser?.uid {
-            ref.child("coordinates").child("players").updateChildValues([(userUid): [lat, lon]])
+            ref.child("coordinates").child("players").updateChildValues([(userUid): [lat, lon, mainPlayerRadius]])
         }
         if start == true {
-            var allScoreCoordinatesIndex = -1
-            for scoreCoordinate in allScoreCoords {
-                allScoreCoordinatesIndex += 1
-                let path = GMSMutablePath()
-                path.add((currentLocation?.coordinate)!)
-                path.add(scoreCoordinate)
-                let polyline = GMSPolyline(path: path)
-                
-                let distance =  polyline.path?.length(of: .geodesic) ?? 0
-                if distance < 50 {
-                    // iphone vibrate
-               AudioServicesPlayAlertSound(kSystemSoundID_Vibrate)
-                    // update score
-                    score += 1
+            scoreDistance(distanceLimit: Double(50 + mainPlayerRadius!), coords: allScoreCoords)
+            otherPlayerDistance(coords: otherPlayers)
+        }
+    }
+    func scoreDistance(distanceLimit: Double, coords: [CLLocationCoordinate2D]) {
+        let currentCoord = currentLocation?.coordinate
+        var allScoreCoordinatesIndex = -1
+        for coord in coords {
+            allScoreCoordinatesIndex += 1
+            let path = GMSMutablePath()
+            path.add(coord)
+            path.add(currentCoord!)
+            let polyline = GMSPolyline(path: path)
+            let distance =  polyline.path?.length(of: .geodesic) ?? 0
+            if distance < distanceLimit {
+                // iphone vibrate
+                AudioServicesPlayAlertSound(kSystemSoundID_Vibrate)
+                // update score
+                score += 1
+                mainPlayerRadius! += 1
+                scoreLabel.text = "\(score)  ⦿"
+                // delete score coordinate and add a random one
+                allScoreCoords.remove(at: allScoreCoordinatesIndex)
+                allScoreCoords.insert(self.randomCoordinate(from: currentCoord!), at: allScoreCoordinatesIndex)
+                ref = Database.database().reference()
+                let allScoreCoordinatesDoubleType = allScoreCoords.map{ [$0.latitude, $0.longitude]}
+                ref.child("coordinates").child("scoreCoordinates").setValue(allScoreCoordinatesDoubleType)
+            }
+        }
+    }
+    
+    func otherPlayerDistance(coords: [PlayerCircle]) {
+        let currentCoord = currentLocation?.coordinate
+        var allScoreCoordinatesIndex = -1
+        for coord in coords {
+            allScoreCoordinatesIndex += 1
+            let path = GMSMutablePath()
+            path.add(coord.coord!)
+            path.add(currentCoord!)
+            let polyline = GMSPolyline(path: path)
+            let distance =  polyline.path?.length(of: .geodesic) ?? 0
+             if let mainPlayerRadius = mainPlayerRadius, let coordRadius = coord.radius, distance < Double(mainPlayerRadius + coordRadius) {
+                // iphone vibrate
+                AudioServicesPlayAlertSound(kSystemSoundID_Vibrate)
+                // update score
+                if mainPlayerRadius > coordRadius {
+                    score += Int(coordRadius)
+                    self.mainPlayerRadius! += coordRadius
                     scoreLabel.text = "\(score)  ⦿"
-                    // delete score coordinate and add a random one
-                    allScoreCoords.remove(at: allScoreCoordinatesIndex)
-                    allScoreCoords.insert(self.randomCoordinate(from: (currentLocation?.coordinate)!), at: allScoreCoordinatesIndex)
-                    ref = Database.database().reference()
-                    let allScoreCoordinatesDoubleType = allScoreCoords.map{ [$0.latitude, $0.longitude]}
-                    ref.child("coordinates").child("scoreCoordinates").setValue(allScoreCoordinatesDoubleType)             
+                    
+                } else {
+                    self.mainPlayerRadius = 10
+                    endCount()
+                    
+                    
                 }
+                
             }
         }
     }

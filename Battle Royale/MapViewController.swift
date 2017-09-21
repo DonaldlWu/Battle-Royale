@@ -17,7 +17,7 @@ import GoogleSignIn
 class MapViewController: UIViewController {
     
     var locationManager = CLLocationManager()
-    var seconds = 300
+    var seconds = 1200
     var timer = Timer()
     var locationUpdateTimer = Timer()
     var isTimerRunning = false
@@ -43,11 +43,18 @@ class MapViewController: UIViewController {
     var score = 0
     var start = false
     var number = 0
+    var mainShape: [MGLPolygon] = []
     var scoreShapes: [MGLPolygon] = []
     var otherPlayerShapes: [MGLPolygon] = []
     
+    
+    var otherPlayers: [PlayerCircle] = []
+    var mainPlayerRadius: Int?
+    
+    var mainLayer: MGLFillStyleLayer?
     var scoreLayer: MGLFillStyleLayer?
     var otherPlayersLayer: MGLFillStyleLayer?
+    var mainSource: MGLShapeSource?
     var scoreSource: MGLShapeSource?
     var otherPlayersSource: MGLShapeSource?
     
@@ -88,7 +95,7 @@ class MapViewController: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         
-        label.text = "05:00"
+        label.text = "20:00"
         label.font = label.font.withSize(30)
         label.backgroundColor = #colorLiteral(red: 0.8530249, green: 0.847953856, blue: 0.8569234014, alpha: 1).withAlphaComponent(0.9)
         label.layer.masksToBounds = true
@@ -123,7 +130,7 @@ class MapViewController: UIViewController {
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         
         // update location every 5 sec
-        runLocationUpdateTimer(with: 5)
+        runLocationUpdateTimer(with: 2)
         
         let url = URL(string: "mapbox://styles/vince9458/cj7j8jyhv6afo2rnitqd3xnmq")
         self.mapView = MGLMapView(frame: view.bounds, styleURL: url)
@@ -143,17 +150,17 @@ class MapViewController: UIViewController {
         // otherPlayers and scorePoints
         
         // firebase otherplayers coordinate update then:
-        fetchOhterPlayersCoords(completion: { (allOtherPlayerCoords) in
+        fetchOtherPlayersCoords(completion: { (otherPlayers) in
             
-            self.OtherPlayerCoords = allOtherPlayerCoords
-            self.otherPlayerShapes = self.updateShapes(coords:allOtherPlayerCoords, radiusMeter: 50)
+            self.otherPlayers = otherPlayers
+            
+            self.otherPlayerShapes = self.updateOtherPlayerShapes(otherPlayers)
             // mapbox update layer
             if let style = self.mapView.style {
                 self.addLayer(to: style, with: "otherPlayer", #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1).withAlphaComponent(0.5), shapes: self.otherPlayerShapes, source: &self.otherPlayersSource, layer: &self.otherPlayersLayer)
-                
             }
-            
         })
+        
         // firebase score coordinate update then:
         fetchAllScoreCoordinates(completion: { (allScoreCoords) in
             
@@ -165,37 +172,56 @@ class MapViewController: UIViewController {
                 self.addLayer(to: style, with: "scorePoints", #colorLiteral(red: 0.9272366166, green: 0.2351297438, blue: 0.103588976, alpha: 1).withAlphaComponent(0.5), shapes: self.scoreShapes, source: &self.scoreSource, layer: &self.scoreLayer)
             }
         })
+        
+        fetchMainPlayersCoords { (mainPlayerRadius) in
+            self.mainPlayerRadius = mainPlayerRadius
+            self.mainShape = self.updateShapes(coords: [(self.currentLocation?.coordinate)!], radiusMeter: Double(self.mainPlayerRadius!))
+            if let style = self.mapView.style {
+                self.addLayer(to: style, with: "mainPlayer", #colorLiteral(red: 0.02766608819, green: 0.4977955222, blue: 1, alpha: 1), shapes: self.mainShape, source: &self.mainSource, layer: &self.mainLayer)
+                
+            }
+            
+        }
     }
     
     @objc func startGame() {
         
         if start == false {
-            start = true
-            button.setTitle("◼︎", for: .normal)
-            runTimer()
-            button.backgroundColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1).withAlphaComponent(0.8)
-            button.layer.shadowColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
+            startCount()
         }
         else {
-            start = false
-            timer.invalidate()
-            button.setTitle("▶︎", for: .normal)
-            score = 0
-            scoreLabel.text = "\(score)  ⦿"
-            seconds = 300
-            timerLabel.text = timeString(time: TimeInterval(seconds))
-            button.backgroundColor = #colorLiteral(red: 0.9272366166, green: 0.2351297438, blue: 0.103588976, alpha: 1).withAlphaComponent(0.8)
-            button.layer.shadowColor = #colorLiteral(red: 0.9272366166, green: 0.2351297438, blue: 0.103588976, alpha: 1)
+            endCount()
         }
     }
     
     @objc func moveCameraToPlayer() {
         if let coord = currentLocation?.coordinate {
-            let camera = MGLMapCamera(lookingAtCenter: coord, fromDistance: 1500, pitch: 30, heading: 0)
+            let camera = MGLMapCamera(lookingAtCenter: coord, fromDistance: 200, pitch: 30, heading: 0)
             
             // Animate the camera movement over 1 seconds.
             mapView.setCamera(camera, withDuration: 1, animationTimingFunction: CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut))
         }
+    }
+    
+    func startCount() {
+        start = true
+        button.setTitle("◼︎", for: .normal)
+        runTimer()
+        button.backgroundColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1).withAlphaComponent(0.8)
+        button.layer.shadowColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
+    }
+    
+    func endCount() {
+        start = false
+        timer.invalidate()
+        button.setTitle("▶︎", for: .normal)
+        score = 0
+        scoreLabel.text = "\(score)  ⦿"
+        seconds = 1200
+        timerLabel.text = timeString(time: TimeInterval(seconds))
+        button.backgroundColor = #colorLiteral(red: 0.9272366166, green: 0.2351297438, blue: 0.103588976, alpha: 1).withAlphaComponent(0.8)
+        button.layer.shadowColor = #colorLiteral(red: 0.9272366166, green: 0.2351297438, blue: 0.103588976, alpha: 1)
+        popAlert()
     }
     
     func randomCoordinate(from coordinate: CLLocationCoordinate2D) -> (CLLocationCoordinate2D) {
@@ -225,56 +251,42 @@ class MapViewController: UIViewController {
             }
         })
     }
-    // back-up plan
-    func fetchAllPlayersCoordinates(completion: @escaping (_ allOtherPlayerCoordinates: [CLLocationCoordinate2D], _ scoreCoordinates:  [CLLocationCoordinate2D]) -> ()) {
-        
+    func fetchMainPlayersCoords(completion: @escaping (_ mainPlayerRadius: Int) -> ()) {
         ref = Database.database().reference()
         let userUid = Auth.auth().currentUser?.uid
-        ref.child("coordinates").observe(.value) { (snapshot) in
-            var allOtherPlayerCoordinates = [CLLocationCoordinate2D]()
-            let playersSnapshot = snapshot.childSnapshot(forPath: "players")
-            let playersCoordinates = playersSnapshot.children
-            for player in playersCoordinates {
+        ref.child("coordinates").child("players").child(userUid!).observe(.value) { (snapshot) in
+            var newMainPlayerRadius: Int
+            if let playerValue = snapshot.value as? [Double] {
+                if playerValue.count == 2 {
+                    newMainPlayerRadius = 10
+                } else {
+                    newMainPlayerRadius = Int(playerValue[2])
+                }
+                completion(newMainPlayerRadius)
+            }
+        }
+    }
+    
+    
+    func fetchOtherPlayersCoords(completion: @escaping (_ OtherPlayerCoords: [PlayerCircle]) -> ()) {
+        ref = Database.database().reference()
+        let userUid = Auth.auth().currentUser?.uid
+        ref.child("coordinates").child("players").observe(.value) { (snapshot) in
+            var newOtherPlayers = [PlayerCircle]()
+            let players = snapshot.children
+            for player in players {
                 if let player = player as? DataSnapshot {
                     if player.key != userUid {
-                        if let playerCoordinate = player.value as? [Double] {
-                            allOtherPlayerCoordinates.append(CLLocationCoordinate2D(latitude: playerCoordinate[0], longitude: playerCoordinate[1]))
-                        }
-                    }
-                }
-            }
-            var newScoreCoordinates = [CLLocationCoordinate2D]()
-            let scoreCoordinatesSnapshot = snapshot.childSnapshot(forPath: "scoreCoordinates")
-            let scoreCoordinates = scoreCoordinatesSnapshot.children
-            for coordinate in scoreCoordinates {
-                if let coordinate = coordinate as? DataSnapshot {
-                    if let coordinate = coordinate.value as? [Double] {
-                        newScoreCoordinates.append(CLLocationCoordinate2D(latitude: coordinate[0], longitude: coordinate[1]))
-                        completion(allOtherPlayerCoordinates, newScoreCoordinates)
+                        
+                        let otherPlayer = PlayerCircle(snapshot: player)
+                        newOtherPlayers.append(otherPlayer)
+                        completion(newOtherPlayers)
                     }
                 }
             }
         }
     }
     
-    func fetchOhterPlayersCoords(completion: @escaping (_ OtherPlayerCoords: [CLLocationCoordinate2D]) -> ()) {
-        ref = Database.database().reference()
-        let userUid = Auth.auth().currentUser?.uid
-        ref.child("coordinates").child("players").observe(.value) { (snapshot) in
-            var OtherPlayerCoords = [CLLocationCoordinate2D]()
-            let players = snapshot.children
-            for player in players {
-                if let player = player as? DataSnapshot {
-                    if player.key != userUid {
-                        if let playerValue = player.value as? [Double] {
-                            OtherPlayerCoords.append(CLLocationCoordinate2D(latitude: playerValue[0], longitude: playerValue[1]))
-                            completion(OtherPlayerCoords)
-                        }
-                    }
-                }
-            }
-        }
-    }
     
     func fetchAllScoreCoordinates(completion: @escaping ([CLLocationCoordinate2D]) -> ()) {
         ref = Database.database().reference()

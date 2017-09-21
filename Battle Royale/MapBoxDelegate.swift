@@ -30,6 +30,27 @@ extension MapViewController: MGLMapViewDelegate {
         return newScoreShapes
     }
     
+    func updateOtherPlayerShapes(_ otherPlayers: [PlayerCircle]) -> [MGLPolygon]{
+        let circleNumbers = 64
+        var newScoreShapes: [MGLPolygon] = []
+        for otherPlayer in otherPlayers {
+            var circlesCoords: [CLLocationCoordinate2D] = []
+            if let lat = otherPlayer.coord?.latitude, let lon = otherPlayer.coord?.longitude, let radius = otherPlayer.radius {
+                for i in 1...circleNumbers {
+                    let lat = Double(lat) + sin(Double(i) / Double(circleNumbers) * 2 * Double.pi) * 0.000008983417785 * Double(radius) * cos(lat / 180 * Double.pi)
+                    let lon = Double(lon) + cos(Double(i) / Double(circleNumbers) * 2 * Double.pi) * 0.000009014705689 * Double(radius)
+                    let coord = CLLocationCoordinate2D(latitude: lat, longitude: lon)
+                    circlesCoords.append(coord)
+                }
+            }
+            let shape = MGLPolygon(coordinates: circlesCoords, count: UInt(circlesCoords.count))
+            newScoreShapes.append(shape)
+        }
+        //                mapView.addAnnotations(newScoreShapes)
+        
+        return newScoreShapes
+    }
+    
     
     func mapView(_ mapView: MGLMapView, alphaForShapeAnnotation annotation: MGLShape) -> CGFloat {
         return 1
@@ -67,7 +88,7 @@ extension MapViewController: MGLMapViewDelegate {
     }
     
     func mapView(_ mapView: MGLMapView, didFinishLoading style: MGLStyle) {
-       
+        
     }
     
 }
