@@ -19,10 +19,16 @@ class MapViewController: UIViewController {
     var locationManager = CLLocationManager()
     var seconds = 300
     var timer = Timer()
+    var locationUpdateTimer = Timer()
     var isTimerRunning = false
     var currentLocation: CLLocation? {
         didSet {
             setCurrentLocation()
+            //            DANGER! update location 500 times/ sec
+            //            locationManager.stopUpdatingLocation()
+            //            locationManager.requestLocation()
+            //            locationManager.startUpdatingLocation()
+            
         }
     }
     
@@ -36,9 +42,16 @@ class MapViewController: UIViewController {
     var allScoreCoords = [CLLocationCoordinate2D]()
     var score = 0
     var start = false
-    var polygonLayer: MGLStyleLayer?
+    var number = 0
     var scoreShapes: [MGLPolygon] = []
     var otherPlayerShapes: [MGLPolygon] = []
+    
+    var scoreLayer: MGLFillStyleLayer?
+    var otherPlayersLayer: MGLFillStyleLayer?
+    var scoreSource: MGLShapeSource?
+    var otherPlayersSource: MGLShapeSource?
+    
+    
     
     let button: UIButton = {
         let button = UIButton()
@@ -51,7 +64,7 @@ class MapViewController: UIViewController {
         button.layer.shadowOpacity = 0.6
         
         
-        button.addTarget(self, action: #selector(setCircle), for: .touchUpInside)
+        button.addTarget(self, action: #selector(startGame), for: .touchUpInside)
         return button
     }()
     
@@ -88,9 +101,10 @@ class MapViewController: UIViewController {
     let moveToCurrentLoactionButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        
-        button.setTitle("◉", for: .normal)
         button.titleLabel?.font = UIFont(name: "system", size: 70)
+        button.setTitle("◉", for: .normal)
+        
+        
         
         button.addTarget(self, action: #selector(moveCameraToPlayer), for: .touchUpInside)
         return button
@@ -105,6 +119,11 @@ class MapViewController: UIViewController {
         locationManager.distanceFilter = 50
         locationManager.startUpdatingLocation()
         locationManager.delegate = self
+        locationManager.pausesLocationUpdatesAutomatically = false
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        
+        // update location every 5 sec
+        runLocationUpdateTimer(with: 5)
         
         let url = URL(string: "mapbox://styles/vince9458/cj7j8jyhv6afo2rnitqd3xnmq")
         self.mapView = MGLMapView(frame: view.bounds, styleURL: url)
@@ -114,6 +133,7 @@ class MapViewController: UIViewController {
         
         mapView.userTrackingMode = .follow
         mapView.showsUserLocation = true
+        
         mapView.delegate = self
         
         setupView()
@@ -124,28 +144,36 @@ class MapViewController: UIViewController {
         
         // firebase otherplayers coordinate update then:
         fetchOhterPlayersCoords(completion: { (allOtherPlayerCoords) in
-            self.mapView.removeAnnotations(self.otherPlayerShapes)
+            
             self.OtherPlayerCoords = allOtherPlayerCoords
             self.otherPlayerShapes = self.updateShapes(coords:allOtherPlayerCoords, radiusMeter: 50)
+            // mapbox update layer
+            if let style = self.mapView.style {
+                self.addLayer(to: style, with: "otherPlayer", #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1).withAlphaComponent(0.5), shapes: self.otherPlayerShapes, source: &self.otherPlayersSource, layer: &self.otherPlayersLayer)
+                
+            }
             
         })
         // firebase score coordinate update then:
         fetchAllScoreCoordinates(completion: { (allScoreCoords) in
-            self.mapView.removeAnnotations(self.scoreShapes)
             
             self.allScoreCoords = allScoreCoords
-            
             self.scoreShapes = self.updateShapes(coords:allScoreCoords, radiusMeter: 50)
+            
+            // mapbox update layer
+            if let style = self.mapView.style {
+                self.addLayer(to: style, with: "scorePoints", #colorLiteral(red: 0.9272366166, green: 0.2351297438, blue: 0.103588976, alpha: 1).withAlphaComponent(0.5), shapes: self.scoreShapes, source: &self.scoreSource, layer: &self.scoreLayer)
+            }
         })
     }
     
-    @objc func setCircle() {
-      print(allScoreCoords)
+    @objc func startGame() {
+        
         if start == false {
             start = true
             button.setTitle("◼︎", for: .normal)
             runTimer()
-            button.backgroundColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
+            button.backgroundColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1).withAlphaComponent(0.8)
             button.layer.shadowColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
         }
         else {
@@ -156,20 +184,18 @@ class MapViewController: UIViewController {
             scoreLabel.text = "\(score)  ⦿"
             seconds = 300
             timerLabel.text = timeString(time: TimeInterval(seconds))
-            button.backgroundColor = #colorLiteral(red: 0.9272366166, green: 0.2351297438, blue: 0.103588976, alpha: 1)
+            button.backgroundColor = #colorLiteral(red: 0.9272366166, green: 0.2351297438, blue: 0.103588976, alpha: 1).withAlphaComponent(0.8)
             button.layer.shadowColor = #colorLiteral(red: 0.9272366166, green: 0.2351297438, blue: 0.103588976, alpha: 1)
         }
     }
     
     @objc func moveCameraToPlayer() {
-//        if let coordinate = currentLocation?.coordinate {
-//        mapView.setCenter(CLLocationCoordinate2D(latitude: coordinate.latitude, longitude: coordinate.longitude), zoomLevel: 18, animated: false)
-//        }
-        
-        let camera = MGLMapCamera(lookingAtCenter: (currentLocation?.coordinate)!, fromDistance: 1500, pitch: 30, heading: 0)
-        
-        // Animate the camera movement over 1 seconds.
-        mapView.setCamera(camera, withDuration: 1, animationTimingFunction: CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut))
+        if let coord = currentLocation?.coordinate {
+            let camera = MGLMapCamera(lookingAtCenter: coord, fromDistance: 1500, pitch: 30, heading: 0)
+            
+            // Animate the camera movement over 1 seconds.
+            mapView.setCamera(camera, withDuration: 1, animationTimingFunction: CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut))
+        }
     }
     
     func randomCoordinate(from coordinate: CLLocationCoordinate2D) -> (CLLocationCoordinate2D) {
@@ -199,7 +225,7 @@ class MapViewController: UIViewController {
             }
         })
     }
-    
+    // back-up plan
     func fetchAllPlayersCoordinates(completion: @escaping (_ allOtherPlayerCoordinates: [CLLocationCoordinate2D], _ scoreCoordinates:  [CLLocationCoordinate2D]) -> ()) {
         
         ref = Database.database().reference()
@@ -257,26 +283,19 @@ class MapViewController: UIViewController {
             let coordinates = snapshot.children
             for coordinate in coordinates {
                 if let coordinate = coordinate as? DataSnapshot {
-                    
                     if let coordinateValue = coordinate.value as? [Double] {
                         allNewCoordinates.append(CLLocationCoordinate2D(latitude: coordinateValue[0], longitude: coordinateValue[1]))
                         completion(allNewCoordinates)
                     }
-                    
                 }
             }
         }
     }
     
-    
-    
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
 }
 
 

@@ -17,19 +17,11 @@ extension MapViewController: CLLocationManagerDelegate {
     // Handle incoming location events.
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location: CLLocation = locations.last!
-//        print("Location: \(location)")
-//        print("-----------------------------")
-//        print(location.coordinate)
-//        print("-----------------------------")
-        
         if mapView.isHidden {
             mapView.isHidden = false
-            
         } else {
-            
         }
         currentLocation = location
-        
     }
     
     // Handle authorization for the location manager.
@@ -56,15 +48,11 @@ extension MapViewController: CLLocationManagerDelegate {
     }
     
     func setCurrentLocation() {
-        print(currentLocation!)
-        
         ref = Database.database().reference()
-        let userUid = Auth.auth().currentUser?.uid
         let coord = currentLocation?.coordinate
-        if let lat = coord?.latitude, let lon = coord?.longitude {
-            ref.child("coordinates").child("players").updateChildValues([(userUid)!: [lat, lon]])
+        if let lat = coord?.latitude, let lon = coord?.longitude, let userUid = Auth.auth().currentUser?.uid {
+            ref.child("coordinates").child("players").updateChildValues([(userUid): [lat, lon]])
         }
-        
         if start == true {
             var allScoreCoordinatesIndex = -1
             for scoreCoordinate in allScoreCoords {
@@ -75,7 +63,7 @@ extension MapViewController: CLLocationManagerDelegate {
                 let polyline = GMSPolyline(path: path)
                 
                 let distance =  polyline.path?.length(of: .geodesic) ?? 0
-                if distance < 55 {
+                if distance < 50 {
                     // iphone vibrate
                AudioServicesPlayAlertSound(kSystemSoundID_Vibrate)
                     // update score
@@ -86,16 +74,10 @@ extension MapViewController: CLLocationManagerDelegate {
                     allScoreCoords.insert(self.randomCoordinate(from: (currentLocation?.coordinate)!), at: allScoreCoordinatesIndex)
                     ref = Database.database().reference()
                     let allScoreCoordinatesDoubleType = allScoreCoords.map{ [$0.latitude, $0.longitude]}
-                    ref.child("coordinates").child("scoreCoordinates").setValue(allScoreCoordinatesDoubleType)
-                    
+                    ref.child("coordinates").child("scoreCoordinates").setValue(allScoreCoordinatesDoubleType)             
                 }
             }
         }
     }
-    
-    
-    
-    
-    
 }
 

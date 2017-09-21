@@ -26,8 +26,9 @@ extension MapViewController {
             start = false
             seconds = 300
             timerLabel.text = timeString(time: TimeInterval(seconds))
-            button.backgroundColor = #colorLiteral(red: 0.9272366166, green: 0.2351297438, blue: 0.103588976, alpha: 1)
-            button.layer.shadowColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
+            button.backgroundColor = #colorLiteral(red: 0.9272366166, green: 0.2351297438, blue: 0.103588976, alpha: 1).withAlphaComponent(0.8)
+            button.layer.shadowColor = #colorLiteral(red: 0.9272366166, green: 0.2351297438, blue: 0.103588976, alpha: 1)
+            button.setTitle("▶︎", for: .normal)
         }
     }
     
@@ -60,5 +61,15 @@ extension MapViewController {
         let seconds = Int(time) % 60
         return String(format:"%02i:%02i",  minutes, seconds)
         //        return String(format:"%02i:%02i:%02i",hours ,minutes, seconds)
+    }
+    
+    func runLocationUpdateTimer(with sec: Double) {
+        locationUpdateTimer = Timer.scheduledTimer(timeInterval: sec, target: self, selector: (#selector(MapViewController.updateLocation)), userInfo: nil, repeats: true)
+    }
+    
+    @objc func updateLocation() {
+        locationManager.stopUpdatingLocation()
+        locationManager.requestLocation()
+        locationManager.startUpdatingLocation()
     }
 }

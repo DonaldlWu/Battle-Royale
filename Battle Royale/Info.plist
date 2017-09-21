@@ -2,33 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>CFBundleURLTypes</key>
-	<array>
-		<dict>
-			<key>CFBundleTypeRole</key>
-			<string>Editor</string>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>fb1890485777835693</string>
-				<string>com.googleusercontent.apps.224335418506-7i0do6nb7m15d57ehsljq75ffgkoar23</string>
-			</array>
-		</dict>
-	</array>
-	<key>FacebookAppID</key>
-	<string>1890485777835693</string>
-	<key>FacebookDisplayName</key>
-	<string>Battle-Royale</string>
-	<key>LSApplicationQueriesSchemes</key>
-	<array>
-		<string>fbapi</string>
-		<string>fb-messenger-api</string>
-		<string>fbauth2</string>
-		<string>fbshareextension</string>
-	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
-	<key>MGLMapboxAccessToken</key>
-	<string>pk.eyJ1IjoidmluY2U5NDU4IiwiYSI6ImNqN2o3a2M0ZDIwOGMzM3Bkd2U1M2gyOGkifQ.mcDGzSAki6PSNB3Rlbt7ng</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -41,12 +16,42 @@
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb1890485777835693</string>
+				<string>com.googleusercontent.apps.224335418506-7i0do6nb7m15d57ehsljq75ffgkoar23</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>FacebookAppID</key>
+	<string>1890485777835693</string>
+	<key>FacebookDisplayName</key>
+	<string>Battle-Royale</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>fbapi</string>
+		<string>fb-messenger-api</string>
+		<string>fbauth2</string>
+		<string>fbshareextension</string>
+	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>MGLMapboxAccessToken</key>
+	<string>pk.eyJ1IjoidmluY2U5NDU4IiwiYSI6ImNqN2o3a2M0ZDIwOGMzM3Bkd2U1M2gyOGkifQ.mcDGzSAki6PSNB3Rlbt7ng</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>確認存取您的位置</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>fetch</string>
+		<string>location</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
