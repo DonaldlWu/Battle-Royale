@@ -25,8 +25,6 @@ extension MapViewController: MGLMapViewDelegate {
             let shape = MGLPolygon(coordinates: circlesCoords, count: UInt(circlesCoords.count))
             newScoreShapes.append(shape)
         }
-        //                mapView.addAnnotations(newScoreShapes)
-        
         return newScoreShapes
     }
     
@@ -44,15 +42,12 @@ extension MapViewController: MGLMapViewDelegate {
                 }
             }
             
-            
             if circlesCoords.count != 0 {
             let shape = MGLPolygon(coordinates: circlesCoords, count: UInt(circlesCoords.count))
             
             newScoreShapes.append(shape)
             }
         }
-        //                mapView.addAnnotations(newScoreShapes)
-        
         return newScoreShapes
     }
     
@@ -90,9 +85,8 @@ extension MapViewController: MGLMapViewDelegate {
             style.addLayer(layer!)
         }
     }
-    
+
     func mapView(_ mapView: MGLMapView, didFinishLoading style: MGLStyle) {
-        
     }
     
 }

@@ -108,11 +108,11 @@ class MapViewController: UIViewController {
     let moveToCurrentLoactionButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.titleLabel?.font = UIFont(name: "system", size: 70)
-        button.setTitle("◉", for: .normal)
+        button.setImage(#imageLiteral(resourceName: "aperture"), for: .normal)
         
-        
-        
+        button.backgroundColor = #colorLiteral(red: 0.8694403768, green: 0.8642715216, blue: 0.8734138608, alpha: 1).withAlphaComponent(0.7)
+        button.layer.cornerRadius = 20
+        button.layer.masksToBounds = true
         button.addTarget(self, action: #selector(moveCameraToPlayer), for: .touchUpInside)
         return button
         

@@ -41,12 +41,13 @@ extension MapViewController {
         
         view.addSubview(moveToCurrentLoactionButton)
         NSLayoutConstraint(item: moveToCurrentLoactionButton, attribute: .centerY, relatedBy: .equal, toItem: button, attribute: .centerY, multiplier: 1, constant: 0).isActive = true
-        NSLayoutConstraint(item: moveToCurrentLoactionButton, attribute: .leading, relatedBy: .equal, toItem: mapView, attribute: .trailing, multiplier: 0.75, constant: 0).isActive = true
-        NSLayoutConstraint(item: moveToCurrentLoactionButton, attribute: .trailing, relatedBy: .equal, toItem: mapView, attribute: .trailing, multiplier: 0.9, constant: 0).isActive = true
-        moveToCurrentLoactionButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
-    
-    
-    
+ 
+       NSLayoutConstraint(item: moveToCurrentLoactionButton, attribute: .height, relatedBy: .equal, toItem: button, attribute: .height, multiplier: 0.8, constant: 0).isActive = true
+        
+        NSLayoutConstraint(item: moveToCurrentLoactionButton, attribute: .centerX, relatedBy: .equal, toItem: mapView, attribute: .trailing, multiplier: 0.83, constant: 0).isActive = true
+        
+        NSLayoutConstraint(item: moveToCurrentLoactionButton, attribute: .width, relatedBy: .equal, toItem: moveToCurrentLoactionButton, attribute: .height, multiplier: 1, constant: 0).isActive = true
+       
     }
     
     
