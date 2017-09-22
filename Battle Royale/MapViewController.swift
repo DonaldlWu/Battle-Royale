@@ -150,16 +150,7 @@ class MapViewController: UIViewController {
         // otherPlayers and scorePoints
         
         // firebase otherplayers coordinate update then:
-        fetchOtherPlayersCoords(completion: { (otherPlayers) in
-            
-            self.otherPlayers = otherPlayers
-            
-            self.otherPlayerShapes = self.updateOtherPlayerShapes(otherPlayers)
-            // mapbox update layer
-            if let style = self.mapView.style {
-                self.addLayer(to: style, with: "otherPlayer", #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1).withAlphaComponent(0.5), shapes: self.otherPlayerShapes, source: &self.otherPlayersSource, layer: &self.otherPlayersLayer)
-            }
-        })
+        
         
         fetchOtherPlayersCoordsRemove(completion: { (otherPlayers) in
             
@@ -282,13 +273,16 @@ class MapViewController: UIViewController {
                 completion(newMainPlayerRadius)
             }
         }
+        
     }
     
     
-    func fetchOtherPlayersCoords(completion: @escaping (_ OtherPlayerCoords: [PlayerCircle]) -> ()) {
+   
+    
+    func fetchOtherPlayersCoordsRemove(completion: @escaping (_ OtherPlayerCoords: [PlayerCircle]) -> ()) {
         ref = Database.database().reference()
         let userUid = Auth.auth().currentUser?.uid
-        ref.child("coordinates").child("players").observe(.value) { (snapshot) in
+        ref.child("coordinates").child("players").observe(.childRemoved) { (snapshot) in
             var newOtherPlayers = [PlayerCircle]()
             let players = snapshot.children
             for player in players {
@@ -302,13 +296,7 @@ class MapViewController: UIViewController {
                 }
             }
         }
-        
-    }
-    
-    func fetchOtherPlayersCoordsRemove(completion: @escaping (_ OtherPlayerCoords: [PlayerCircle]) -> ()) {
-        ref = Database.database().reference()
-        let userUid = Auth.auth().currentUser?.uid
-        ref.child("coordinates").child("players").observe(.childRemoved) { (snapshot) in
+        ref.child("coordinates").child("players").observe(.value) { (snapshot) in
             var newOtherPlayers = [PlayerCircle]()
             let players = snapshot.children
             for player in players {
