@@ -14,6 +14,7 @@ struct PlayerCircle {
     
     var radius: Int?
     var coord: CLLocationCoordinate2D?
+
     
     init(snapshot: DataSnapshot) {
         if let snapshotValue = snapshot.value as? [Double] {

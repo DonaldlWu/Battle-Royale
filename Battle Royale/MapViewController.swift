@@ -129,7 +129,7 @@ class MapViewController: UIViewController {
         locationManager.pausesLocationUpdatesAutomatically = false
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         
-        // update location every 5 sec
+        // update location every 2 sec
         runLocationUpdateTimer(with: 2)
         
         let url = URL(string: "mapbox://styles/vince9458/cj7j8jyhv6afo2rnitqd3xnmq")
@@ -214,14 +214,16 @@ class MapViewController: UIViewController {
     func endCount() {
         start = false
         timer.invalidate()
+        popAlert()
         button.setTitle("▶︎", for: .normal)
-        score = 0
-        scoreLabel.text = "\(score)  ⦿"
+        
+        
+        
         seconds = 1200
         timerLabel.text = timeString(time: TimeInterval(seconds))
         button.backgroundColor = #colorLiteral(red: 0.9272366166, green: 0.2351297438, blue: 0.103588976, alpha: 1).withAlphaComponent(0.8)
         button.layer.shadowColor = #colorLiteral(red: 0.9272366166, green: 0.2351297438, blue: 0.103588976, alpha: 1)
-        popAlert()
+        
     }
     
     func randomCoordinate(from coordinate: CLLocationCoordinate2D) -> (CLLocationCoordinate2D) {

@@ -50,12 +50,13 @@ extension MapViewController: CLLocationManagerDelegate {
     func setCurrentLocation() {
         ref = Database.database().reference()
         let coord = currentLocation?.coordinate
-        if let lat = coord?.latitude, let lon = coord?.longitude, let userUid = Auth.auth().currentUser?.uid {
-            ref.child("coordinates").child("players").updateChildValues([(userUid): [lat, lon, mainPlayerRadius]])
-        }
+        
         if start == true {
             scoreDistance(distanceLimit: Double(50 + mainPlayerRadius!), coords: allScoreCoords)
             otherPlayerDistance(coords: otherPlayers)
+        }
+        if let lat = coord?.latitude, let lon = coord?.longitude, let userUid = Auth.auth().currentUser?.uid {
+            ref.child("coordinates").child("players").updateChildValues([(userUid): [lat, lon, mainPlayerRadius]])
         }
     }
     func scoreDistance(distanceLimit: Double, coords: [CLLocationCoordinate2D]) {
@@ -100,15 +101,14 @@ extension MapViewController: CLLocationManagerDelegate {
                 AudioServicesPlayAlertSound(kSystemSoundID_Vibrate)
                 // update score
                 if mainPlayerRadius > coordRadius {
+                   
                     score += Int(coordRadius)
-                    self.mainPlayerRadius! += coordRadius
+                    self.mainPlayerRadius! = mainPlayerRadius + coordRadius
                     scoreLabel.text = "\(score)  ⦿"
                     
                 } else {
                     self.mainPlayerRadius = 10
                     endCount()
-                    
-                    
                 }
                 
             }

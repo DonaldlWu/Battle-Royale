@@ -67,12 +67,12 @@ extension MapViewController: MGLMapViewDelegate {
     func addLayer(to style: MGLStyle,with identifier: String, _ color: UIColor, shapes: [MGLPolygon], source: inout MGLShapeSource?, layer:inout MGLFillStyleLayer?) {
         
         if let source = source, let layer = layer {
-            print(number)
-            style.removeSource(source)
+            
+//            style.removeSource(source)
             style.removeLayer(layer)
             number += 1
         }
-        print(number)
+        
         source = MGLShapeSource(identifier: "\(identifier)-\(number)", shapes: shapes, options: nil)
         layer = MGLFillStyleLayer(identifier: "\(identifier)-\(number)", source: source!)
         layer!.sourceLayerIdentifier = "\(identifier)-\(number)"

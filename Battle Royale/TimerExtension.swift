@@ -42,11 +42,16 @@ extension MapViewController {
             let userUid = Auth.auth().currentUser?.uid
             self.ref.child("users").child(userUid!).updateChildValues(["score" : self.score])
             self.score = 0
+            self.scoreLabel.text = "0  ⦿"
+            self.mainPlayerRadius = 10
         })
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: {
             (action : UIAlertAction!) -> Void in
             self.score = 0
+            self.scoreLabel.text = "0  ⦿"
+            self.mainPlayerRadius = 10
+
         })
         
         alertController.addAction(saveAction)
