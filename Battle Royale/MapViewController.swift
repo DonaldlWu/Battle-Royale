@@ -174,8 +174,12 @@ class MapViewController: UIViewController {
         })
         
         fetchMainPlayersCoords { (mainPlayerRadius) in
+            
             self.mainPlayerRadius = mainPlayerRadius
-            self.mainShape = self.updateShapes(coords: [(self.currentLocation?.coordinate)!], radiusMeter: Double(self.mainPlayerRadius!))
+            
+            if let coord = self.currentLocation?.coordinate, let radius = self.mainPlayerRadius {
+            self.mainShape = self.updateShapes(coords: [coord], radiusMeter: Double(radius))
+            }
             if let style = self.mapView.style {
                 self.addLayer(to: style, with: "mainPlayer", #colorLiteral(red: 0.02766608819, green: 0.4977955222, blue: 1, alpha: 1), shapes: self.mainShape, source: &self.mainSource, layer: &self.mainLayer)
                 
@@ -263,6 +267,7 @@ class MapViewController: UIViewController {
                     newMainPlayerRadius = 10
                 } else {
                     newMainPlayerRadius = Int(playerValue[2])
+                    
                 }
                 completion(newMainPlayerRadius)
             }

@@ -73,8 +73,9 @@ extension MapViewController: CLLocationManagerDelegate {
                 // iphone vibrate
                 AudioServicesPlayAlertSound(kSystemSoundID_Vibrate)
                 // update score
-                score += 1
-                mainPlayerRadius! += 1
+                score += 2
+                mainPlayerRadius! += 2
+                
                 scoreLabel.text = "\(score)  ⦿"
                 // delete score coordinate and add a random one
                 allScoreCoords.remove(at: allScoreCoordinatesIndex)
@@ -82,6 +83,7 @@ extension MapViewController: CLLocationManagerDelegate {
                 ref = Database.database().reference()
                 let allScoreCoordinatesDoubleType = allScoreCoords.map{ [$0.latitude, $0.longitude]}
                 ref.child("coordinates").child("scoreCoordinates").setValue(allScoreCoordinatesDoubleType)
+                
             }
         }
     }
@@ -98,12 +100,15 @@ extension MapViewController: CLLocationManagerDelegate {
             let distance =  polyline.path?.length(of: .geodesic) ?? 0
              if let mainPlayerRadius = mainPlayerRadius, let coordRadius = coord.radius, distance < Double(mainPlayerRadius + coordRadius) {
                 // iphone vibrate
+               
+                
                 AudioServicesPlayAlertSound(kSystemSoundID_Vibrate)
                 // update score
                 if mainPlayerRadius > coordRadius {
-                   
+                  
                     score += Int(coordRadius)
-                    self.mainPlayerRadius! = mainPlayerRadius + coordRadius
+                    self.mainPlayerRadius = self.mainPlayerRadius! + coordRadius
+                    
                     scoreLabel.text = "\(score)  ⦿"
                     
                 } else {
