@@ -43,8 +43,13 @@ extension MapViewController: MGLMapViewDelegate {
                     circlesCoords.append(coord)
                 }
             }
+            
+            
+            if circlesCoords.count != 0 {
             let shape = MGLPolygon(coordinates: circlesCoords, count: UInt(circlesCoords.count))
+            
             newScoreShapes.append(shape)
+            }
         }
         //                mapView.addAnnotations(newScoreShapes)
         
@@ -72,7 +77,6 @@ extension MapViewController: MGLMapViewDelegate {
             style.removeLayer(layer)
             number += 1
         }
-        
         source = MGLShapeSource(identifier: "\(identifier)-\(number)", shapes: shapes, options: nil)
         layer = MGLFillStyleLayer(identifier: "\(identifier)-\(number)", source: source!)
         layer!.sourceLayerIdentifier = "\(identifier)-\(number)"

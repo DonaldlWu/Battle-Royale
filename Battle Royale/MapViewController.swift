@@ -161,6 +161,16 @@ class MapViewController: UIViewController {
             }
         })
         
+        fetchOtherPlayersCoordsRemove(completion: { (otherPlayers) in
+            
+            self.otherPlayers = otherPlayers
+            self.otherPlayerShapes = self.updateOtherPlayerShapes(otherPlayers)
+            // mapbox update layer
+            if let style = self.mapView.style {
+                self.addLayer(to: style, with: "otherPlayer", #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1).withAlphaComponent(0.5), shapes: self.otherPlayerShapes, source: &self.otherPlayersSource, layer: &self.otherPlayersLayer)
+            }
+        })
+        
         // firebase score coordinate update then:
         fetchAllScoreCoordinates(completion: { (allScoreCoords) in
             
@@ -199,8 +209,8 @@ class MapViewController: UIViewController {
     }
     
     @objc func moveCameraToPlayer() {
-        if let coord = currentLocation?.coordinate {
-            let camera = MGLMapCamera(lookingAtCenter: coord, fromDistance: 200, pitch: 30, heading: 0)
+        if let coord = currentLocation?.coordinate, let radius = mainPlayerRadius {
+            let camera = MGLMapCamera(lookingAtCenter: coord, fromDistance: CLLocationDistance(radius * 20), pitch: 0, heading: 0)
             
             // Animate the camera movement over 1 seconds.
             mapView.setCamera(camera, withDuration: 1, animationTimingFunction: CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut))
@@ -292,6 +302,27 @@ class MapViewController: UIViewController {
                 }
             }
         }
+        
+    }
+    
+    func fetchOtherPlayersCoordsRemove(completion: @escaping (_ OtherPlayerCoords: [PlayerCircle]) -> ()) {
+        ref = Database.database().reference()
+        let userUid = Auth.auth().currentUser?.uid
+        ref.child("coordinates").child("players").observe(.childRemoved) { (snapshot) in
+            var newOtherPlayers = [PlayerCircle]()
+            let players = snapshot.children
+            for player in players {
+                if let player = player as? DataSnapshot {
+                    if player.key != userUid {
+                        
+                        let otherPlayer = PlayerCircle(snapshot: player)
+                        newOtherPlayers.append(otherPlayer)
+                        completion(newOtherPlayers)
+                    }
+                }
+            }
+        }
+        
     }
     
     

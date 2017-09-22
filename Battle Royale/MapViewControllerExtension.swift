@@ -92,25 +92,26 @@ extension MapViewController: CLLocationManagerDelegate {
         let currentCoord = currentLocation?.coordinate
         var allScoreCoordinatesIndex = -1
         for coord in coords {
+            
             allScoreCoordinatesIndex += 1
             let path = GMSMutablePath()
-            path.add(coord.coord!)
+            if let coord = coord.coord {
+            path.add(coord)
+            }
             path.add(currentCoord!)
             let polyline = GMSPolyline(path: path)
             let distance =  polyline.path?.length(of: .geodesic) ?? 0
              if let mainPlayerRadius = mainPlayerRadius, let coordRadius = coord.radius, distance < Double(mainPlayerRadius + coordRadius) {
                 // iphone vibrate
-               
-                
                 AudioServicesPlayAlertSound(kSystemSoundID_Vibrate)
                 // update score
                 if mainPlayerRadius > coordRadius {
-                  
                     score += Int(coordRadius)
                     self.mainPlayerRadius = self.mainPlayerRadius! + coordRadius
-                    
                     scoreLabel.text = "\(score)  ⦿"
-                    
+                    if let uid = coord.uid {
+                        ref.child("coordinates").child("players").child(uid).removeValue()
+                    }
                 } else {
                     self.mainPlayerRadius = 10
                     endCount()
@@ -119,5 +120,6 @@ extension MapViewController: CLLocationManagerDelegate {
             }
         }
     }
+    
 }
 
