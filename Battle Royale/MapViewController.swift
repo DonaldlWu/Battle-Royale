@@ -42,6 +42,7 @@ class MapViewController: UIViewController {
     var allScoreCoords = [CLLocationCoordinate2D]()
     var score = 0
     var start = false
+    var hideButton = false
     var number = 0
     var mainShape: [MGLPolygon] = []
     var scoreShapes: [MGLPolygon] = []
@@ -118,6 +119,8 @@ class MapViewController: UIViewController {
         
     }()
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         locationManager = CLLocationManager()
@@ -140,10 +143,19 @@ class MapViewController: UIViewController {
         
         mapView.userTrackingMode = .follow
         mapView.showsUserLocation = true
+        mapView.attributionButton.isHidden = true
+        mapView.logoView.isHidden = true
         
         mapView.delegate = self
         
         setupView()
+        // double tap hide buttons and labels
+        let doubleTap = UITapGestureRecognizer(target: self, action: #selector(handleSingleTap(tap:)))
+        for recognizer in mapView.gestureRecognizers! where recognizer is UITapGestureRecognizer {
+            doubleTap.require(toFail: recognizer)
+        }
+        
+        mapView.addGestureRecognizer(doubleTap)
         
         
         // divide fetch from firebase to 2 completion
