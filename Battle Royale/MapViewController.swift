@@ -40,6 +40,7 @@ class MapViewController: UIViewController {
     var allUid = [String]()
     var OtherPlayerCoords = [CLLocationCoordinate2D]()
     var allScoreCoords = [CLLocationCoordinate2D]()
+    
     var score = 0
     var start = false
     var hideButton = false
@@ -133,7 +134,7 @@ class MapViewController: UIViewController {
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         
         // update location every 2 sec
-        runLocationUpdateTimer(with: 2)
+        runLocationUpdateTimer(with: 5)
         
         let url = URL(string: "mapbox://styles/vince9458/cj7j8jyhv6afo2rnitqd3xnmq")
         self.mapView = MGLMapView(frame: view.bounds, styleURL: url)
@@ -176,9 +177,10 @@ class MapViewController: UIViewController {
         
         // firebase score coordinate update then:
         fetchAllScoreCoordinates(completion: { (allScoreCoords) in
-            
             self.allScoreCoords = allScoreCoords
-            self.scoreShapes = self.updateShapes(coords:allScoreCoords, radiusMeter: 50)
+           let allScoreCoordsFiltered = self.filterCoords(allScoreCoords)
+            
+            self.scoreShapes = self.updateShapes(coords:allScoreCoordsFiltered , radiusMeter: 50)
             
             // mapbox update layer
             if let style = self.mapView.style {

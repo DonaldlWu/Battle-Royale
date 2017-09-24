@@ -7,7 +7,8 @@
 //
 
 import Foundation
-import  Mapbox
+import Mapbox
+import GoogleMaps
 
 extension MapViewController: MGLMapViewDelegate {
     
@@ -43,9 +44,9 @@ extension MapViewController: MGLMapViewDelegate {
             }
             
             if circlesCoords.count != 0 {
-            let shape = MGLPolygon(coordinates: circlesCoords, count: UInt(circlesCoords.count))
-            
-            newScoreShapes.append(shape)
+                let shape = MGLPolygon(coordinates: circlesCoords, count: UInt(circlesCoords.count))
+                
+                newScoreShapes.append(shape)
             }
         }
         return newScoreShapes
@@ -67,9 +68,8 @@ extension MapViewController: MGLMapViewDelegate {
     func addLayer(to style: MGLStyle,with identifier: String, _ color: UIColor, shapes: [MGLPolygon], source: inout MGLShapeSource?, layer:inout MGLFillStyleLayer?) {
         
         if let source = source, let layer = layer {
-            
-//            style.removeSource(source)
             style.removeLayer(layer)
+            style.removeSource(source)
             number += 1
         }
         source = MGLShapeSource(identifier: "\(identifier)-\(number)", shapes: shapes, options: nil)
@@ -85,9 +85,27 @@ extension MapViewController: MGLMapViewDelegate {
             style.addLayer(layer!)
         }
     }
-
+    
     func mapView(_ mapView: MGLMapView, didFinishLoading style: MGLStyle) {
     }
     
+    func filterCoords(_ coords: [CLLocationCoordinate2D]) -> [CLLocationCoordinate2D]{
+        var newCoords: [CLLocationCoordinate2D] = []
+        for coord in coords {
+            
+            if let currentCoord = currentLocation?.coordinate, let radius = mainPlayerRadius {
+                let path = GMSMutablePath()
+                path.add(coord)
+                path.add(currentCoord)
+                let polyline = GMSPolyline(path: path)
+                let distance =  polyline.path?.length(of: .geodesic) ?? 0
+                if distance < Double(radius * 80) {
+                    newCoords.append(coord)
+                }
+                
+            }
+        }
+        return newCoords
+    }
+    
 }
-

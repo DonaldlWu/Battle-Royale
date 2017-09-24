@@ -51,7 +51,19 @@ extension MapViewController: CLLocationManagerDelegate {
         ref = Database.database().reference()
         let coord = currentLocation?.coordinate
         
+        // update socre coords in X distance
+        
+        let allScoreCoordsFiltered = filterCoords(allScoreCoords)
+        self.scoreShapes = self.updateShapes(coords:allScoreCoordsFiltered , radiusMeter: 50)
+        
+        // mapbox update layer
+        if let style = self.mapView.style {
+            self.addLayer(to: style, with: "scorePoints", #colorLiteral(red: 0.9272366166, green: 0.2351297438, blue: 0.103588976, alpha: 1).withAlphaComponent(0.5), shapes: self.scoreShapes, source: &self.scoreSource, layer: &self.scoreLayer)
+            
+        }
+        // game start then compute player  and score/other players distance
         if start == true {
+            
             scoreDistance(distanceLimit: Double(50 + mainPlayerRadius!), coords: allScoreCoords)
             otherPlayerDistance(coords: otherPlayers)
         }
@@ -96,12 +108,12 @@ extension MapViewController: CLLocationManagerDelegate {
             allScoreCoordinatesIndex += 1
             let path = GMSMutablePath()
             if let coord = coord.coord {
-            path.add(coord)
+                path.add(coord)
             }
             path.add(currentCoord!)
             let polyline = GMSPolyline(path: path)
             let distance =  polyline.path?.length(of: .geodesic) ?? 0
-             if let mainPlayerRadius = mainPlayerRadius, let coordRadius = coord.radius, distance < Double(mainPlayerRadius + coordRadius) {
+            if let mainPlayerRadius = mainPlayerRadius, let coordRadius = coord.radius, distance < Double(mainPlayerRadius + coordRadius) {
                 // iphone vibrate
                 AudioServicesPlayAlertSound(kSystemSoundID_Vibrate)
                 // update score

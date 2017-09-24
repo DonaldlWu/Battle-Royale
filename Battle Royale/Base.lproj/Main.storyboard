@@ -110,30 +110,30 @@
                         <sections>
                             <tableViewSection id="1bR-CD-zPx">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="400" id="zR9-JU-3wV">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="400"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="450" id="zR9-JU-3wV">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="450"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zR9-JU-3wV" id="UaF-SF-awg">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="400"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="450"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QZe-Pb-Tk4">
-                                                    <rect key="frame" x="0.0" y="0.5" width="375" height="399.5"/>
+                                                    <rect key="frame" x="20" y="30" width="335" height="420"/>
                                                     <connections>
-                                                        <segue destination="QrS-c9-co6" kind="embed" id="rUy-v7-Ke7"/>
+                                                        <segue destination="QrS-c9-co6" kind="embed" id="uIg-Ki-f6v"/>
                                                     </connections>
                                                 </containerView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="QZe-Pb-Tk4" firstAttribute="leading" secondItem="UaF-SF-awg" secondAttribute="leading" id="19a-jr-6py"/>
+                                                <constraint firstItem="QZe-Pb-Tk4" firstAttribute="leading" secondItem="UaF-SF-awg" secondAttribute="leading" constant="20" id="19a-jr-6py"/>
                                                 <constraint firstAttribute="bottom" secondItem="QZe-Pb-Tk4" secondAttribute="bottom" id="Nuy-88-b2a"/>
-                                                <constraint firstItem="QZe-Pb-Tk4" firstAttribute="top" secondItem="UaF-SF-awg" secondAttribute="top" id="RHC-cJ-1kZ"/>
-                                                <constraint firstAttribute="trailing" secondItem="QZe-Pb-Tk4" secondAttribute="trailing" id="vX8-FY-Ifa"/>
+                                                <constraint firstItem="QZe-Pb-Tk4" firstAttribute="top" secondItem="UaF-SF-awg" secondAttribute="top" constant="30" id="RHC-cJ-1kZ"/>
+                                                <constraint firstAttribute="trailing" secondItem="QZe-Pb-Tk4" secondAttribute="trailing" constant="20" id="vX8-FY-Ifa"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KgP-z9-QBP">
-                                        <rect key="frame" x="0.0" y="400" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="450" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KgP-z9-QBP" id="c0O-VD-Q7u">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -153,7 +153,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="40" id="rp2-SE-YHX">
-                                        <rect key="frame" x="0.0" y="444" width="375" height="40"/>
+                                        <rect key="frame" x="0.0" y="494" width="375" height="40"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rp2-SE-YHX" id="4CY-OG-Ybw">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
@@ -211,10 +211,37 @@
         <!--Page View Controller-->
         <scene sceneID="d3K-ca-Nqy">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="QrS-c9-co6" sceneMemberID="viewController"/>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="QrS-c9-co6" customClass="PageViewController" customModule="Battle_Royale" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zGC-8f-2sX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2502" y="1183"/>
+        </scene>
+        <!--Page1 View Controller-->
+        <scene sceneID="jj8-8O-s69">
+            <objects>
+                <viewController storyboardIdentifier="Page1" id="xgu-SL-gRU" customClass="Page1ViewController" customModule="Battle_Royale" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Hhy-L4-A49">
+                        <rect key="frame" x="0.0" y="0.0" width="335" height="420"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Page1" translatesAutoresizingMaskIntoConstraints="NO" id="Ivh-rU-5oT">
+                                <rect key="frame" x="0.0" y="0.0" width="335" height="420"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ivh-rU-5oT" firstAttribute="leading" secondItem="4au-dA-sb8" secondAttribute="leading" id="9cT-my-4EE"/>
+                            <constraint firstItem="4au-dA-sb8" firstAttribute="trailing" secondItem="Ivh-rU-5oT" secondAttribute="trailing" id="GXo-Nx-LMh"/>
+                            <constraint firstItem="Ivh-rU-5oT" firstAttribute="top" secondItem="4au-dA-sb8" secondAttribute="top" id="NB5-Fi-duh"/>
+                            <constraint firstItem="4au-dA-sb8" firstAttribute="bottom" secondItem="Ivh-rU-5oT" secondAttribute="bottom" id="hFk-KV-vCX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="4au-dA-sb8"/>
+                    </view>
+                    <size key="freeformSize" width="335" height="420"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2ee-4G-gB2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3102" y="1742"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="hNP-j2-qcB">
@@ -258,8 +285,65 @@
             </objects>
             <point key="canvasLocation" x="-318.39999999999998" y="796.10194902548733"/>
         </scene>
+        <!--Page2 View Controller-->
+        <scene sceneID="U0F-3G-aud">
+            <objects>
+                <viewController storyboardIdentifier="Page2" id="td5-qK-rni" customClass="Page2ViewController" customModule="Battle_Royale" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tiK-5h-PTk">
+                        <rect key="frame" x="0.0" y="0.0" width="335" height="420"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Page2" translatesAutoresizingMaskIntoConstraints="NO" id="n5N-0g-NXN">
+                                <rect key="frame" x="0.0" y="0.0" width="335" height="420"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="n5N-0g-NXN" firstAttribute="top" secondItem="06x-cQ-s8D" secondAttribute="top" id="GFn-s6-DRP"/>
+                            <constraint firstItem="06x-cQ-s8D" firstAttribute="trailing" secondItem="n5N-0g-NXN" secondAttribute="trailing" id="GIi-cm-cmC"/>
+                            <constraint firstItem="n5N-0g-NXN" firstAttribute="leading" secondItem="06x-cQ-s8D" secondAttribute="leading" id="QDz-1n-3Ja"/>
+                            <constraint firstItem="06x-cQ-s8D" firstAttribute="bottom" secondItem="n5N-0g-NXN" secondAttribute="bottom" id="esM-B6-L9p"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="06x-cQ-s8D"/>
+                    </view>
+                    <size key="freeformSize" width="335" height="420"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2SL-QW-Rxm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2447" y="1742"/>
+        </scene>
+        <!--Page3 View Controller-->
+        <scene sceneID="XY7-oy-eRI">
+            <objects>
+                <viewController storyboardIdentifier="Page3" id="tiB-Uv-arU" customClass="Page3ViewController" customModule="Battle_Royale" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aVw-mh-C7n">
+                        <rect key="frame" x="0.0" y="0.0" width="335" height="420"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Page3" translatesAutoresizingMaskIntoConstraints="NO" id="jrL-NJ-Guy">
+                                <rect key="frame" x="0.0" y="0.0" width="335" height="420"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="jrL-NJ-Guy" firstAttribute="top" secondItem="iSb-Km-WDO" secondAttribute="top" id="KiA-cA-Qd9"/>
+                            <constraint firstItem="jrL-NJ-Guy" firstAttribute="leading" secondItem="iSb-Km-WDO" secondAttribute="leading" id="OMv-BL-EMx"/>
+                            <constraint firstItem="iSb-Km-WDO" firstAttribute="trailing" secondItem="jrL-NJ-Guy" secondAttribute="trailing" id="RGF-T1-8MU"/>
+                            <constraint firstItem="iSb-Km-WDO" firstAttribute="bottom" secondItem="jrL-NJ-Guy" secondAttribute="bottom" id="UaA-MX-Xih"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="iSb-Km-WDO"/>
+                    </view>
+                    <size key="freeformSize" width="335" height="420"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zIg-eX-aby" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1753" y="1742"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="Page1" width="717" height="1073"/>
+        <image name="Page2" width="718" height="851"/>
+        <image name="Page3" width="733" height="826"/>
         <image name="bar-chart-2" width="22" height="20"/>
         <image name="disc" width="22" height="22"/>
     </resources>

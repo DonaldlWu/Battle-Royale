@@ -17,4 +17,5 @@ struct PropertKeys {
     static let unwindToLogin = "UnwindToLogin"
     static let loginToTutorialSegue = "LoginToTutorialSegue"
     static let tutorialToTabBarSegue = "TutorialToTabBarSegue"
+    static let containerViewSegue = "ContainerViewSegue"
 }

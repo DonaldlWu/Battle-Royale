@@ -49,6 +49,8 @@
 	<true/>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>確認存取您的位置</string>
+	<key>Privacy — Location Always and When In Use Usage Description</key>
+	<string>確認存取您的位置</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>fetch</string>

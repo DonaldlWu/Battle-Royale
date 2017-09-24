@@ -9,7 +9,11 @@
 /* Begin PBXBuildFile section */
 		167A29D388D24EF4FDD4A809 /* Pods_Battle_Royale.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 064F06316B4D915CFE5313B2 /* Pods_Battle_Royale.framework */; };
 		5620B9D51F76222900C1936D /* TapHideButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5620B9D41F76222700C1936D /* TapHideButtonExtension.swift */; };
-		5665C4161F6A9CE900C49FE2 /* MapBoxDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5665C4151F6A9CE900C49FE2 /* MapBoxDelegate.swift */; };
+		5620B9D71F7633EE00C1936D /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5620B9D61F7633EE00C1936D /* PageViewController.swift */; };
+		5620B9DA1F775E7D00C1936D /* Page1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5620B9D91F775E7D00C1936D /* Page1ViewController.swift */; };
+		5620B9DC1F775E9D00C1936D /* Page2ViewController ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5620B9DB1F775E9D00C1936D /* Page2ViewController ViewController.swift */; };
+		5620B9DE1F775EAE00C1936D /* Page3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5620B9DD1F775EAE00C1936D /* Page3ViewController.swift */; };
+		5665C4161F6A9CE900C49FE2 /* AfterFetchDataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5665C4151F6A9CE900C49FE2 /* AfterFetchDataExtension.swift */; };
 		5665C4181F6AAC5F00C49FE2 /* TimerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5665C4171F6AAC5F00C49FE2 /* TimerExtension.swift */; };
 		5665C41C1F6AD1C000C49FE2 /* Struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5665C41B1F6AD1C000C49FE2 /* Struct.swift */; };
 		5665C41E1F6B7C8600C49FE2 /* MapUISetupExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5665C41D1F6B7C8600C49FE2 /* MapUISetupExtension.swift */; };
@@ -50,7 +54,11 @@
 		064F06316B4D915CFE5313B2 /* Pods_Battle_Royale.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Battle_Royale.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1497A6E0721312EAE8ABA43B /* Pods-Battle Royale.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Battle Royale.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Battle Royale/Pods-Battle Royale.debug.xcconfig"; sourceTree = "<group>"; };
 		5620B9D41F76222700C1936D /* TapHideButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapHideButtonExtension.swift; sourceTree = "<group>"; };
-		5665C4151F6A9CE900C49FE2 /* MapBoxDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapBoxDelegate.swift; sourceTree = "<group>"; };
+		5620B9D61F7633EE00C1936D /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		5620B9D91F775E7D00C1936D /* Page1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page1ViewController.swift; sourceTree = "<group>"; };
+		5620B9DB1F775E9D00C1936D /* Page2ViewController ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Page2ViewController ViewController.swift"; sourceTree = "<group>"; };
+		5620B9DD1F775EAE00C1936D /* Page3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page3ViewController.swift; sourceTree = "<group>"; };
+		5665C4151F6A9CE900C49FE2 /* AfterFetchDataExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterFetchDataExtension.swift; sourceTree = "<group>"; };
 		5665C4171F6AAC5F00C49FE2 /* TimerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerExtension.swift; sourceTree = "<group>"; };
 		5665C41B1F6AD1C000C49FE2 /* Struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Struct.swift; sourceTree = "<group>"; };
 		5665C41D1F6B7C8600C49FE2 /* MapUISetupExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapUISetupExtension.swift; sourceTree = "<group>"; };
@@ -118,6 +126,17 @@
 			name = Rank;
 			sourceTree = "<group>";
 		};
+		5620B9D81F775E5900C1936D /* Pages */ = {
+			isa = PBXGroup;
+			children = (
+				5620B9D61F7633EE00C1936D /* PageViewController.swift */,
+				5620B9D91F775E7D00C1936D /* Page1ViewController.swift */,
+				5620B9DB1F775E9D00C1936D /* Page2ViewController ViewController.swift */,
+				5620B9DD1F775EAE00C1936D /* Page3ViewController.swift */,
+			);
+			name = Pages;
+			sourceTree = "<group>";
+		};
 		567B6D361F681D5100E849D4 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -164,11 +183,12 @@
 			isa = PBXGroup;
 			children = (
 				C05ACC1E1F5FC4030082B0E2 /* AppDelegate.swift */,
+				C05ACC221F5FC4030082B0E2 /* Main.storyboard */,
 				567B6D371F681D5C00E849D4 /* Map */,
 				567B6D361F681D5100E849D4 /* Login */,
-				C05ACC221F5FC4030082B0E2 /* Main.storyboard */,
 				5620B9D31F73806100C1936D /* Rank */,
 				567B6D311F6695DF00E849D4 /* TabBarController.swift */,
+				5620B9D81F775E5900C1936D /* Pages */,
 				C05ACC281F5FC4030082B0E2 /* Assets.xcassets */,
 				C05ACC2A1F5FC4030082B0E2 /* LaunchScreen.storyboard */,
 				56BC31411F630C440036B97B /* PropertyKeys.swift */,
@@ -192,7 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				C064D5BB1F5FCC4700FF763A /* MapViewControllerExtension.swift */,
-				5665C4151F6A9CE900C49FE2 /* MapBoxDelegate.swift */,
+				5665C4151F6A9CE900C49FE2 /* AfterFetchDataExtension.swift */,
 				5665C41D1F6B7C8600C49FE2 /* MapUISetupExtension.swift */,
 				5620B9D41F76222700C1936D /* TapHideButtonExtension.swift */,
 				5665C4171F6AAC5F00C49FE2 /* TimerExtension.swift */,
@@ -375,17 +395,21 @@
 			files = (
 				567B6D3D1F68503C00E849D4 /* GoogleLoginDelegate.swift in Sources */,
 				5665C41C1F6AD1C000C49FE2 /* Struct.swift in Sources */,
+				5620B9DA1F775E7D00C1936D /* Page1ViewController.swift in Sources */,
 				5665C41E1F6B7C8600C49FE2 /* MapUISetupExtension.swift in Sources */,
 				567B6D321F6695DF00E849D4 /* PlayerInfo.swift in Sources */,
 				566D96401F691DC300FEAEC3 /* LoginUISetupExtension.swift in Sources */,
 				56BC313B1F62A1B80036B97B /* LoginViewController.swift in Sources */,
 				5620B9D51F76222900C1936D /* TapHideButtonExtension.swift in Sources */,
+				5620B9DE1F775EAE00C1936D /* Page3ViewController.swift in Sources */,
+				5620B9DC1F775E9D00C1936D /* Page2ViewController ViewController.swift in Sources */,
 				567B6D331F6695DF00E849D4 /* TabBarController.swift in Sources */,
 				5665C4181F6AAC5F00C49FE2 /* TimerExtension.swift in Sources */,
 				567B6D271F66644100E849D4 /* (null) in Sources */,
 				C05ACC211F5FC4030082B0E2 /* MapViewController.swift in Sources */,
 				567B6D391F681DF300E849D4 /* TutorialTableViewController.swift in Sources */,
-				5665C4161F6A9CE900C49FE2 /* MapBoxDelegate.swift in Sources */,
+				5665C4161F6A9CE900C49FE2 /* AfterFetchDataExtension.swift in Sources */,
+				5620B9D71F7633EE00C1936D /* PageViewController.swift in Sources */,
 				C05ACC271F5FC4030082B0E2 /* Battle_Royale.xcdatamodeld in Sources */,
 				56BC31421F630C440036B97B /* PropertyKeys.swift in Sources */,
 				567B6D2B1F66696F00E849D4 /* (null) in Sources */,
