@@ -33,28 +33,28 @@ extension LoginViewController {
         
         
         // accountTextfield
-        NSLayoutConstraint(item: accountTextfield, attribute: .bottom, relatedBy: .equal, toItem: passwordsTextfield, attribute: .top, multiplier: 1, constant: -30).isActive = true
+        NSLayoutConstraint(item: accountTextfield, attribute: .bottom, relatedBy: .equal, toItem: passwordsTextfield, attribute: .top, multiplier: 1, constant: -15).isActive = true
         NSLayoutConstraint(item: accountTextfield, attribute: .leading, relatedBy: .equal, toItem: view, attribute: .trailing, multiplier: 0.2, constant: 0).isActive = true
         NSLayoutConstraint(item: accountTextfield, attribute: .trailing, relatedBy: .equal, toItem: view, attribute: .trailing, multiplier: 0.8, constant: 0).isActive = true
         
         
         
         // passwordsTextfield
-        NSLayoutConstraint(item: passwordsTextfield, attribute: .bottom, relatedBy: .equal, toItem: passwordsLoginButton, attribute: .top, multiplier: 1, constant: -30).isActive = true
+        NSLayoutConstraint(item: passwordsTextfield, attribute: .bottom, relatedBy: .equal, toItem: passwordsLoginButton, attribute: .top, multiplier: 1, constant: -15).isActive = true
         NSLayoutConstraint(item: passwordsTextfield, attribute: .leading, relatedBy: .equal, toItem: view, attribute: .trailing, multiplier: 0.2, constant: 0).isActive = true
         NSLayoutConstraint(item: passwordsTextfield, attribute: .trailing, relatedBy: .equal, toItem: view, attribute: .trailing, multiplier: 0.8, constant: 0).isActive = true
         
         // passwordsLoginButton
         passwordsLoginButton.layer.cornerRadius = 3
 
-        NSLayoutConstraint(item: passwordsLoginButton, attribute: .bottom, relatedBy: .equal, toItem: facebookLoginButton, attribute: .top, multiplier: 1, constant: -30).isActive = true
+        NSLayoutConstraint(item: passwordsLoginButton, attribute: .bottom, relatedBy: .equal, toItem: facebookLoginButton, attribute: .top, multiplier: 1, constant: -15).isActive = true
         NSLayoutConstraint(item: passwordsLoginButton, attribute: .leading, relatedBy: .equal, toItem: view, attribute: .trailing, multiplier: 0.2, constant: 0).isActive = true
         NSLayoutConstraint(item: passwordsLoginButton, attribute: .trailing, relatedBy: .equal, toItem: view, attribute: .trailing, multiplier: 0.8, constant: 0).isActive = true
         
         //  fb button
         facebookLoginButton.translatesAutoresizingMaskIntoConstraints = false
         facebookLoginButton.layer.cornerRadius = 10
-        NSLayoutConstraint(item: facebookLoginButton, attribute: .bottom, relatedBy: .equal, toItem: googleButton, attribute: .top, multiplier: 1, constant: -30).isActive = true
+        NSLayoutConstraint(item: facebookLoginButton, attribute: .bottom, relatedBy: .equal, toItem: googleButton, attribute: .top, multiplier: 1, constant: -15).isActive = true
         NSLayoutConstraint(item: facebookLoginButton, attribute: .leading, relatedBy: .equal, toItem: view, attribute: .trailing, multiplier: 0.2, constant: 0).isActive = true
         NSLayoutConstraint(item: facebookLoginButton, attribute: .trailing, relatedBy: .equal, toItem: view, attribute: .trailing, multiplier: 0.8, constant: 0).isActive = true
         // height

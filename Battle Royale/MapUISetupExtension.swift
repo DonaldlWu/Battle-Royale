@@ -10,17 +10,21 @@ import Foundation
 import UIKit
 
 extension MapViewController {
+    
     func setupView() {
         
+        tabBarController?.tabBar.alpha = 0.8
+        
+        
         view.addSubview(mapView)
-        mapView.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor).isActive = true
+        mapView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         mapView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         mapView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        mapView.bottomAnchor.constraint(equalTo: bottomLayoutGuide.topAnchor).isActive = true
+        mapView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         mapView.isHidden = true
         
         mapView.addSubview(button)
-        NSLayoutConstraint(item: button, attribute: .bottom, relatedBy: .equal, toItem: mapView, attribute: .bottom, multiplier: 0.95, constant: 0).isActive = true
+        NSLayoutConstraint(item: button, attribute: .bottom, relatedBy: .equal, toItem: mapView, attribute: .bottom, multiplier: 0.9, constant: 0).isActive = true
         NSLayoutConstraint(item: button, attribute: .leading, relatedBy: .equal, toItem: mapView, attribute: .trailing, multiplier: 0.3, constant: 0).isActive = true
         NSLayoutConstraint(item: button, attribute: .trailing, relatedBy: .equal, toItem: mapView, attribute: .trailing, multiplier: 0.7, constant: 0).isActive = true
         button.heightAnchor.constraint(equalToConstant: 50).isActive = true

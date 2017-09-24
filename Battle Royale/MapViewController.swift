@@ -215,7 +215,7 @@ class MapViewController: UIViewController {
     
     @objc func moveCameraToPlayer() {
         if let coord = currentLocation?.coordinate, let radius = mainPlayerRadius {
-            let camera = MGLMapCamera(lookingAtCenter: coord, fromDistance: CLLocationDistance(radius * 20), pitch: 0, heading: 0)
+            let camera = MGLMapCamera(lookingAtCenter: coord, fromDistance: CLLocationDistance(radius * 30), pitch: 0, heading: 0)
             
             // Animate the camera movement over 1 seconds.
             mapView.setCamera(camera, withDuration: 1, animationTimingFunction: CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut))
@@ -235,9 +235,6 @@ class MapViewController: UIViewController {
         timer.invalidate()
         popAlert()
         button.setTitle("▶︎", for: .normal)
-        
-        
-        
         seconds = 1200
         timerLabel.text = timeString(time: TimeInterval(seconds))
         button.backgroundColor = #colorLiteral(red: 0.9272366166, green: 0.2351297438, blue: 0.103588976, alpha: 1).withAlphaComponent(0.8)
@@ -245,12 +242,12 @@ class MapViewController: UIViewController {
         
     }
     
-    func randomCoordinate(from coordinate: CLLocationCoordinate2D) -> (CLLocationCoordinate2D) {
+    func randomCoordinate(radius: Int, from coordinate: CLLocationCoordinate2D) -> (CLLocationCoordinate2D) {
         
         let angleRandom = GKRandomDistribution(lowestValue: 0, highestValue: 360)
         let newaAngleRandom = angleRandom.nextInt()
-        let nextLat = Double(coordinate.latitude) + sin(Double(newaAngleRandom) / 180 * Double.pi) * 0.0011
-        let nextLon = Double(coordinate.longitude) + cos(Double(newaAngleRandom) / 180 * Double.pi) * 0.0011
+        let nextLat = Double(coordinate.latitude) + sin(Double(newaAngleRandom) / 180 * Double.pi) * 0.000008983417785 * Double(radius) * cos(coordinate.latitude / 180 * Double.pi)
+        let nextLon = Double(coordinate.longitude) + cos(Double(newaAngleRandom) / 180 * Double.pi) * 0.000009014705689 * Double(radius)
         nextCircleCorordinate = CLLocationCoordinate2D(latitude: nextLat, longitude: nextLon)
         return nextCircleCorordinate!
     }

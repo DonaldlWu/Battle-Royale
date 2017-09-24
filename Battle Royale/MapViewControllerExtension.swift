@@ -91,10 +91,10 @@ extension MapViewController: CLLocationManagerDelegate {
                 scoreLabel.text = "\(score)  ⦿"
                 // delete score coordinate and add a random one
                 allScoreCoords.remove(at: allScoreCoordinatesIndex)
-                allScoreCoords.insert(self.randomCoordinate(from: currentCoord!), at: allScoreCoordinatesIndex)
+                allScoreCoords.insert(self.randomCoordinate(radius: 300, from: currentCoord!), at: allScoreCoordinatesIndex)
                 ref = Database.database().reference()
                 let allScoreCoordinatesDoubleType = allScoreCoords.map{ [$0.latitude, $0.longitude]}
-                ref.child("coordinates").child("scoreCoordinates").setValue(allScoreCoordinatesDoubleType)
+               	 ref.child("coordinates").child("scoreCoordinates").setValue(allScoreCoordinatesDoubleType)
                 
             }
         }
