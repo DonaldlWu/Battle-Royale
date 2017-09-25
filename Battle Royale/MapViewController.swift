@@ -46,10 +46,6 @@ class MapViewController: UIViewController {
     var start = false
     var hideButton = false
     var number = 0
-    var mainShape: [MGLPolygon] = []
-    var scoreShapes: [MGLPolygon] = []
-    var otherPlayerShapes: [MGLPolygon] = []
-    
     
     var otherPlayers: [PlayerCircle] = []
     var mainPlayerRadius: Int?
@@ -170,12 +166,12 @@ class MapViewController: UIViewController {
         fetchOtherPlayersCoords(completion: { (otherPlayers) in
             
             self.otherPlayers = otherPlayers
-            self.otherPlayerShapes = self.updateOtherPlayerShapes(otherPlayers)
-            self.downdloadImage()
+            let otherPlayerShapes = self.updateOtherPlayerShapes(otherPlayers)
+            
             
             // mapbox update layer
             if let style = self.mapView.style {
-                self.addLayer(to: style, with: "otherPlayer", #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1).withAlphaComponent(0.5), shapes: self.otherPlayerShapes, source: &self.otherPlayersSource, layer: &self.otherPlayersLayer)
+                self.addLayer(to: style, with: "otherPlayer", #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1).withAlphaComponent(0.5), shapes: otherPlayerShapes, source: &self.otherPlayersSource, layer: &self.otherPlayersLayer)
             }
         })
         
@@ -184,11 +180,11 @@ class MapViewController: UIViewController {
             self.allScoreCoords = allScoreCoords
            let allScoreCoordsFiltered = self.filterCoords(allScoreCoords)
             
-            self.scoreShapes = self.updateShapes(coords:allScoreCoordsFiltered , radiusMeter: 50)
+            let scoreShapes = self.updateShapes(coords:allScoreCoordsFiltered , radiusMeter: 50)
             
             // mapbox update layer
             if let style = self.mapView.style {
-                self.addLayer(to: style, with: "scorePoints", #colorLiteral(red: 0.9272366166, green: 0.2351297438, blue: 0.103588976, alpha: 1).withAlphaComponent(0.5), shapes: self.scoreShapes, source: &self.scoreSource, layer: &self.scoreLayer)
+                self.addLayer(to: style, with: "scorePoints", #colorLiteral(red: 0.9272366166, green: 0.2351297438, blue: 0.103588976, alpha: 1).withAlphaComponent(0.5), shapes: scoreShapes, source: &self.scoreSource, layer: &self.scoreLayer)
             }
         })
         
@@ -197,11 +193,11 @@ class MapViewController: UIViewController {
             self.mainPlayerRadius = mainPlayerRadius
             
             if let coord = self.currentLocation?.coordinate, let radius = self.mainPlayerRadius {
-            self.mainShape = self.updateShapes(coords: [coord], radiusMeter: Double(radius))
-            }
+            let mainShape = self.updateShapes(coords: [coord], radiusMeter: Double(radius))
+            
             if let style = self.mapView.style {
-                self.addLayer(to: style, with: "mainPlayer", #colorLiteral(red: 0.02766608819, green: 0.4977955222, blue: 1, alpha: 1), shapes: self.mainShape, source: &self.mainSource, layer: &self.mainLayer)
-                
+                self.addLayer(to: style, with: "mainPlayer", #colorLiteral(red: 0.02766608819, green: 0.4977955222, blue: 1, alpha: 1), shapes: mainShape, source: &self.mainSource, layer: &self.mainLayer)
+                }
             }
             
         }

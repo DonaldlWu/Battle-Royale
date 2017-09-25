@@ -54,11 +54,11 @@ extension MapViewController: CLLocationManagerDelegate {
         // update socre coords in X distance
         
         let allScoreCoordsFiltered = filterCoords(allScoreCoords)
-        self.scoreShapes = self.updateShapes(coords:allScoreCoordsFiltered , radiusMeter: 50)
+        let scoreShapes = self.updateShapes(coords:allScoreCoordsFiltered , radiusMeter: 50)
         
         // mapbox update layer
         if let style = self.mapView.style {
-            self.addLayer(to: style, with: "scorePoints", #colorLiteral(red: 0.9272366166, green: 0.2351297438, blue: 0.103588976, alpha: 1).withAlphaComponent(0.5), shapes: self.scoreShapes, source: &self.scoreSource, layer: &self.scoreLayer)
+            self.addLayer(to: style, with: "scorePoints", #colorLiteral(red: 0.9272366166, green: 0.2351297438, blue: 0.103588976, alpha: 1).withAlphaComponent(0.5), shapes: scoreShapes, source: &self.scoreSource, layer: &self.scoreLayer)
             
         }
         // game start then compute player  and score/other players distance
