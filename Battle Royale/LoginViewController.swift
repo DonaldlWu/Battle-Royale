@@ -55,15 +55,6 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
     
     let googleButton = GIDSignInButton()
     
-    let mapViewButton: UIButton = {
-        let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("START", for: .normal)
-        button.backgroundColor = #colorLiteral(red: 0.9272366166, green: 0.2351297438, blue: 0.103588976, alpha: 1).withAlphaComponent(0.8)
-        button.addTarget(self, action: #selector(presentTutorial), for: .touchUpInside)
-        return button
-    }()
-    
     let accountTextfield: UITextField = {
         let textfield = UITextField()
         textfield.translatesAutoresizingMaskIntoConstraints = false

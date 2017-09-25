@@ -15,15 +15,12 @@ extension LoginViewController {
     func setupView() {
         
         view.addSubview(googleButton)
-        view.addSubview(mapViewButton)
+        
         view.addSubview(accountTextfield)
         view.addSubview(passwordsTextfield)
         view.addSubview(passwordsLoginButton)
         view.addSubview(facebookLoginButton)
         
-        mapViewButton.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        mapViewButton.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-        mapViewButton.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         
         // google button
         googleButton.translatesAutoresizingMaskIntoConstraints = false

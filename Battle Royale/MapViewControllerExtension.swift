@@ -49,26 +49,30 @@ extension MapViewController: CLLocationManagerDelegate {
     
     func setCurrentLocation() {
         ref = Database.database().reference()
-        let coord = currentLocation?.coordinate
-        
-        // update socre coords in X distance
-        
-        let allScoreCoordsFiltered = filterCoords(allScoreCoords)
-        let scoreShapes = self.updateShapes(coords:allScoreCoordsFiltered , radiusMeter: 50)
-        
-        // mapbox update layer
-        if let style = self.mapView.style {
-            self.addLayer(to: style, with: "scorePoints", #colorLiteral(red: 0.9272366166, green: 0.2351297438, blue: 0.103588976, alpha: 1).withAlphaComponent(0.5), shapes: scoreShapes, source: &self.scoreSource, layer: &self.scoreLayer)
+        if let coord = self.currentLocation?.coordinate, let radius = self.mainPlayerRadius {
             
-        }
-        // game start then compute player  and score/other players distance
-        if start == true {
+            // update socre coords in X distance
             
-            scoreDistance(distanceLimit: Double(50 + mainPlayerRadius!), coords: allScoreCoords)
-            otherPlayerDistance(coords: otherPlayers)
-        }
-        if let lat = coord?.latitude, let lon = coord?.longitude, let userUid = Auth.auth().currentUser?.uid {
-            ref.child("coordinates").child("players").updateChildValues([(userUid): [lat, lon, mainPlayerRadius]])
+            let allScoreCoordsFiltered = filterCoords(allScoreCoords)
+            let scoreShapes = self.updateShapes(coords:allScoreCoordsFiltered , radiusMeter: 50)
+            let mainShape = self.updateShapes(coords: [coord], radiusMeter: Double(radius))
+            // mapbox update layer
+            if let style = self.mapView.style {
+                self.addLayer(to: style, with: "scorePoints", #colorLiteral(red: 0.9272366166, green: 0.2351297438, blue: 0.103588976, alpha: 1).withAlphaComponent(0.5), shapes: scoreShapes, source: &self.scoreSource, layer: &self.scoreLayer)
+                
+                self.addLayer(to: style, with: "mainPlayer", #colorLiteral(red: 0.02766608819, green: 0.4977955222, blue: 1, alpha: 1), shapes: mainShape, source: &self.mainSource, layer: &self.mainLayer)
+            }
+            // game start then compute player  and score/other players distance
+            if start == true {
+                
+                scoreDistance(distanceLimit: Double(50 + mainPlayerRadius!), coords: allScoreCoords)
+                otherPlayerDistance(coords: otherPlayers)
+            }
+            if let userUid = Auth.auth().currentUser?.uid {
+                let lat = coord.latitude
+                let lon = coord.longitude
+                ref.child("coordinates").child("players").updateChildValues([(userUid): [lat, lon, mainPlayerRadius]])
+            }
         }
     }
     func scoreDistance(distanceLimit: Double, coords: [CLLocationCoordinate2D]) {
@@ -94,7 +98,7 @@ extension MapViewController: CLLocationManagerDelegate {
                 allScoreCoords.insert(self.randomCoordinate(radius: 300, from: currentCoord!), at: allScoreCoordinatesIndex)
                 ref = Database.database().reference()
                 let allScoreCoordinatesDoubleType = allScoreCoords.map{ [$0.latitude, $0.longitude]}
-               	 ref.child("coordinates").child("scoreCoordinates").setValue(allScoreCoordinatesDoubleType)
+                ref.child("coordinates").child("scoreCoordinates").setValue(allScoreCoordinatesDoubleType)
                 
             }
         }

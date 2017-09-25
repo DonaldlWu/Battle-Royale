@@ -132,7 +132,7 @@ class MapViewController: UIViewController {
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         
         // update location every 2 sec
-        runLocationUpdateTimer(with: 5)
+        runLocationUpdateTimer(with: 2)
         
         let url = URL(string: "mapbox://styles/vince9458/cj7j8jyhv6afo2rnitqd3xnmq")
         self.mapView = MGLMapView(frame: view.bounds, styleURL: url)
@@ -272,7 +272,7 @@ class MapViewController: UIViewController {
     func fetchMainPlayersCoords(completion: @escaping (_ mainPlayerRadius: Int) -> ()) {
         ref = Database.database().reference()
         let userUid = Auth.auth().currentUser?.uid
-        ref.child("coordinates").child("players").child(userUid!).observe(.value) { (snapshot) in
+        ref.child("coordinates").child("players").child(userUid!).observeSingleEvent(of: .value, with: { (snapshot) in
             var newMainPlayerRadius: Int
             if let playerValue = snapshot.value as? [Double] {
                 if playerValue.count == 2 {
@@ -285,7 +285,7 @@ class MapViewController: UIViewController {
             }
         }
         
-    }
+    )}
     
     
    
