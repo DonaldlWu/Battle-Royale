@@ -11,6 +11,7 @@ import GoogleMaps
 import Mapbox
 import GameKit
 import Firebase
+import FirebaseStorage
 import GoogleSignIn
 
 
@@ -60,7 +61,8 @@ class MapViewController: UIViewController {
     var scoreSource: MGLShapeSource?
     var otherPlayersSource: MGLShapeSource?
     
-    
+    let storage = Storage.storage()
+   
     
     let button: UIButton = {
         let button = UIButton()
@@ -165,10 +167,12 @@ class MapViewController: UIViewController {
         // firebase otherplayers coordinate update then:
         
         
-        fetchOtherPlayersCoordsRemove(completion: { (otherPlayers) in
+        fetchOtherPlayersCoords(completion: { (otherPlayers) in
             
             self.otherPlayers = otherPlayers
             self.otherPlayerShapes = self.updateOtherPlayerShapes(otherPlayers)
+            self.downdloadImage()
+            
             // mapbox update layer
             if let style = self.mapView.style {
                 self.addLayer(to: style, with: "otherPlayer", #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1).withAlphaComponent(0.5), shapes: self.otherPlayerShapes, source: &self.otherPlayersSource, layer: &self.otherPlayersLayer)
@@ -290,7 +294,7 @@ class MapViewController: UIViewController {
     
    
     
-    func fetchOtherPlayersCoordsRemove(completion: @escaping (_ OtherPlayerCoords: [PlayerCircle]) -> ()) {
+    func fetchOtherPlayersCoords(completion: @escaping (_ OtherPlayerCoords: [PlayerCircle]) -> ()) {
         ref = Database.database().reference()
         let userUid = Auth.auth().currentUser?.uid
         ref.child("coordinates").child("players").observe(.childRemoved) { (snapshot) in
