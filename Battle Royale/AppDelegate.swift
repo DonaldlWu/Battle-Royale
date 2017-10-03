@@ -25,8 +25,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        GMSServices.provideAPIKey("AIzaSyDhRGfCW3G_brM7gv8V6WPhvckGbCDcDTQ")
-        GMSPlacesClient.provideAPIKey("AIzaSyDhRGfCW3G_brM7gv8V6WPhvckGbCDcDTQ")
+        GMSServices.provideAPIKey("INSERT YOUR GOOGLE MAP API KEY HERE")
+        GMSPlacesClient.provideAPIKey("INSERT YOUR GOOGLE MAP API KEY HERE")
         
         
         FirebaseApp.configure()
