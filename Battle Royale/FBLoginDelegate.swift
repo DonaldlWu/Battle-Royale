@@ -36,6 +36,7 @@ extension LoginViewController: LoginButtonDelegate {
                     print(error)
                     return
                 }
+                self.activityView.stopAnimating()
                 self.performSegue(withIdentifier: PropertKeys.loginToTutorialSegue, sender: self)
                 print("Successfully logged in with facebook...")
             }

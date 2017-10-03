@@ -33,6 +33,8 @@ class MapViewController: UIViewController {
         }
     }
     
+    var savedCoords = [CLLocationCoordinate2D]()
+    
     var mapView: MGLMapView!
     var zoomLevel: Float = 18.0
     var circ = GMSCircle()
@@ -48,17 +50,23 @@ class MapViewController: UIViewController {
     var number = 0
     
     var otherPlayers: [PlayerCircle] = []
-    var mainPlayerRadius: Int?
+    var mainPlayerRadius: Int? {
+        didSet {
+            updateMainPlayerCircle()
+        }
+    }
     
     var mainLayer: MGLFillStyleLayer?
     var scoreLayer: MGLFillStyleLayer?
+    
     var otherPlayersLayer: MGLFillStyleLayer?
     var mainSource: MGLShapeSource?
     var scoreSource: MGLShapeSource?
+    
     var otherPlayersSource: MGLShapeSource?
     
     let storage = Storage.storage()
-   
+    
     
     let button: UIButton = {
         let button = UIButton()
@@ -125,15 +133,23 @@ class MapViewController: UIViewController {
         locationManager = CLLocationManager()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestAlwaysAuthorization()
-        locationManager.distanceFilter = 50
-        locationManager.startUpdatingLocation()
+        locationManager.distanceFilter = 2
+        
         locationManager.delegate = self
         locationManager.pausesLocationUpdatesAutomatically = false
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        
+        mainPlayerRadius = 10
+        
+        locationManager.stopUpdatingLocation()
+        locationManager.requestLocation()
+        locationManager.startUpdatingLocation()
+        
+        
         
         // update location every 2 sec
-        runLocationUpdateTimer(with: 2)
+        //        runLocationUpdateTimer(with: 2)
         
+        // mapView setup
         let url = URL(string: "mapbox://styles/vince9458/cj7j8jyhv6afo2rnitqd3xnmq")
         self.mapView = MGLMapView(frame: view.bounds, styleURL: url)
         mapView.translatesAutoresizingMaskIntoConstraints = false
@@ -155,6 +171,9 @@ class MapViewController: UIViewController {
         }
         
         mapView.addGestureRecognizer(doubleTap)
+        
+        // update savedCoords every X distance
+        
         
         
         // divide fetch from firebase to 2 completion
@@ -178,35 +197,40 @@ class MapViewController: UIViewController {
         // firebase score coordinate update then:
         fetchAllScoreCoordinates(completion: { (allScoreCoords) in
             self.allScoreCoords = allScoreCoords
-           let allScoreCoordsFiltered = self.filterCoords(allScoreCoords)
             
+            let allScoreCoordsFiltered = self.filterCoords(allScoreCoords)
             let scoreShapes = self.updateShapes(coords:allScoreCoordsFiltered , radiusMeter: 50)
-            
             // mapbox update layer
             if let style = self.mapView.style {
                 self.addLayer(to: style, with: "scorePoints", #colorLiteral(red: 0.9272366166, green: 0.2351297438, blue: 0.103588976, alpha: 1).withAlphaComponent(0.5), shapes: scoreShapes, source: &self.scoreSource, layer: &self.scoreLayer)
             }
         })
         
-        fetchMainPlayersCoords { (mainPlayerRadius) in
-            
-            self.mainPlayerRadius = mainPlayerRadius
-            
-            if let coord = self.currentLocation?.coordinate, let radius = self.mainPlayerRadius {
-            let mainShape = self.updateShapes(coords: [coord], radiusMeter: Double(radius))
-            
-            if let style = self.mapView.style {
-                self.addLayer(to: style, with: "mainPlayer", #colorLiteral(red: 0.02766608819, green: 0.4977955222, blue: 1, alpha: 1), shapes: mainShape, source: &self.mainSource, layer: &self.mainLayer)
-                }
-            }
-            
-        }
+//        fetchMainPlayersCoords { (mainPlayerRadius) in
+//
+//            self.mainPlayerRadius = mainPlayerRadius
+//
+//            if let coord = self.currentLocation?.coordinate, let radius = self.mainPlayerRadius {
+//                let mainShape = self.updateShapes(coords: [coord], radiusMeter: Double(radius))
+//
+//                if let style = self.mapView.style {
+//                    self.addLayer(to: style, with: "mainPlayer", #colorLiteral(red: 0.02766608819, green: 0.4977955222, blue: 1, alpha: 1), shapes: mainShape, source: &self.mainSource, layer: &self.mainLayer)
+//                }
+//            }
+//
+//        }
+        
     }
     
     @objc func startGame() {
         
         if start == false {
             startCount()
+            locationManager.startUpdatingLocation()
+            if let coord = currentLocation?.coordinate,  savedCoords.count == 0 {
+                savedCoords.append(coord)
+                print(savedCoords)
+            }
         }
         else {
             endCount()
@@ -284,11 +308,11 @@ class MapViewController: UIViewController {
                 completion(newMainPlayerRadius)
             }
         }
-        
-    )}
+            
+        )}
     
     
-   
+    
     
     func fetchOtherPlayersCoords(completion: @escaping (_ OtherPlayerCoords: [PlayerCircle]) -> ()) {
         ref = Database.database().reference()

@@ -53,6 +53,15 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
         
     }
     
+    let welcomeImage: UIImageView = {
+        let image = UIImageView()
+        image.image = #imageLiteral(resourceName: "WelcomePage")
+        
+        return image
+    }()
+    
+    
+    
     let googleButton = GIDSignInButton()
     
     let accountTextfield: UITextField = {
@@ -85,6 +94,7 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
     let activityView: UIActivityIndicatorView = {
         let activityView = UIActivityIndicatorView()
         activityView.activityIndicatorViewStyle = .gray
+        activityView.hidesWhenStopped = true
         return activityView
     }()
     

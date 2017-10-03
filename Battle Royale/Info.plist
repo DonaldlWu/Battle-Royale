@@ -47,9 +47,9 @@
 	<string>pk.eyJ1IjoidmluY2U5NDU4IiwiYSI6ImNqN2o3a2M0ZDIwOGMzM3Bkd2U1M2gyOGkifQ.mcDGzSAki6PSNB3Rlbt7ng</string>
 	<key>MGLMapboxMetricsEnabledSettingShownInApp</key>
 	<true/>
-	<key>NSLocationWhenInUseUsageDescription</key>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>確認存取您的位置</string>
-	<key>Privacy — Location Always and When In Use Usage Description</key>
+	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>確認存取您的位置</string>
 	<key>UIBackgroundModes</key>
 	<array>

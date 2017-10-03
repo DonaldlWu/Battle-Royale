@@ -12,8 +12,10 @@ import Firebase
 extension LoginViewController {
     
     @objc func handleRegister() {
+        activityView.startAnimating()
         guard let email = accountTextfield.text, let password = passwordsTextfield.text else {
                 print("RegisterError")
+            activityView.stopAnimating()
                 return
         }
         Auth.auth().createUser(withEmail: email, password: password, completion:

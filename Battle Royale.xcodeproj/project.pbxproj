@@ -11,7 +11,7 @@
 		5620B9D51F76222900C1936D /* TapHideButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5620B9D41F76222700C1936D /* TapHideButtonExtension.swift */; };
 		5620B9D71F7633EE00C1936D /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5620B9D61F7633EE00C1936D /* PageViewController.swift */; };
 		5620B9DA1F775E7D00C1936D /* Page1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5620B9D91F775E7D00C1936D /* Page1ViewController.swift */; };
-		5620B9DC1F775E9D00C1936D /* Page2ViewController ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5620B9DB1F775E9D00C1936D /* Page2ViewController ViewController.swift */; };
+		5620B9DC1F775E9D00C1936D /* Page2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5620B9DB1F775E9D00C1936D /* Page2ViewController.swift */; };
 		5620B9DE1F775EAE00C1936D /* Page3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5620B9DD1F775EAE00C1936D /* Page3ViewController.swift */; };
 		5620B9E11F78028200C1936D /* FetchImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5620B9E01F78028200C1936D /* FetchImageExtension.swift */; };
 		5620B9E31F78151000C1936D /* DLImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5620B9E21F78150F00C1936D /* DLImageExtension.swift */; };
@@ -59,7 +59,7 @@
 		5620B9D41F76222700C1936D /* TapHideButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapHideButtonExtension.swift; sourceTree = "<group>"; };
 		5620B9D61F7633EE00C1936D /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		5620B9D91F775E7D00C1936D /* Page1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page1ViewController.swift; sourceTree = "<group>"; };
-		5620B9DB1F775E9D00C1936D /* Page2ViewController ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Page2ViewController ViewController.swift"; sourceTree = "<group>"; };
+		5620B9DB1F775E9D00C1936D /* Page2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page2ViewController.swift; sourceTree = "<group>"; };
 		5620B9DD1F775EAE00C1936D /* Page3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page3ViewController.swift; sourceTree = "<group>"; };
 		5620B9E01F78028200C1936D /* FetchImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchImageExtension.swift; sourceTree = "<group>"; };
 		5620B9E21F78150F00C1936D /* DLImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DLImageExtension.swift; sourceTree = "<group>"; };
@@ -137,7 +137,7 @@
 			children = (
 				5620B9D61F7633EE00C1936D /* PageViewController.swift */,
 				5620B9D91F775E7D00C1936D /* Page1ViewController.swift */,
-				5620B9DB1F775E9D00C1936D /* Page2ViewController ViewController.swift */,
+				5620B9DB1F775E9D00C1936D /* Page2ViewController.swift */,
 				5620B9DD1F775EAE00C1936D /* Page3ViewController.swift */,
 			);
 			name = Pages;
@@ -148,6 +148,7 @@
 			children = (
 				567B6D381F681DF300E849D4 /* TutorialTableViewController.swift */,
 				5620B9E01F78028200C1936D /* FetchImageExtension.swift */,
+				5620B9D81F775E5900C1936D /* Pages */,
 			);
 			name = TutorialPage;
 			sourceTree = "<group>";
@@ -203,7 +204,6 @@
 				5620B9DF1F78024A00C1936D /* TutorialPage */,
 				5620B9D31F73806100C1936D /* Rank */,
 				567B6D311F6695DF00E849D4 /* TabBarController.swift */,
-				5620B9D81F775E5900C1936D /* Pages */,
 				C05ACC281F5FC4030082B0E2 /* Assets.xcassets */,
 				C05ACC2A1F5FC4030082B0E2 /* LaunchScreen.storyboard */,
 				56BC31411F630C440036B97B /* PropertyKeys.swift */,
@@ -459,7 +459,7 @@
 				5620B9E31F78151000C1936D /* DLImageExtension.swift in Sources */,
 				5620B9E11F78028200C1936D /* FetchImageExtension.swift in Sources */,
 				5620B9DE1F775EAE00C1936D /* Page3ViewController.swift in Sources */,
-				5620B9DC1F775E9D00C1936D /* Page2ViewController ViewController.swift in Sources */,
+				5620B9DC1F775E9D00C1936D /* Page2ViewController.swift in Sources */,
 				567B6D331F6695DF00E849D4 /* TabBarController.swift in Sources */,
 				5665C4181F6AAC5F00C49FE2 /* TimerExtension.swift in Sources */,
 				567432B71F7820DA00E97632 /* CustomAnnotationModels.swift in Sources */,

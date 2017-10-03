@@ -22,7 +22,14 @@ class TutorialTableViewController: UITableViewController {
     @IBOutlet weak var playerImageView: UIImageView!
     @IBOutlet weak var nameTextField: UITextField!
     
-    @IBOutlet weak var playButoon: UIButton!
+    @IBOutlet weak var playButton: UIButton!
+    
+    @IBOutlet weak var pageControl: UIPageControl!
+    
+    @IBAction func pageControlPressed(_ sender: Any) {
+        
+        
+    }
     
     @IBAction func playButtonPressed(_ sender: Any) {
         
@@ -45,7 +52,7 @@ class TutorialTableViewController: UITableViewController {
         }
         nameTextField.layer.masksToBounds = true
         nameTextField.textAlignment = .center
-        playButoon.layer.cornerRadius = 10
+        playButton.layer.cornerRadius = 10
         
         playerImageView.clipsToBounds = true
         
