@@ -25,10 +25,7 @@ class MapViewController: UIViewController {
     var currentLocation: CLLocation? {
         didSet {
             setCurrentLocation()
-            //            DANGER! update location 500 times/ sec
-            //            locationManager.stopUpdatingLocation()
-            //            locationManager.requestLocation()
-            //            locationManager.startUpdatingLocation()
+           
             
         }
     }
@@ -149,7 +146,7 @@ class MapViewController: UIViewController {
         // update location every 2 sec
         //        runLocationUpdateTimer(with: 2)
         
-        // mapView setup
+//         mapView setup
         let url = URL(string: "mapbox://styles/vince9458/cj7j8jyhv6afo2rnitqd3xnmq")
         self.mapView = MGLMapView(frame: view.bounds, styleURL: url)
         mapView.translatesAutoresizingMaskIntoConstraints = false
@@ -172,7 +169,7 @@ class MapViewController: UIViewController {
         
         mapView.addGestureRecognizer(doubleTap)
         
-        // update savedCoords every X distance
+       
         
         
         
@@ -206,20 +203,7 @@ class MapViewController: UIViewController {
             }
         })
         
-//        fetchMainPlayersCoords { (mainPlayerRadius) in
-//
-//            self.mainPlayerRadius = mainPlayerRadius
-//
-//            if let coord = self.currentLocation?.coordinate, let radius = self.mainPlayerRadius {
-//                let mainShape = self.updateShapes(coords: [coord], radiusMeter: Double(radius))
-//
-//                if let style = self.mapView.style {
-//                    self.addLayer(to: style, with: "mainPlayer", #colorLiteral(red: 0.02766608819, green: 0.4977955222, blue: 1, alpha: 1), shapes: mainShape, source: &self.mainSource, layer: &self.mainLayer)
-//                }
-//            }
-//
-//        }
-        
+
     }
     
     @objc func startGame() {

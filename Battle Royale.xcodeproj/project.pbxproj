@@ -77,6 +77,7 @@
 		56BC313A1F62A1B80036B97B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		56BC313C1F62A39D0036B97B /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		56BC31411F630C440036B97B /* PropertyKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyKeys.swift; sourceTree = "<group>"; };
+		56C3DC8C1F837DB7001CBF6C /* Battle Royale.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Battle Royale.entitlements"; sourceTree = "<group>"; };
 		56D536051F69277200F4B492 /* PasswordsLoginExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordsLoginExtension.swift; sourceTree = "<group>"; };
 		56D536071F69717400F4B492 /* FBLoginDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBLoginDelegate.swift; sourceTree = "<group>"; };
 		C05ACC1B1F5FC4030082B0E2 /* Battle Royale.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Battle Royale.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -197,6 +198,7 @@
 		C05ACC1D1F5FC4030082B0E2 /* Battle Royale */ = {
 			isa = PBXGroup;
 			children = (
+				56C3DC8C1F837DB7001CBF6C /* Battle Royale.entitlements */,
 				C05ACC1E1F5FC4030082B0E2 /* AppDelegate.swift */,
 				C05ACC221F5FC4030082B0E2 /* Main.storyboard */,
 				567B6D371F681D5C00E849D4 /* Map */,
@@ -306,6 +308,9 @@
 								enabled = 1;
 							};
 							com.apple.Maps.iOS = {
+								enabled = 0;
+							};
+							com.apple.Push = {
 								enabled = 0;
 							};
 						};
@@ -636,6 +641,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.BattleRoyale.Battle-Royale";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -653,6 +659,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.BattleRoyale.Battle-Royale";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
