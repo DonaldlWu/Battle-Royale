@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		167A29D388D24EF4FDD4A809 /* Pods_Battle_Royale.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 064F06316B4D915CFE5313B2 /* Pods_Battle_Royale.framework */; };
+		561A51871F853C800007DE6B /* TimeFilterToMapboxStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561A51861F853C800007DE6B /* TimeFilterToMapboxStyle.swift */; };
 		5620B9D51F76222900C1936D /* TapHideButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5620B9D41F76222700C1936D /* TapHideButtonExtension.swift */; };
 		5620B9D71F7633EE00C1936D /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5620B9D61F7633EE00C1936D /* PageViewController.swift */; };
 		5620B9DA1F775E7D00C1936D /* Page1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5620B9D91F775E7D00C1936D /* Page1ViewController.swift */; };
@@ -56,6 +57,7 @@
 /* Begin PBXFileReference section */
 		064F06316B4D915CFE5313B2 /* Pods_Battle_Royale.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Battle_Royale.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1497A6E0721312EAE8ABA43B /* Pods-Battle Royale.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Battle Royale.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Battle Royale/Pods-Battle Royale.debug.xcconfig"; sourceTree = "<group>"; };
+		561A51861F853C800007DE6B /* TimeFilterToMapboxStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFilterToMapboxStyle.swift; sourceTree = "<group>"; };
 		5620B9D41F76222700C1936D /* TapHideButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapHideButtonExtension.swift; sourceTree = "<group>"; };
 		5620B9D61F7633EE00C1936D /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		5620B9D91F775E7D00C1936D /* Page1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page1ViewController.swift; sourceTree = "<group>"; };
@@ -233,6 +235,7 @@
 				5665C41D1F6B7C8600C49FE2 /* MapUISetupExtension.swift */,
 				5620B9D41F76222700C1936D /* TapHideButtonExtension.swift */,
 				5620B9E21F78150F00C1936D /* DLImageExtension.swift */,
+				561A51861F853C800007DE6B /* TimeFilterToMapboxStyle.swift */,
 				5665C4171F6AAC5F00C49FE2 /* TimerExtension.swift */,
 				567432B61F7820DA00E97632 /* CustomAnnotationModels.swift */,
 				5665C41B1F6AD1C000C49FE2 /* Struct.swift */,
@@ -469,6 +472,7 @@
 				5665C4181F6AAC5F00C49FE2 /* TimerExtension.swift in Sources */,
 				567432B71F7820DA00E97632 /* CustomAnnotationModels.swift in Sources */,
 				567B6D271F66644100E849D4 /* (null) in Sources */,
+				561A51871F853C800007DE6B /* TimeFilterToMapboxStyle.swift in Sources */,
 				C05ACC211F5FC4030082B0E2 /* MapViewController.swift in Sources */,
 				567B6D391F681DF300E849D4 /* TutorialTableViewController.swift in Sources */,
 				5665C4161F6A9CE900C49FE2 /* AfterFetchDataExtension.swift in Sources */,

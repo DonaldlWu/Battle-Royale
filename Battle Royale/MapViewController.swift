@@ -147,8 +147,8 @@ class MapViewController: UIViewController {
         //        runLocationUpdateTimer(with: 2)
         
 //         mapView setup
-        let url = URL(string: "mapbox://styles/vince9458/cj7j8jyhv6afo2rnitqd3xnmq")
-        self.mapView = MGLMapView(frame: view.bounds, styleURL: url)
+        
+        self.mapView = timeFilterMapboxStyleImport()
         mapView.translatesAutoresizingMaskIntoConstraints = false
         
         mapView.setCenter(CLLocationCoordinate2D(latitude: 25.021293, longitude: 121.538006), zoomLevel: 9, animated: false)
@@ -205,6 +205,13 @@ class MapViewController: UIViewController {
         
 
     }
+    override func viewDidAppear(_ animated: Bool) {
+        dayNightUIFilter()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        UIApplication.shared.statusBarStyle = .default
+    }
     
     @objc func startGame() {
         
@@ -223,7 +230,7 @@ class MapViewController: UIViewController {
     
     @objc func moveCameraToPlayer() {
         if let coord = currentLocation?.coordinate, let radius = mainPlayerRadius {
-            let camera = MGLMapCamera(lookingAtCenter: coord, fromDistance: CLLocationDistance(radius * 30), pitch: 0, heading: 0)
+            let camera = MGLMapCamera(lookingAtCenter: coord, fromDistance: CLLocationDistance(radius * 30), pitch: 45, heading: 0)
             
             // Animate the camera movement over 1 seconds.
             mapView.setCamera(camera, withDuration: 1, animationTimingFunction: CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut))
