@@ -70,14 +70,12 @@ extension MapViewController: MGLMapViewDelegate {
         
         
         let newsource = MGLShapeSource(identifier: "\(identifier)-\(number)", shapes: shapes, options: nil)
-//        scoreSourceStored = source
+
         let newlayer = MGLFillStyleLayer(identifier: "\(identifier)-\(number)", source: newsource)
         
         newlayer.sourceLayerIdentifier = "\(identifier)-\(number)"
         newlayer.fillColor = MGLStyleValue(rawValue: color)
-//        scoreLayerStored = layer
-        
-       
+
         style.addSource(newsource)
          if let building = style.layer(withIdentifier: "building") {
             // You can insert a layer below an existing style layer

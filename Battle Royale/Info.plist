@@ -15,7 +15,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.1.1</string>
+	<string>1.1.2</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -29,7 +29,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>3</string>
+	<string>4</string>
 	<key>FacebookAppID</key>
 	<string>1890485777835693</string>
 	<key>FacebookDisplayName</key>
@@ -48,9 +48,9 @@
 	<key>MGLMapboxMetricsEnabledSettingShownInApp</key>
 	<true/>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>確認存取您的位置</string>
+	<string>請保持定位服務開啟，讓”城市碰碰球“可以傳位置資訊至後台，處理與其他玩家互動訊息，並保證不會洩漏隱私資訊。</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>確認存取您的位置</string>
+	<string>請保持定位服務開啟，讓”城市碰碰球“可以傳位置資訊至後台，處理與其他玩家互動訊息，並保證不會洩漏隱私資訊。</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>fetch</string>
