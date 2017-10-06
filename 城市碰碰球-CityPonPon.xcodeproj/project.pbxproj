@@ -82,7 +82,7 @@
 		56D536051F69277200F4B492 /* PasswordsLoginExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordsLoginExtension.swift; sourceTree = "<group>"; };
 		56D536071F69717400F4B492 /* FBLoginDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBLoginDelegate.swift; sourceTree = "<group>"; };
 		56DA68FD1F87387B0049763F /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		C05ACC1B1F5FC4030082B0E2 /* 城市碰碰球(CityPonPon).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "城市碰碰球(CityPonPon).app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C05ACC1B1F5FC4030082B0E2 /* 城市碰碰球-CityPonPon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "城市碰碰球-CityPonPon.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C05ACC1E1F5FC4030082B0E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C05ACC201F5FC4030082B0E2 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		C05ACC231F5FC4030082B0E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -90,7 +90,7 @@
 		C05ACC281F5FC4030082B0E2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C05ACC2B1F5FC4030082B0E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C05ACC2D1F5FC4030082B0E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C05ACC321F5FC4030082B0E2 /* 城市碰碰球(CityPonPon)Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "城市碰碰球(CityPonPon)Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C05ACC321F5FC4030082B0E2 /* 城市碰碰球-CityPonPonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "城市碰碰球-CityPonPonTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C05ACC361F5FC4030082B0E2 /* Battle_RoyaleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Battle_RoyaleTests.swift; sourceTree = "<group>"; };
 		C05ACC381F5FC4030082B0E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C064D5BB1F5FCC4700FF763A /* MapViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewControllerExtension.swift; sourceTree = "<group>"; };
@@ -191,8 +191,8 @@
 		C05ACC1C1F5FC4030082B0E2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C05ACC1B1F5FC4030082B0E2 /* 城市碰碰球(CityPonPon).app */,
-				C05ACC321F5FC4030082B0E2 /* 城市碰碰球(CityPonPon)Tests.xctest */,
+				C05ACC1B1F5FC4030082B0E2 /* 城市碰碰球-CityPonPon.app */,
+				C05ACC321F5FC4030082B0E2 /* 城市碰碰球-CityPonPonTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -255,9 +255,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C05ACC1A1F5FC4030082B0E2 /* 城市碰碰球(CityPonPon) */ = {
+		C05ACC1A1F5FC4030082B0E2 /* 城市碰碰球-CityPonPon */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C05ACC3B1F5FC4030082B0E2 /* Build configuration list for PBXNativeTarget "城市碰碰球(CityPonPon)" */;
+			buildConfigurationList = C05ACC3B1F5FC4030082B0E2 /* Build configuration list for PBXNativeTarget "城市碰碰球-CityPonPon" */;
 			buildPhases = (
 				EC5A1C3144BF8C44BE616F6D /* [CP] Check Pods Manifest.lock */,
 				C05ACC171F5FC4030082B0E2 /* Sources */,
@@ -270,14 +270,14 @@
 			);
 			dependencies = (
 			);
-			name = "城市碰碰球(CityPonPon)";
+			name = "城市碰碰球-CityPonPon";
 			productName = "Battle Royale";
-			productReference = C05ACC1B1F5FC4030082B0E2 /* 城市碰碰球(CityPonPon).app */;
+			productReference = C05ACC1B1F5FC4030082B0E2 /* 城市碰碰球-CityPonPon.app */;
 			productType = "com.apple.product-type.application";
 		};
-		C05ACC311F5FC4030082B0E2 /* 城市碰碰球(CityPonPon)Tests */ = {
+		C05ACC311F5FC4030082B0E2 /* 城市碰碰球-CityPonPonTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C05ACC3E1F5FC4030082B0E2 /* Build configuration list for PBXNativeTarget "城市碰碰球(CityPonPon)Tests" */;
+			buildConfigurationList = C05ACC3E1F5FC4030082B0E2 /* Build configuration list for PBXNativeTarget "城市碰碰球-CityPonPonTests" */;
 			buildPhases = (
 				C05ACC2E1F5FC4030082B0E2 /* Sources */,
 				C05ACC2F1F5FC4030082B0E2 /* Frameworks */,
@@ -288,9 +288,9 @@
 			dependencies = (
 				C05ACC341F5FC4030082B0E2 /* PBXTargetDependency */,
 			);
-			name = "城市碰碰球(CityPonPon)Tests";
+			name = "城市碰碰球-CityPonPonTests";
 			productName = "Battle RoyaleTests";
-			productReference = C05ACC321F5FC4030082B0E2 /* 城市碰碰球(CityPonPon)Tests.xctest */;
+			productReference = C05ACC321F5FC4030082B0E2 /* 城市碰碰球-CityPonPonTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -325,7 +325,7 @@
 					};
 				};
 			};
-			buildConfigurationList = C05ACC161F5FC4030082B0E2 /* Build configuration list for PBXProject "城市碰碰球(CityPonPon)" */;
+			buildConfigurationList = C05ACC161F5FC4030082B0E2 /* Build configuration list for PBXProject "城市碰碰球-CityPonPon" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -338,8 +338,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C05ACC1A1F5FC4030082B0E2 /* 城市碰碰球(CityPonPon) */,
-				C05ACC311F5FC4030082B0E2 /* 城市碰碰球(CityPonPon)Tests */,
+				C05ACC1A1F5FC4030082B0E2 /* 城市碰碰球-CityPonPon */,
+				C05ACC311F5FC4030082B0E2 /* 城市碰碰球-CityPonPonTests */,
 			);
 		};
 /* End PBXProject section */
@@ -501,7 +501,7 @@
 /* Begin PBXTargetDependency section */
 		C05ACC341F5FC4030082B0E2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = C05ACC1A1F5FC4030082B0E2 /* 城市碰碰球(CityPonPon) */;
+			target = C05ACC1A1F5FC4030082B0E2 /* 城市碰碰球-CityPonPon */;
 			targetProxy = C05ACC331F5FC4030082B0E2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -682,7 +682,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/城市碰碰球(CityPonPon).app/城市碰碰球(CityPonPon)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/城市碰碰球-CityPonPon.app/城市碰碰球-CityPonPon";
 			};
 			name = Debug;
 		};
@@ -699,14 +699,14 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/城市碰碰球(CityPonPon).app/城市碰碰球(CityPonPon)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/城市碰碰球-CityPonPon.app/城市碰碰球-CityPonPon";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C05ACC161F5FC4030082B0E2 /* Build configuration list for PBXProject "城市碰碰球(CityPonPon)" */ = {
+		C05ACC161F5FC4030082B0E2 /* Build configuration list for PBXProject "城市碰碰球-CityPonPon" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C05ACC391F5FC4030082B0E2 /* Debug */,
@@ -715,7 +715,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C05ACC3B1F5FC4030082B0E2 /* Build configuration list for PBXNativeTarget "城市碰碰球(CityPonPon)" */ = {
+		C05ACC3B1F5FC4030082B0E2 /* Build configuration list for PBXNativeTarget "城市碰碰球-CityPonPon" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C05ACC3C1F5FC4030082B0E2 /* Debug */,
@@ -724,7 +724,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C05ACC3E1F5FC4030082B0E2 /* Build configuration list for PBXNativeTarget "城市碰碰球(CityPonPon)Tests" */ = {
+		C05ACC3E1F5FC4030082B0E2 /* Build configuration list for PBXNativeTarget "城市碰碰球-CityPonPonTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C05ACC3F1F5FC4030082B0E2 /* Debug */,

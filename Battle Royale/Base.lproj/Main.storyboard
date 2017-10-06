@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nSw-bN-rlq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13526" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nSw-bN-rlq">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13524"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -15,7 +15,7 @@
         <!--地圖-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MapViewController" customModule="Battle_Royale" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MapViewController" customModule="城市碰碰球_CityPonPon_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -35,7 +35,7 @@
         <!--Login View Controller-->
         <scene sceneID="3T2-JE-uwL">
             <objects>
-                <viewController id="nSw-bN-rlq" customClass="LoginViewController" customModule="Battle_Royale" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="nSw-bN-rlq" customClass="LoginViewController" customModule="城市碰碰球_CityPonPon_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oAN-jb-3NY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -53,7 +53,7 @@
         <!--排名-->
         <scene sceneID="dHn-Vh-ujH">
             <objects>
-                <tableViewController id="20V-oR-PKv" customClass="RankTableViewController" customModule="Battle_Royale" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="20V-oR-PKv" customClass="RankTableViewController" customModule="城市碰碰球_CityPonPon_" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="hpe-aT-3i1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -75,7 +75,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9QM-XZ-lOf">
-                                            <rect key="frame" x="316" y="12" width="44" height="20.5"/>
+                                            <rect key="frame" x="315" y="12" width="44" height="20.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -103,7 +103,7 @@
         <!--Tutorial Table View Controller-->
         <scene sceneID="1Q1-IW-lbj">
             <objects>
-                <tableViewController storyboardIdentifier="TutorialTableView" id="cCL-b0-cv6" customClass="TutorialTableViewController" customModule="Battle_Royale" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="TutorialTableView" id="cCL-b0-cv6" customClass="TutorialTableViewController" customModule="城市碰碰球_CityPonPon_" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="PXM-dQ-zFM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -597,9 +597,9 @@ Any of the information we collect from you may be used to  personalize your expe
                                                                     </attributes>
                                                                 </fragment>
                                                                 <fragment>
-                                                                    <mutableString key="content"> run and operate our Mobile Application and Services. Non-personal information collected is used only to identify potential cases of abuse and establish statistical information regarding Mobile Application traffic and usage. This statistical information is not otherwise aggregated in such a way that would identify any particular user of the system.
+                                                                    <string key="content"> run and operate our Mobile Application and Services. Non-personal information collected is used only to identify potential cases of abuse and establish statistical information regarding Mobile Application traffic and usage. This statistical information is not otherwise aggregated in such a way that would identify any particular user of the system.
 
-</mutableString>
+</string>
                                                                     <attributes>
                                                                         <font key="NSFont" metaFont="system" size="14"/>
                                                                     </attributes>
@@ -624,7 +624,7 @@ We do not knowingly collect any personal information from children under the age
                                                                     </attributes>
                                                                 </fragment>
                                                                 <fragment>
-                                                                    <mutableString key="content"> please do not submit any personal information through our Mobile Application or Service. We encourage parents and legal guardians to monitor their children's Internet usage and to help enforce this Policy by instructing their children never to provide personal information through our Mobile Application or Service without their permission. If you have reason to believe that a child under the age of 13 has provided personal information to us through our Mobile Application or Service</mutableString>
+                                                                    <string key="content"> please do not submit any personal information through our Mobile Application or Service. We encourage parents and legal guardians to monitor their children's Internet usage and to help enforce this Policy by instructing their children never to provide personal information through our Mobile Application or Service without their permission. If you have reason to believe that a child under the age of 13 has provided personal information to us through our Mobile Application or Service</string>
                                                                     <attributes>
                                                                         <font key="NSFont" metaFont="system" size="14"/>
                                                                     </attributes>
@@ -649,11 +649,11 @@ We do not knowingly collect any personal information from children under the age
                                                                     </attributes>
                                                                 </fragment>
                                                                 <fragment>
-                                                                    <mutableString key="content">
+                                                                    <string key="content">
 
 We offer electronic newsletters to which you may voluntarily subscribe at any time. You may choose to stop receiving our newsletter or marketing emails by following the unsubscribe instructions included in these emails or by contacting us. However you will continue to receive essential transactional emails.
 
-</mutableString>
+</string>
                                                                     <attributes>
                                                                         <font key="NSFont" metaFont="system" size="14"/>
                                                                     </attributes>
@@ -665,9 +665,9 @@ We offer electronic newsletters to which you may voluntarily subscribe at any ti
                                                                     </attributes>
                                                                 </fragment>
                                                                 <fragment>
-                                                                    <mutableString key="content">
+                                                                    <string key="content">
 
-We may display online advertisements and we may share aggregated and non-identifying information about our customers that we collect through the registration process or through online surveys and promotions with certain advertisers. We do not share personally identifiable information about individual customers with advertisers. In some instances</mutableString>
+We may display online advertisements and we may share aggregated and non-identifying information about our customers that we collect through the registration process or through online surveys and promotions with certain advertisers. We do not share personally identifiable information about individual customers with advertisers. In some instances</string>
                                                                     <attributes>
                                                                         <font key="NSFont" metaFont="system" size="14"/>
                                                                     </attributes>
@@ -692,11 +692,11 @@ We may display online advertisements and we may share aggregated and non-identif
                                                                     </attributes>
                                                                 </fragment>
                                                                 <fragment>
-                                                                    <mutableString key="content">
+                                                                    <string key="content">
 
 Our Mobile Application contains links to other mobile applications that are not owned or controlled by us. Please be aware that we are not responsible for the privacy practices of such other mobile applications or third parties. We encourage you to be aware when you leave our Mobile Application and to read the privacy statements of each and every mobile application that may collect personal information.
 
-</mutableString>
+</string>
                                                                     <attributes>
                                                                         <font key="NSFont" metaFont="system" size="14"/>
                                                                     </attributes>
@@ -1122,9 +1122,9 @@ We reserve the right to modify this privacy policy relating to the Mobile Applic
                                                                     </attributes>
                                                                 </fragment>
                                                                 <fragment>
-                                                                    <mutableString key="content"> effective upon posting of an updated version of this Policy in the Mobile Application. When we do we will  revise the updated date at the bottom of this page. Continued use of the Mobile Application after any such changes shall constitute your consent to such changes. Policy was created with https://www.WebsitePolicies.com
+                                                                    <string key="content"> effective upon posting of an updated version of this Policy in the Mobile Application. When we do we will  revise the updated date at the bottom of this page. Continued use of the Mobile Application after any such changes shall constitute your consent to such changes. Policy was created with https://www.WebsitePolicies.com
 
-</mutableString>
+</string>
                                                                     <attributes>
                                                                         <font key="NSFont" metaFont="system" size="14"/>
                                                                     </attributes>
@@ -1239,7 +1239,7 @@ If you have any questions about this Policy</string>
                         <outlet property="pageControl" destination="eJF-cR-JWG" id="dFn-bO-Ede"/>
                         <outlet property="playButton" destination="fds-ce-J8I" id="joy-Ae-FaD"/>
                         <outlet property="playerImageView" destination="eeI-gv-hG4" id="0B5-BG-BYK"/>
-                        <outlet property="privatePolicyView" destination="wuL-Dp-PoR" id="DzL-2b-1MO"/>
+                        <outlet property="privacyPolicyView" destination="wuL-Dp-PoR" id="qgS-ma-XSc"/>
                         <segue destination="G7n-uG-w1E" kind="show" identifier="TutorialToTabBarSegue" id="R7K-hD-XgQ"/>
                     </connections>
                 </tableViewController>
@@ -1250,7 +1250,7 @@ If you have any questions about this Policy</string>
         <!--Page View Controller-->
         <scene sceneID="d3K-ca-Nqy">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="QrS-c9-co6" customClass="PageViewController" customModule="Battle_Royale" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="QrS-c9-co6" customClass="PageViewController" customModule="城市碰碰球_CityPonPon_" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zGC-8f-2sX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2502" y="1183"/>
@@ -1258,7 +1258,7 @@ If you have any questions about this Policy</string>
         <!--Page1 View Controller-->
         <scene sceneID="jj8-8O-s69">
             <objects>
-                <viewController storyboardIdentifier="Page1" id="xgu-SL-gRU" customClass="Page1ViewController" customModule="Battle_Royale" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Page1" id="xgu-SL-gRU" customClass="Page1ViewController" customModule="城市碰碰球_CityPonPon_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Hhy-L4-A49">
                         <rect key="frame" x="0.0" y="0.0" width="335" height="420"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1285,7 +1285,7 @@ If you have any questions about this Policy</string>
         <!--Tab Bar Controller-->
         <scene sceneID="hNP-j2-qcB">
             <objects>
-                <tabBarController storyboardIdentifier="TabBarController" automaticallyAdjustsScrollViewInsets="NO" id="G7n-uG-w1E" customClass="TabBarController" customModule="Battle_Royale" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarController" automaticallyAdjustsScrollViewInsets="NO" id="G7n-uG-w1E" customClass="TabBarController" customModule="城市碰碰球_CityPonPon_" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" tag="1" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="pQN-US-RkL">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -1327,7 +1327,7 @@ If you have any questions about this Policy</string>
         <!--Page2 View Controller-->
         <scene sceneID="U0F-3G-aud">
             <objects>
-                <viewController storyboardIdentifier="Page2" id="td5-qK-rni" customClass="Page2ViewController" customModule="Battle_Royale" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Page2" id="td5-qK-rni" customClass="Page2ViewController" customModule="城市碰碰球_CityPonPon_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tiK-5h-PTk">
                         <rect key="frame" x="0.0" y="0.0" width="335" height="420"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1354,7 +1354,7 @@ If you have any questions about this Policy</string>
         <!--Page3 View Controller-->
         <scene sceneID="XY7-oy-eRI">
             <objects>
-                <viewController storyboardIdentifier="Page3" id="tiB-Uv-arU" customClass="Page3ViewController" customModule="Battle_Royale" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Page3" id="tiB-Uv-arU" customClass="Page3ViewController" customModule="城市碰碰球_CityPonPon_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aVw-mh-C7n">
                         <rect key="frame" x="0.0" y="0.0" width="335" height="420"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
