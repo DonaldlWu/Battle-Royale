@@ -13,6 +13,7 @@ struct PropertKeys {
     static let navigationControllerOfMapView = "NavigationControllerOfMapView"
     static let tabBarController = "TabBarController"
     static let rankCell = "rankCell"
+    static let selfRankCell = "selfRankCell"
     static let tutorialTableView = "TutorialTableView"
     static let unwindToLogin = "UnwindToLogin"
     static let loginToTutorialSegue = "LoginToTutorialSegue"

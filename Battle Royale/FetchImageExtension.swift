@@ -32,7 +32,7 @@ extension TutorialTableViewController {
         let storageRef = storage.reference()
         let uid = Auth.auth().currentUser?.uid
         let userProfilePic = storageRef.child("images/\(uid!).jpg")
-        if let image = playerImage, let data = UIImageJPEGRepresentation(image, 1), Auth.auth().currentUser?.photoURL != nil {
+        if let image = playerImage, let data = UIImageJPEGRepresentation(image, 1), let imageURL =  Auth.auth().currentUser?.photoURL {
             
             let uploadTask = userProfilePic.putData(data, metadata: nil) { (metadata, error) in
                 guard let metadata = metadata else {
@@ -41,6 +41,9 @@ extension TutorialTableViewController {
                 }
                 // Metadata contains file metadata such as size, content-type, and download URL.
                 let downloadURL = metadata.downloadURL
+                self.ref?.child("users").child(uid!).child("image").setValue("\(imageURL)")
+                
+                
             }
             
         }

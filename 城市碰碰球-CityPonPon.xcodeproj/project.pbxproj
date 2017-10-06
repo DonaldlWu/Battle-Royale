@@ -29,6 +29,7 @@
 		567B6D331F6695DF00E849D4 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567B6D311F6695DF00E849D4 /* TabBarController.swift */; };
 		567B6D391F681DF300E849D4 /* TutorialTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567B6D381F681DF300E849D4 /* TutorialTableViewController.swift */; };
 		567B6D3D1F68503C00E849D4 /* GoogleLoginDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567B6D3C1F68503C00E849D4 /* GoogleLoginDelegate.swift */; };
+		56B1278C1F87EA8200DF05D9 /* RankTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B1278B1F87EA8200DF05D9 /* RankTableViewCell.swift */; };
 		56BC313B1F62A1B80036B97B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BC313A1F62A1B80036B97B /* LoginViewController.swift */; };
 		56BC31421F630C440036B97B /* PropertyKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BC31411F630C440036B97B /* PropertyKeys.swift */; };
 		56D536061F69277200F4B492 /* PasswordsLoginExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D536051F69277200F4B492 /* PasswordsLoginExtension.swift */; };
@@ -76,6 +77,7 @@
 		567B6D311F6695DF00E849D4 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		567B6D381F681DF300E849D4 /* TutorialTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialTableViewController.swift; sourceTree = "<group>"; };
 		567B6D3C1F68503C00E849D4 /* GoogleLoginDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleLoginDelegate.swift; sourceTree = "<group>"; };
+		56B1278B1F87EA8200DF05D9 /* RankTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankTableViewCell.swift; sourceTree = "<group>"; };
 		56BC313A1F62A1B80036B97B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		56BC31411F630C440036B97B /* PropertyKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyKeys.swift; sourceTree = "<group>"; };
 		56C3DC8C1F837DB7001CBF6C /* Battle Royale.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Battle Royale.entitlements"; sourceTree = "<group>"; };
@@ -129,8 +131,9 @@
 		5620B9D31F73806100C1936D /* Rank */ = {
 			isa = PBXGroup;
 			children = (
-				567B6D301F6695DF00E849D4 /* PlayerInfo.swift */,
 				567B6D2E1F6695CA00E849D4 /* RankTableViewController.swift */,
+				56B1278B1F87EA8200DF05D9 /* RankTableViewCell.swift */,
+				567B6D301F6695DF00E849D4 /* PlayerInfo.swift */,
 			);
 			name = Rank;
 			sourceTree = "<group>";
@@ -475,6 +478,7 @@
 				561A51871F853C800007DE6B /* TimeFilterToMapboxStyle.swift in Sources */,
 				C05ACC211F5FC4030082B0E2 /* MapViewController.swift in Sources */,
 				567B6D391F681DF300E849D4 /* TutorialTableViewController.swift in Sources */,
+				56B1278C1F87EA8200DF05D9 /* RankTableViewCell.swift in Sources */,
 				5665C4161F6A9CE900C49FE2 /* AfterFetchDataExtension.swift in Sources */,
 				5620B9D71F7633EE00C1936D /* PageViewController.swift in Sources */,
 				C05ACC271F5FC4030082B0E2 /* Battle_Royale.xcdatamodeld in Sources */,

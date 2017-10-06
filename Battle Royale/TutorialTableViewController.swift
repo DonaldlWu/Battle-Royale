@@ -34,7 +34,7 @@ class TutorialTableViewController: UITableViewController {
     
     @IBAction func playButtonPressed(_ sender: Any) {
         
-        if (nameTextField.text?.characters.count)! >= 3 {
+        if (nameTextField.text?.characters.count)! >= 3 && (nameTextField.text?.characters.count)! <= 12 {
             ref = Database.database().reference()
             if let user = Auth.auth().currentUser {
                 ref?.child("users").child(user.uid).updateChildValues(["username" : nameTextField.text!])
@@ -79,7 +79,7 @@ class TutorialTableViewController: UITableViewController {
     
     func nameTooShort() {
         let retryAction = UIAlertAction(title: "再試一次", style: .cancel, handler: nil)
-        let alertController = UIAlertController(title: "Error", message: "名字要三個字以上喔", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Error", message: "名字要3個字以上，12個字以下喔", preferredStyle: .alert)
         
         alertController.addAction(retryAction)
         present(alertController, animated: true, completion: nil)

@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13524"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -15,7 +16,7 @@
         <!--地圖-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MapViewController" customModule="城市碰碰球_CityPonPon_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MapViewController" customModule="城市碰碰球_CityPonPon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -35,7 +36,7 @@
         <!--Login View Controller-->
         <scene sceneID="3T2-JE-uwL">
             <objects>
-                <viewController id="nSw-bN-rlq" customClass="LoginViewController" customModule="城市碰碰球_CityPonPon_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="nSw-bN-rlq" customClass="LoginViewController" customModule="城市碰碰球_CityPonPon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oAN-jb-3NY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -53,36 +54,64 @@
         <!--排名-->
         <scene sceneID="dHn-Vh-ujH">
             <objects>
-                <tableViewController id="20V-oR-PKv" customClass="RankTableViewController" customModule="城市碰碰球_CityPonPon_" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="20V-oR-PKv" customClass="RankTableViewController" customModule="城市碰碰球_CityPonPon" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="hpe-aT-3i1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" red="0.85481059550000005" green="0.29669573900000001" blue="0.1804287285" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="rankCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="rankCell" textLabel="1is-3c-Thf" detailTextLabel="9QM-XZ-lOf" style="IBUITableViewCellStyleValue1" id="qiX-sT-mUj">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="rankCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="rankCell" rowHeight="100" id="qiX-sT-mUj" customClass="RankTableViewCell" customModule="城市碰碰球_CityPonPon" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qiX-sT-mUj" id="uvj-DV-sq3">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1is-3c-Thf">
-                                            <rect key="frame" x="16" y="12" width="33.5" height="20.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Bf-t4-qGl">
+                                            <rect key="frame" x="29" y="32" width="14" height="36"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xd6-5A-CYt">
+                                            <rect key="frame" x="162" y="50" width="123.5" height="0.0"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9QM-XZ-lOf">
-                                            <rect key="frame" x="315" y="12" width="44" height="20.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O8n-Ro-9gM">
+                                            <rect key="frame" x="305.5" y="35" width="59.5" height="30"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rwH-vY-1Yo">
+                                            <rect key="frame" x="70" y="14" width="72" height="72"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="72" id="Yps-NU-wrR"/>
+                                                <constraint firstAttribute="height" constant="72" id="gsf-Zp-NcE"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="O8n-Ro-9gM" secondAttribute="centerX" constant="40" id="38F-LP-RXC"/>
+                                        <constraint firstItem="rwH-vY-1Yo" firstAttribute="centerY" secondItem="uvj-DV-sq3" secondAttribute="centerY" id="8ir-Ge-UPG"/>
+                                        <constraint firstItem="Xd6-5A-CYt" firstAttribute="centerY" secondItem="uvj-DV-sq3" secondAttribute="centerY" id="LyD-SN-I5C"/>
+                                        <constraint firstItem="9Bf-t4-qGl" firstAttribute="centerX" secondItem="uvj-DV-sq3" secondAttribute="leadingMargin" constant="20" id="QKM-Ib-FWq"/>
+                                        <constraint firstItem="rwH-vY-1Yo" firstAttribute="leading" secondItem="uvj-DV-sq3" secondAttribute="leading" constant="70" id="VdU-jx-929"/>
+                                        <constraint firstItem="Xd6-5A-CYt" firstAttribute="leading" secondItem="rwH-vY-1Yo" secondAttribute="trailing" constant="20" id="chH-uO-rZy"/>
+                                        <constraint firstItem="9Bf-t4-qGl" firstAttribute="centerY" secondItem="uvj-DV-sq3" secondAttribute="centerY" id="eH8-Xp-jWg"/>
+                                        <constraint firstItem="O8n-Ro-9gM" firstAttribute="centerY" secondItem="uvj-DV-sq3" secondAttribute="centerY" id="ev1-12-ojd"/>
+                                        <constraint firstItem="O8n-Ro-9gM" firstAttribute="leading" secondItem="Xd6-5A-CYt" secondAttribute="trailing" constant="20" id="g4a-kV-6dM"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="nameLabel" destination="Xd6-5A-CYt" id="LQj-8k-dVa"/>
+                                    <outlet property="playerImage" destination="rwH-vY-1Yo" id="1Il-Vv-wrH"/>
+                                    <outlet property="rankLabel" destination="9Bf-t4-qGl" id="qGS-Fp-slm"/>
+                                    <outlet property="scoreLabel" destination="O8n-Ro-9gM" id="v04-Ul-BEm"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -98,12 +127,12 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="etH-wC-7cN" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="nqW-5r-FbL" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="594" y="796"/>
+            <point key="canvasLocation" x="592.79999999999995" y="795.6521739130435"/>
         </scene>
         <!--Tutorial Table View Controller-->
         <scene sceneID="1Q1-IW-lbj">
             <objects>
-                <tableViewController storyboardIdentifier="TutorialTableView" id="cCL-b0-cv6" customClass="TutorialTableViewController" customModule="城市碰碰球_CityPonPon_" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="TutorialTableView" id="cCL-b0-cv6" customClass="TutorialTableViewController" customModule="城市碰碰球_CityPonPon" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="PXM-dQ-zFM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1250,7 +1279,7 @@ If you have any questions about this Policy</string>
         <!--Page View Controller-->
         <scene sceneID="d3K-ca-Nqy">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="QrS-c9-co6" customClass="PageViewController" customModule="城市碰碰球_CityPonPon_" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="QrS-c9-co6" customClass="PageViewController" customModule="城市碰碰球_CityPonPon" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zGC-8f-2sX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2502" y="1183"/>
@@ -1258,7 +1287,7 @@ If you have any questions about this Policy</string>
         <!--Page1 View Controller-->
         <scene sceneID="jj8-8O-s69">
             <objects>
-                <viewController storyboardIdentifier="Page1" id="xgu-SL-gRU" customClass="Page1ViewController" customModule="城市碰碰球_CityPonPon_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Page1" id="xgu-SL-gRU" customClass="Page1ViewController" customModule="城市碰碰球_CityPonPon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Hhy-L4-A49">
                         <rect key="frame" x="0.0" y="0.0" width="335" height="420"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1285,7 +1314,7 @@ If you have any questions about this Policy</string>
         <!--Tab Bar Controller-->
         <scene sceneID="hNP-j2-qcB">
             <objects>
-                <tabBarController storyboardIdentifier="TabBarController" automaticallyAdjustsScrollViewInsets="NO" id="G7n-uG-w1E" customClass="TabBarController" customModule="城市碰碰球_CityPonPon_" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarController" automaticallyAdjustsScrollViewInsets="NO" id="G7n-uG-w1E" customClass="TabBarController" customModule="城市碰碰球_CityPonPon" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" tag="1" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="pQN-US-RkL">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -1327,7 +1356,7 @@ If you have any questions about this Policy</string>
         <!--Page2 View Controller-->
         <scene sceneID="U0F-3G-aud">
             <objects>
-                <viewController storyboardIdentifier="Page2" id="td5-qK-rni" customClass="Page2ViewController" customModule="城市碰碰球_CityPonPon_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Page2" id="td5-qK-rni" customClass="Page2ViewController" customModule="城市碰碰球_CityPonPon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tiK-5h-PTk">
                         <rect key="frame" x="0.0" y="0.0" width="335" height="420"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1354,7 +1383,7 @@ If you have any questions about this Policy</string>
         <!--Page3 View Controller-->
         <scene sceneID="XY7-oy-eRI">
             <objects>
-                <viewController storyboardIdentifier="Page3" id="tiB-Uv-arU" customClass="Page3ViewController" customModule="城市碰碰球_CityPonPon_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Page3" id="tiB-Uv-arU" customClass="Page3ViewController" customModule="城市碰碰球_CityPonPon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aVw-mh-C7n">
                         <rect key="frame" x="0.0" y="0.0" width="335" height="420"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
