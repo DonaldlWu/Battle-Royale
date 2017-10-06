@@ -24,7 +24,7 @@ extension MapViewController {
         mapView.isHidden = true
         
         mapView.addSubview(button)
-        NSLayoutConstraint(item: button, attribute: .bottom, relatedBy: .equal, toItem: mapView, attribute: .bottom, multiplier: 0.9, constant: 0).isActive = true
+        NSLayoutConstraint(item: button, attribute: .bottom, relatedBy: .equal, toItem: bottomLayoutGuide, attribute: .top, multiplier: 1, constant: -15).isActive = true
         NSLayoutConstraint(item: button, attribute: .leading, relatedBy: .equal, toItem: mapView, attribute: .trailing, multiplier: 0.3, constant: 0).isActive = true
         NSLayoutConstraint(item: button, attribute: .trailing, relatedBy: .equal, toItem: mapView, attribute: .trailing, multiplier: 0.7, constant: 0).isActive = true
         button.heightAnchor.constraint(equalToConstant: 50).isActive = true

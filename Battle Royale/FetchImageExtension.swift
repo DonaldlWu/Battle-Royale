@@ -14,15 +14,17 @@ extension TutorialTableViewController {
     
     func fetchUserImage(completion: @escaping (UIImage?) -> ()) {
         if let photoURL = Auth.auth().currentUser?.photoURL {
-        let task = URLSession.shared.dataTask(with: photoURL) { (data, response , error) in
-            if let data = data, let image = UIImage(data: data) {
-                completion(image)
+            let task = URLSession.shared.dataTask(with: photoURL) { (data, response , error) in
+                if let data = data, let image = UIImage(data: data) {
+                    completion(image)
+                }
+                else {
+                    completion(#imageLiteral(resourceName: "Unknown"))
+                }
             }
-            else {
-                completion(nil)
-            }
-        }
-        task.resume()
+            task.resume()
+        } else {
+            completion(#imageLiteral(resourceName: "Unknown"))
         }
     }
     
@@ -30,8 +32,7 @@ extension TutorialTableViewController {
         let storageRef = storage.reference()
         let uid = Auth.auth().currentUser?.uid
         let userProfilePic = storageRef.child("images/\(uid!).jpg")
-        if let image = playerImage {
-        if let data = UIImageJPEGRepresentation(image, 1) {
+        if let image = playerImage, let data = UIImageJPEGRepresentation(image, 1), Auth.auth().currentUser?.photoURL != nil {
             
             let uploadTask = userProfilePic.putData(data, metadata: nil) { (metadata, error) in
                 guard let metadata = metadata else {
@@ -41,7 +42,7 @@ extension TutorialTableViewController {
                 // Metadata contains file metadata such as size, content-type, and download URL.
                 let downloadURL = metadata.downloadURL
             }
-        }
+            
         }
     }
     

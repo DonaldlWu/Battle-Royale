@@ -18,6 +18,7 @@ class TutorialTableViewController: UITableViewController {
     var playerImage: UIImage?
     let storage = Storage.storage()
     
+    @IBOutlet weak var privacyPolicyView: UIView!
     
     @IBOutlet weak var playerImageView: UIImageView!
     @IBOutlet weak var nameTextField: UITextField!
@@ -50,6 +51,10 @@ class TutorialTableViewController: UITableViewController {
         if let displayName = Auth.auth().currentUser?.displayName {
             nameTextField.text = displayName
         }
+        
+        privacyPolicyView.layer.borderWidth = 1
+        privacyPolicyView.layer.cornerRadius = 5
+        
         nameTextField.layer.masksToBounds = true
         nameTextField.textAlignment = .center
         playButton.layer.cornerRadius = 10

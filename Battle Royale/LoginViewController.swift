@@ -69,6 +69,7 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
         textfield.translatesAutoresizingMaskIntoConstraints = false
         textfield.placeholder = "帳號"
         textfield.borderStyle = .roundedRect
+        textfield.autocorrectionType = .no
         return textfield
      }()
     let passwordsTextfield: UITextField = {
@@ -76,6 +77,7 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
         textfield.translatesAutoresizingMaskIntoConstraints = false
         textfield.placeholder = "密碼"
         textfield.borderStyle = .roundedRect
+        textfield.autocorrectionType = .no
         return textfield
     }()
     

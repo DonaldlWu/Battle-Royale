@@ -12,6 +12,8 @@
 	<string>6.0</string>
 	<key>CFBundleName</key>
 	<string>$(PRODUCT_NAME)</string>
+	<key>CFBundleDisplayName</key>
+	<string>城市碰碰球</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
@@ -33,7 +35,7 @@
 	<key>FacebookAppID</key>
 	<string>1890485777835693</string>
 	<key>FacebookDisplayName</key>
-	<string>Battle-Royale</string>
+	<string>城市碰碰球(CityPonPon)</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>fbapi</string>
