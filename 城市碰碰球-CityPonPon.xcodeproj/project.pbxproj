@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		167A29D388D24EF4FDD4A809 /* Pods_Battle_Royale.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 064F06316B4D915CFE5313B2 /* Pods_Battle_Royale.framework */; };
 		561A51871F853C800007DE6B /* TimeFilterToMapboxStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561A51861F853C800007DE6B /* TimeFilterToMapboxStyle.swift */; };
 		5620B9D51F76222900C1936D /* TapHideButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5620B9D41F76222700C1936D /* TapHideButtonExtension.swift */; };
 		5620B9D71F7633EE00C1936D /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5620B9D61F7633EE00C1936D /* PageViewController.swift */; };
@@ -35,6 +34,7 @@
 		56D536061F69277200F4B492 /* PasswordsLoginExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D536051F69277200F4B492 /* PasswordsLoginExtension.swift */; };
 		56D536081F69717400F4B492 /* FBLoginDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D536071F69717400F4B492 /* FBLoginDelegate.swift */; };
 		56DA68FF1F87399C0049763F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 56DA68FD1F87387B0049763F /* GoogleService-Info.plist */; };
+		BFAB659647F5791637E488AC /* Pods_______CityPonPon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDA6253FA679A1899DED3469 /* Pods_______CityPonPon.framework */; };
 		C05ACC1F1F5FC4030082B0E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05ACC1E1F5FC4030082B0E2 /* AppDelegate.swift */; };
 		C05ACC211F5FC4030082B0E2 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05ACC201F5FC4030082B0E2 /* MapViewController.swift */; };
 		C05ACC241F5FC4030082B0E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C05ACC221F5FC4030082B0E2 /* Main.storyboard */; };
@@ -57,7 +57,7 @@
 
 /* Begin PBXFileReference section */
 		064F06316B4D915CFE5313B2 /* Pods_Battle_Royale.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Battle_Royale.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1497A6E0721312EAE8ABA43B /* Pods-Battle Royale.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Battle Royale.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Battle Royale/Pods-Battle Royale.debug.xcconfig"; sourceTree = "<group>"; };
+		1B633A2CE4ABCA01E08CA32A /* Pods-城市碰碰球-CityPonPon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-城市碰碰球-CityPonPon.release.xcconfig"; path = "Pods/Target Support Files/Pods-城市碰碰球-CityPonPon/Pods-城市碰碰球-CityPonPon.release.xcconfig"; sourceTree = "<group>"; };
 		561A51861F853C800007DE6B /* TimeFilterToMapboxStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFilterToMapboxStyle.swift; sourceTree = "<group>"; };
 		5620B9D41F76222700C1936D /* TapHideButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapHideButtonExtension.swift; sourceTree = "<group>"; };
 		5620B9D61F7633EE00C1936D /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
@@ -97,7 +97,8 @@
 		C05ACC381F5FC4030082B0E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C064D5BB1F5FCC4700FF763A /* MapViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewControllerExtension.swift; sourceTree = "<group>"; };
 		D5DB1C9D34CE9D3F2985761F /* Pods_Battle_RoyaleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Battle_RoyaleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		ED49B0456941629CF3A3050C /* Pods-Battle Royale.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Battle Royale.release.xcconfig"; path = "Pods/Target Support Files/Pods-Battle Royale/Pods-Battle Royale.release.xcconfig"; sourceTree = "<group>"; };
+		EC401596E98DEC7C20EC6E3B /* Pods-城市碰碰球-CityPonPon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-城市碰碰球-CityPonPon.debug.xcconfig"; path = "Pods/Target Support Files/Pods-城市碰碰球-CityPonPon/Pods-城市碰碰球-CityPonPon.debug.xcconfig"; sourceTree = "<group>"; };
+		FDA6253FA679A1899DED3469 /* Pods_______CityPonPon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_______CityPonPon.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,7 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				167A29D388D24EF4FDD4A809 /* Pods_Battle_Royale.framework in Frameworks */,
+				BFAB659647F5791637E488AC /* Pods_______CityPonPon.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,8 +123,8 @@
 		128CB357D2133B8DDBA1E0CD /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				1497A6E0721312EAE8ABA43B /* Pods-Battle Royale.debug.xcconfig */,
-				ED49B0456941629CF3A3050C /* Pods-Battle Royale.release.xcconfig */,
+				EC401596E98DEC7C20EC6E3B /* Pods-城市碰碰球-CityPonPon.debug.xcconfig */,
+				1B633A2CE4ABCA01E08CA32A /* Pods-城市碰碰球-CityPonPon.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -183,7 +184,7 @@
 		C05ACC121F5FC4030082B0E2 = {
 			isa = PBXGroup;
 			children = (
-				C05ACC1D1F5FC4030082B0E2 /* Battle Royale */,
+				C05ACC1D1F5FC4030082B0E2 /* 城市碰碰球-CityPonPon */,
 				C05ACC351F5FC4030082B0E2 /* Battle RoyaleTests */,
 				C05ACC1C1F5FC4030082B0E2 /* Products */,
 				128CB357D2133B8DDBA1E0CD /* Pods */,
@@ -200,7 +201,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C05ACC1D1F5FC4030082B0E2 /* Battle Royale */ = {
+		C05ACC1D1F5FC4030082B0E2 /* 城市碰碰球-CityPonPon */ = {
 			isa = PBXGroup;
 			children = (
 				56C3DC8C1F837DB7001CBF6C /* Battle Royale.entitlements */,
@@ -218,7 +219,7 @@
 				56DA68FD1F87387B0049763F /* GoogleService-Info.plist */,
 				C05ACC251F5FC4030082B0E2 /* Battle_Royale.xcdatamodeld */,
 			);
-			path = "Battle Royale";
+			path = "城市碰碰球-CityPonPon";
 			sourceTree = "<group>";
 		};
 		C05ACC351F5FC4030082B0E2 /* Battle RoyaleTests */ = {
@@ -251,6 +252,7 @@
 			children = (
 				064F06316B4D915CFE5313B2 /* Pods_Battle_Royale.framework */,
 				D5DB1C9D34CE9D3F2985761F /* Pods_Battle_RoyaleTests.framework */,
+				FDA6253FA679A1899DED3469 /* Pods_______CityPonPon.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -311,7 +313,7 @@
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
-								enabled = 1;
+								enabled = 0;
 							};
 							com.apple.Maps.iOS = {
 								enabled = 0;
@@ -375,7 +377,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Battle Royale/Pods-Battle Royale-resources.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-城市碰碰球-CityPonPon/Pods-城市碰碰球-CityPonPon-resources.sh",
 				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
 				"${PODS_ROOT}/GooglePlacePicker/Frameworks/GooglePlacePicker.framework/Resources/GooglePlacePicker.bundle",
 				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
@@ -387,7 +389,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Battle Royale/Pods-Battle Royale-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-城市碰碰球-CityPonPon/Pods-城市碰碰球-CityPonPon-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D65911645C216BA8306328D9 /* [CP] Embed Pods Frameworks */ = {
@@ -396,7 +398,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Battle Royale/Pods-Battle Royale-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-城市碰碰球-CityPonPon/Pods-城市碰碰球-CityPonPon-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
@@ -409,6 +411,7 @@
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${PODS_ROOT}/Mapbox-iOS-SDK/dynamic/Mapbox.framework",
 				"${PODS_ROOT}/Mapbox-iOS-SDK/dynamic/Mapbox.framework.dSYM",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -426,12 +429,13 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mapbox.framework",
 				"${DWARF_DSYM_FOLDER_PATH}/Mapbox.framework.dSYM",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Battle Royale/Pods-Battle Royale-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-城市碰碰球-CityPonPon/Pods-城市碰碰球-CityPonPon-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		EC5A1C3144BF8C44BE616F6D /* [CP] Check Pods Manifest.lock */ = {
@@ -445,7 +449,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Battle Royale-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-城市碰碰球-CityPonPon-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -639,12 +643,12 @@
 		};
 		C05ACC3C1F5FC4030082B0E2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1497A6E0721312EAE8ABA43B /* Pods-Battle Royale.debug.xcconfig */;
+			baseConfigurationReference = EC401596E98DEC7C20EC6E3B /* Pods-城市碰碰球-CityPonPon.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G9JF9YBU33;
-				INFOPLIST_FILE = "Battle Royale/Info.plist";
+				INFOPLIST_FILE = "城市碰碰球-CityPonPon/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.BattleRoyale.Battle-Royale";
@@ -657,12 +661,12 @@
 		};
 		C05ACC3D1F5FC4030082B0E2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ED49B0456941629CF3A3050C /* Pods-Battle Royale.release.xcconfig */;
+			baseConfigurationReference = 1B633A2CE4ABCA01E08CA32A /* Pods-城市碰碰球-CityPonPon.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G9JF9YBU33;
-				INFOPLIST_FILE = "Battle Royale/Info.plist";
+				INFOPLIST_FILE = "城市碰碰球-CityPonPon/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.BattleRoyale.Battle-Royale";

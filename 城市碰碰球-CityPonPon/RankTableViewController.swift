@@ -11,6 +11,7 @@ import Firebase
 import GoogleSignIn
 import FBSDKLoginKit
 import FirebaseStorage
+import SDWebImage
 
 class RankTableViewController: UITableViewController {
     
@@ -103,7 +104,7 @@ class RankTableViewController: UITableViewController {
         cell.nameLabel?.text = player.username
         cell.scoreLabel.text = String(describing: player.score!)
         cell.rankLabel.text = String(describing: indexPath.row + 1)
-        cell.playerImage.image = player.image
+        cell.playerImage.sd_setImage(with: player.imageURL, placeholderImage: #imageLiteral(resourceName: "Unknown"))
         cell.playerImage.clipsToBounds = true
         cell.playerImage.layer.cornerRadius = cell.playerImage.frame.height / 2
         
