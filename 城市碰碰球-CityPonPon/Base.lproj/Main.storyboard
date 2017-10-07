@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13526" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nSw-bN-rlq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nSw-bN-rlq">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -69,7 +69,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Bf-t4-qGl">
-                                            <rect key="frame" x="29" y="32" width="14" height="36"/>
+                                            <rect key="frame" x="21" y="32" width="14" height="36"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -149,9 +149,6 @@
                                             <subviews>
                                                 <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QZe-Pb-Tk4">
                                                     <rect key="frame" x="20" y="30" width="335" height="390"/>
-                                                    <connections>
-                                                        <segue destination="QrS-c9-co6" kind="embed" id="uIg-Ki-f6v"/>
-                                                    </connections>
                                                 </containerView>
                                                 <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="eJF-cR-JWG">
                                                     <rect key="frame" x="168" y="420" width="39" height="37"/>
@@ -1264,6 +1261,7 @@ If you have any questions about this Policy</string>
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="firstCellView" destination="QZe-Pb-Tk4" id="Pde-sJ-Av7"/>
                         <outlet property="nameTextField" destination="C1l-g4-YVv" id="Ica-IY-qZL"/>
                         <outlet property="pageControl" destination="eJF-cR-JWG" id="dFn-bO-Ede"/>
                         <outlet property="playButton" destination="fds-ce-J8I" id="joy-Ae-FaD"/>
@@ -1279,10 +1277,10 @@ If you have any questions about this Policy</string>
         <!--Page View Controller-->
         <scene sceneID="d3K-ca-Nqy">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="QrS-c9-co6" customClass="PageViewController" customModule="城市碰碰球_CityPonPon" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zGC-8f-2sX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="QrS-c9-co6" customClass="PageViewController" customModule="城市碰碰球_CityPonPon" customModuleProvider="target" sceneMemberID="viewController"/>
             </objects>
-            <point key="canvasLocation" x="-2502" y="1183"/>
+            <point key="canvasLocation" x="-3036" y="1159"/>
         </scene>
         <!--Page1 View Controller-->
         <scene sceneID="jj8-8O-s69">

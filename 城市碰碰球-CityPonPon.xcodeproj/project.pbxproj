@@ -20,6 +20,7 @@
 		5665C41C1F6AD1C000C49FE2 /* Struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5665C41B1F6AD1C000C49FE2 /* Struct.swift */; };
 		5665C41E1F6B7C8600C49FE2 /* MapUISetupExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5665C41D1F6B7C8600C49FE2 /* MapUISetupExtension.swift */; };
 		566D96401F691DC300FEAEC3 /* LoginUISetupExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566D963F1F691DC300FEAEC3 /* LoginUISetupExtension.swift */; };
+		567289581F88B62B00D27606 /* PageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567289571F88B62B00D27606 /* PageViewExtension.swift */; };
 		567432B71F7820DA00E97632 /* CustomAnnotationModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567432B61F7820DA00E97632 /* CustomAnnotationModels.swift */; };
 		567B6D271F66644100E849D4 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		567B6D2B1F66696F00E849D4 /* (null) in Sources */ = {isa = PBXBuildFile; };
@@ -56,7 +57,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		064F06316B4D915CFE5313B2 /* Pods_Battle_Royale.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Battle_Royale.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B633A2CE4ABCA01E08CA32A /* Pods-城市碰碰球-CityPonPon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-城市碰碰球-CityPonPon.release.xcconfig"; path = "Pods/Target Support Files/Pods-城市碰碰球-CityPonPon/Pods-城市碰碰球-CityPonPon.release.xcconfig"; sourceTree = "<group>"; };
 		561A51861F853C800007DE6B /* TimeFilterToMapboxStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFilterToMapboxStyle.swift; sourceTree = "<group>"; };
 		5620B9D41F76222700C1936D /* TapHideButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapHideButtonExtension.swift; sourceTree = "<group>"; };
@@ -71,6 +71,7 @@
 		5665C41B1F6AD1C000C49FE2 /* Struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Struct.swift; sourceTree = "<group>"; };
 		5665C41D1F6B7C8600C49FE2 /* MapUISetupExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapUISetupExtension.swift; sourceTree = "<group>"; };
 		566D963F1F691DC300FEAEC3 /* LoginUISetupExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUISetupExtension.swift; sourceTree = "<group>"; };
+		567289571F88B62B00D27606 /* PageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewExtension.swift; sourceTree = "<group>"; };
 		567432B61F7820DA00E97632 /* CustomAnnotationModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnnotationModels.swift; sourceTree = "<group>"; };
 		567B6D2E1F6695CA00E849D4 /* RankTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankTableViewController.swift; sourceTree = "<group>"; };
 		567B6D301F6695DF00E849D4 /* PlayerInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerInfo.swift; sourceTree = "<group>"; };
@@ -96,7 +97,6 @@
 		C05ACC361F5FC4030082B0E2 /* Battle_RoyaleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Battle_RoyaleTests.swift; sourceTree = "<group>"; };
 		C05ACC381F5FC4030082B0E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C064D5BB1F5FCC4700FF763A /* MapViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewControllerExtension.swift; sourceTree = "<group>"; };
-		D5DB1C9D34CE9D3F2985761F /* Pods_Battle_RoyaleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Battle_RoyaleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC401596E98DEC7C20EC6E3B /* Pods-城市碰碰球-CityPonPon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-城市碰碰球-CityPonPon.debug.xcconfig"; path = "Pods/Target Support Files/Pods-城市碰碰球-CityPonPon/Pods-城市碰碰球-CityPonPon.debug.xcconfig"; sourceTree = "<group>"; };
 		FDA6253FA679A1899DED3469 /* Pods_______CityPonPon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_______CityPonPon.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -154,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				567B6D381F681DF300E849D4 /* TutorialTableViewController.swift */,
+				567289571F88B62B00D27606 /* PageViewExtension.swift */,
 				5620B9E01F78028200C1936D /* FetchImageExtension.swift */,
 				5620B9D81F775E5900C1936D /* Pages */,
 			);
@@ -250,8 +251,6 @@
 		C781237427AD92E349850842 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				064F06316B4D915CFE5313B2 /* Pods_Battle_Royale.framework */,
-				D5DB1C9D34CE9D3F2985761F /* Pods_Battle_RoyaleTests.framework */,
 				FDA6253FA679A1899DED3469 /* Pods_______CityPonPon.framework */,
 			);
 			name = Frameworks;
@@ -488,6 +487,7 @@
 				C05ACC271F5FC4030082B0E2 /* Battle_Royale.xcdatamodeld in Sources */,
 				56BC31421F630C440036B97B /* PropertyKeys.swift in Sources */,
 				567B6D2B1F66696F00E849D4 /* (null) in Sources */,
+				567289581F88B62B00D27606 /* PageViewExtension.swift in Sources */,
 				56D536061F69277200F4B492 /* PasswordsLoginExtension.swift in Sources */,
 				56D536081F69717400F4B492 /* FBLoginDelegate.swift in Sources */,
 				567B6D2F1F6695CA00E849D4 /* RankTableViewController.swift in Sources */,

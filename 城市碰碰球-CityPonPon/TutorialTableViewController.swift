@@ -18,6 +18,19 @@ class TutorialTableViewController: UITableViewController {
     var playerImage: UIImage?
     let storage = Storage.storage()
     
+    // The pages it contains
+    var pages = [UIViewController]()
+    
+    // Track the current index
+    var currentIndex: Int?
+    var pendingIndex: Int?
+    
+    @IBOutlet weak var firstCellView: UIView!
+    
+    
+    
+    var pageContainer: UIPageViewController!
+    
     @IBOutlet weak var privacyPolicyView: UIView!
     
     @IBOutlet weak var playerImageView: UIImageView!
@@ -48,6 +61,9 @@ class TutorialTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupPages()
+        
         if let displayName = Auth.auth().currentUser?.displayName {
             nameTextField.text = displayName
         }
