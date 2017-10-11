@@ -20,6 +20,11 @@ class RankTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        
+        let colors = [#colorLiteral(red: 0.3476037681, green: 0.4178079367, blue: 0.5853316188, alpha: 1).cgColor, #colorLiteral(red: 0.01379980333, green: 0.2095791996, blue: 0.5689586401, alpha: 1).cgColor]
+        addGradiantLayer(sender: self, colors: colors )
         fetchAllPlayerSocre()
         
         
@@ -96,18 +101,22 @@ class RankTableViewController: UITableViewController {
     }
     
     
+    
     func configure(cell: RankTableViewCell, forItemAt indexPath: IndexPath) {
         
         
         
         let player = players[indexPath.row]
         cell.nameLabel?.text = player.username
+        cell.nameLabel?.textColor = .white
         cell.scoreLabel.text = String(describing: player.score!)
+         cell.scoreLabel?.textColor = .white
         cell.rankLabel.text = String(describing: indexPath.row + 1)
+         cell.rankLabel?.textColor = .white
         cell.playerImage.sd_setImage(with: player.imageURL, placeholderImage: #imageLiteral(resourceName: "Unknown"))
         cell.playerImage.clipsToBounds = true
         cell.playerImage.layer.cornerRadius = cell.playerImage.frame.height / 2
-        
+        cell.backgroundColor = UIColor.clear
         
     }
     
