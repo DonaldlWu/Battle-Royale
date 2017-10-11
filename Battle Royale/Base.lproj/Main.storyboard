@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nSw-bN-rlq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13526" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nSw-bN-rlq">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13524"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -61,7 +61,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" red="0.85481059550000005" green="0.29669573900000001" blue="0.1804287285" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="rankCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="rankCell" rowHeight="100" id="qiX-sT-mUj" customClass="RankTableViewCell" customModule="城市碰碰球_CityPonPon" customModuleProvider="target">
+                            <tableViewCell opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="rankCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="rankCell" rowHeight="100" id="qiX-sT-mUj" customClass="RankTableViewCell" customModule="城市碰碰球_CityPonPon" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qiX-sT-mUj" id="uvj-DV-sq3">
@@ -69,14 +69,14 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Bf-t4-qGl">
-                                            <rect key="frame" x="21" y="32" width="14" height="36"/>
+                                            <rect key="frame" x="29" y="32" width="14" height="36"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xd6-5A-CYt">
-                                            <rect key="frame" x="162" y="50" width="123.5" height="0.0"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xd6-5A-CYt">
+                                            <rect key="frame" x="162" y="38.5" width="123.5" height="24"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -1274,14 +1274,6 @@ If you have any questions about this Policy</string>
             </objects>
             <point key="canvasLocation" x="-2447.1999999999998" y="419.64017991004499"/>
         </scene>
-        <!--Page View Controller-->
-        <scene sceneID="d3K-ca-Nqy">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zGC-8f-2sX" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="QrS-c9-co6" customClass="PageViewController" customModule="城市碰碰球_CityPonPon" customModuleProvider="target" sceneMemberID="viewController"/>
-            </objects>
-            <point key="canvasLocation" x="-3036" y="1159"/>
-        </scene>
         <!--Page1 View Controller-->
         <scene sceneID="jj8-8O-s69">
             <objects>
@@ -1332,7 +1324,7 @@ If you have any questions about this Policy</string>
         <!--Navigation Controller-->
         <scene sceneID="Rwp-wU-1Qq">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PkR-BR-BCC" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBarsOnSwipe="YES" id="PkR-BR-BCC" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="bar-chart-2" id="NaN-sM-wuI">
                         <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-10"/>
                     </tabBarItem>
