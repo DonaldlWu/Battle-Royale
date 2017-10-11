@@ -230,7 +230,7 @@ class MapViewController: UIViewController {
     
     @objc func moveCameraToPlayer() {
         if let coord = currentLocation?.coordinate, let radius = mainPlayerRadius {
-            let camera = MGLMapCamera(lookingAtCenter: coord, fromDistance: CLLocationDistance(radius * 30), pitch: 30, heading: 0)
+            let camera = MGLMapCamera(lookingAtCenter: coord, fromDistance: CLLocationDistance(radius * 30), pitch: 45, heading: 0)
             
             // Animate the camera movement over 1 seconds.
             mapView.setCamera(camera, withDuration: 1, animationTimingFunction: CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut))

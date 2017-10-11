@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		561A51871F853C800007DE6B /* TimeFilterToMapboxStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561A51861F853C800007DE6B /* TimeFilterToMapboxStyle.swift */; };
 		5620B9D51F76222900C1936D /* TapHideButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5620B9D41F76222700C1936D /* TapHideButtonExtension.swift */; };
+		5620B9D71F7633EE00C1936D /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5620B9D61F7633EE00C1936D /* PageViewController.swift */; };
+		5620B9DA1F775E7D00C1936D /* Page1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5620B9D91F775E7D00C1936D /* Page1ViewController.swift */; };
+		5620B9DC1F775E9D00C1936D /* Page2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5620B9DB1F775E9D00C1936D /* Page2ViewController.swift */; };
+		5620B9DE1F775EAE00C1936D /* Page3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5620B9DD1F775EAE00C1936D /* Page3ViewController.swift */; };
 		5620B9E11F78028200C1936D /* FetchImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5620B9E01F78028200C1936D /* FetchImageExtension.swift */; };
 		5620B9E31F78151000C1936D /* DLImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5620B9E21F78150F00C1936D /* DLImageExtension.swift */; };
 		5665C4161F6A9CE900C49FE2 /* AfterFetchDataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5665C4151F6A9CE900C49FE2 /* AfterFetchDataExtension.swift */; };
@@ -28,7 +32,6 @@
 		56B1278C1F87EA8200DF05D9 /* RankTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B1278B1F87EA8200DF05D9 /* RankTableViewCell.swift */; };
 		56BC313B1F62A1B80036B97B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BC313A1F62A1B80036B97B /* LoginViewController.swift */; };
 		56BC31421F630C440036B97B /* PropertyKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BC31411F630C440036B97B /* PropertyKeys.swift */; };
-		56CC7A9A1F88D4E00003B27E /* UISetupRankTableExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CC7A991F88D4E00003B27E /* UISetupRankTableExtention.swift */; };
 		56D536061F69277200F4B492 /* PasswordsLoginExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D536051F69277200F4B492 /* PasswordsLoginExtension.swift */; };
 		56D536081F69717400F4B492 /* FBLoginDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D536071F69717400F4B492 /* FBLoginDelegate.swift */; };
 		56DA68FF1F87399C0049763F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 56DA68FD1F87387B0049763F /* GoogleService-Info.plist */; };
@@ -57,6 +60,10 @@
 		1B633A2CE4ABCA01E08CA32A /* Pods-城市碰碰球-CityPonPon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-城市碰碰球-CityPonPon.release.xcconfig"; path = "Pods/Target Support Files/Pods-城市碰碰球-CityPonPon/Pods-城市碰碰球-CityPonPon.release.xcconfig"; sourceTree = "<group>"; };
 		561A51861F853C800007DE6B /* TimeFilterToMapboxStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFilterToMapboxStyle.swift; sourceTree = "<group>"; };
 		5620B9D41F76222700C1936D /* TapHideButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapHideButtonExtension.swift; sourceTree = "<group>"; };
+		5620B9D61F7633EE00C1936D /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		5620B9D91F775E7D00C1936D /* Page1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page1ViewController.swift; sourceTree = "<group>"; };
+		5620B9DB1F775E9D00C1936D /* Page2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page2ViewController.swift; sourceTree = "<group>"; };
+		5620B9DD1F775EAE00C1936D /* Page3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page3ViewController.swift; sourceTree = "<group>"; };
 		5620B9E01F78028200C1936D /* FetchImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchImageExtension.swift; sourceTree = "<group>"; };
 		5620B9E21F78150F00C1936D /* DLImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DLImageExtension.swift; sourceTree = "<group>"; };
 		5665C4151F6A9CE900C49FE2 /* AfterFetchDataExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterFetchDataExtension.swift; sourceTree = "<group>"; };
@@ -75,7 +82,6 @@
 		56BC313A1F62A1B80036B97B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		56BC31411F630C440036B97B /* PropertyKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyKeys.swift; sourceTree = "<group>"; };
 		56C3DC8C1F837DB7001CBF6C /* Battle Royale.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Battle Royale.entitlements"; sourceTree = "<group>"; };
-		56CC7A991F88D4E00003B27E /* UISetupRankTableExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISetupRankTableExtention.swift; sourceTree = "<group>"; };
 		56D536051F69277200F4B492 /* PasswordsLoginExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordsLoginExtension.swift; sourceTree = "<group>"; };
 		56D536071F69717400F4B492 /* FBLoginDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBLoginDelegate.swift; sourceTree = "<group>"; };
 		56DA68FD1F87387B0049763F /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -128,10 +134,20 @@
 			children = (
 				567B6D2E1F6695CA00E849D4 /* RankTableViewController.swift */,
 				56B1278B1F87EA8200DF05D9 /* RankTableViewCell.swift */,
-				56CC7A991F88D4E00003B27E /* UISetupRankTableExtention.swift */,
 				567B6D301F6695DF00E849D4 /* PlayerInfo.swift */,
 			);
 			name = Rank;
+			sourceTree = "<group>";
+		};
+		5620B9D81F775E5900C1936D /* Pages */ = {
+			isa = PBXGroup;
+			children = (
+				5620B9D61F7633EE00C1936D /* PageViewController.swift */,
+				5620B9D91F775E7D00C1936D /* Page1ViewController.swift */,
+				5620B9DB1F775E9D00C1936D /* Page2ViewController.swift */,
+				5620B9DD1F775EAE00C1936D /* Page3ViewController.swift */,
+			);
+			name = Pages;
 			sourceTree = "<group>";
 		};
 		5620B9DF1F78024A00C1936D /* TutorialPage */ = {
@@ -140,6 +156,7 @@
 				567B6D381F681DF300E849D4 /* TutorialTableViewController.swift */,
 				567289571F88B62B00D27606 /* PageViewExtension.swift */,
 				5620B9E01F78028200C1936D /* FetchImageExtension.swift */,
+				5620B9D81F775E5900C1936D /* Pages */,
 			);
 			name = TutorialPage;
 			sourceTree = "<group>";
@@ -203,8 +220,7 @@
 				56DA68FD1F87387B0049763F /* GoogleService-Info.plist */,
 				C05ACC251F5FC4030082B0E2 /* Battle_Royale.xcdatamodeld */,
 			);
-			name = "城市碰碰球-CityPonPon";
-			path = "Battle Royale";
+			path = "城市碰碰球-CityPonPon";
 			sourceTree = "<group>";
 		};
 		C05ACC351F5FC4030082B0E2 /* Battle RoyaleTests */ = {
@@ -448,6 +464,7 @@
 			files = (
 				567B6D3D1F68503C00E849D4 /* GoogleLoginDelegate.swift in Sources */,
 				5665C41C1F6AD1C000C49FE2 /* Struct.swift in Sources */,
+				5620B9DA1F775E7D00C1936D /* Page1ViewController.swift in Sources */,
 				5665C41E1F6B7C8600C49FE2 /* MapUISetupExtension.swift in Sources */,
 				567B6D321F6695DF00E849D4 /* PlayerInfo.swift in Sources */,
 				566D96401F691DC300FEAEC3 /* LoginUISetupExtension.swift in Sources */,
@@ -455,6 +472,8 @@
 				5620B9D51F76222900C1936D /* TapHideButtonExtension.swift in Sources */,
 				5620B9E31F78151000C1936D /* DLImageExtension.swift in Sources */,
 				5620B9E11F78028200C1936D /* FetchImageExtension.swift in Sources */,
+				5620B9DE1F775EAE00C1936D /* Page3ViewController.swift in Sources */,
+				5620B9DC1F775E9D00C1936D /* Page2ViewController.swift in Sources */,
 				567B6D331F6695DF00E849D4 /* TabBarController.swift in Sources */,
 				5665C4181F6AAC5F00C49FE2 /* TimerExtension.swift in Sources */,
 				567432B71F7820DA00E97632 /* CustomAnnotationModels.swift in Sources */,
@@ -464,6 +483,7 @@
 				567B6D391F681DF300E849D4 /* TutorialTableViewController.swift in Sources */,
 				56B1278C1F87EA8200DF05D9 /* RankTableViewCell.swift in Sources */,
 				5665C4161F6A9CE900C49FE2 /* AfterFetchDataExtension.swift in Sources */,
+				5620B9D71F7633EE00C1936D /* PageViewController.swift in Sources */,
 				C05ACC271F5FC4030082B0E2 /* Battle_Royale.xcdatamodeld in Sources */,
 				56BC31421F630C440036B97B /* PropertyKeys.swift in Sources */,
 				567B6D2B1F66696F00E849D4 /* (null) in Sources */,
@@ -473,7 +493,6 @@
 				567B6D2F1F6695CA00E849D4 /* RankTableViewController.swift in Sources */,
 				C064D5BC1F5FCC4700FF763A /* MapViewControllerExtension.swift in Sources */,
 				C05ACC1F1F5FC4030082B0E2 /* AppDelegate.swift in Sources */,
-				56CC7A9A1F88D4E00003B27E /* UISetupRankTableExtention.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

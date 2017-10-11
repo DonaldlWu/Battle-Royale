@@ -56,15 +56,11 @@ extension TutorialTableViewController: UIPageViewControllerDataSource, UIPageVie
         pageContainer.delegate = self
         pageContainer.dataSource = self
         pageContainer.setViewControllers([page1], direction: UIPageViewControllerNavigationDirection.forward, animated: false, completion: nil)
-       
         
         // Add it to the view
         
         firstCellView.addSubview(pageContainer.view)
-        
-        
         pageContainer.view.translatesAutoresizingMaskIntoConstraints = false
-        
         NSLayoutConstraint(item: pageContainer.view, attribute: .bottom, relatedBy: .equal, toItem: firstCellView, attribute: .bottom, multiplier: 1, constant: 0).isActive = true
         NSLayoutConstraint(item: pageContainer.view, attribute: .top, relatedBy: .equal, toItem: firstCellView, attribute: .top, multiplier: 1, constant: 0).isActive = true
         NSLayoutConstraint(item: pageContainer.view, attribute: .leading, relatedBy: .equal, toItem: firstCellView, attribute: .leading, multiplier: 1, constant: 0).isActive = true
