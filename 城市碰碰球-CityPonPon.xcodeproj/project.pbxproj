@@ -32,6 +32,9 @@
 		56D536061F69277200F4B492 /* PasswordsLoginExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D536051F69277200F4B492 /* PasswordsLoginExtension.swift */; };
 		56D536081F69717400F4B492 /* FBLoginDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D536071F69717400F4B492 /* FBLoginDelegate.swift */; };
 		56DA68FF1F87399C0049763F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 56DA68FD1F87387B0049763F /* GoogleService-Info.plist */; };
+		56F368B01F8E6FFC007880D2 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56F368AF1F8E6FFC007880D2 /* Setting.storyboard */; };
+		56F368B21F8E7133007880D2 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F368B11F8E7133007880D2 /* SettingTableViewController.swift */; };
+		56F368B51F8F2A5A007880D2 /* FanPageWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F368B41F8F2A5A007880D2 /* FanPageWebViewController.swift */; };
 		BFAB659647F5791637E488AC /* Pods_______CityPonPon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDA6253FA679A1899DED3469 /* Pods_______CityPonPon.framework */; };
 		C05ACC1F1F5FC4030082B0E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05ACC1E1F5FC4030082B0E2 /* AppDelegate.swift */; };
 		C05ACC211F5FC4030082B0E2 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05ACC201F5FC4030082B0E2 /* MapViewController.swift */; };
@@ -79,6 +82,9 @@
 		56D536051F69277200F4B492 /* PasswordsLoginExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordsLoginExtension.swift; sourceTree = "<group>"; };
 		56D536071F69717400F4B492 /* FBLoginDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBLoginDelegate.swift; sourceTree = "<group>"; };
 		56DA68FD1F87387B0049763F /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		56F368AF1F8E6FFC007880D2 /* Setting.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
+		56F368B11F8E7133007880D2 /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
+		56F368B41F8F2A5A007880D2 /* FanPageWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FanPageWebViewController.swift; sourceTree = "<group>"; };
 		C05ACC1B1F5FC4030082B0E2 /* 城市碰碰球-CityPonPon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "城市碰碰球-CityPonPon.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C05ACC1E1F5FC4030082B0E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C05ACC201F5FC4030082B0E2 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -165,6 +171,15 @@
 			name = Map;
 			sourceTree = "<group>";
 		};
+		56F368B31F8E7157007880D2 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				56F368B11F8E7133007880D2 /* SettingTableViewController.swift */,
+				56F368B41F8F2A5A007880D2 /* FanPageWebViewController.swift */,
+			);
+			name = Setting;
+			sourceTree = "<group>";
+		};
 		C05ACC121F5FC4030082B0E2 = {
 			isa = PBXGroup;
 			children = (
@@ -191,10 +206,12 @@
 				56C3DC8C1F837DB7001CBF6C /* Battle Royale.entitlements */,
 				C05ACC1E1F5FC4030082B0E2 /* AppDelegate.swift */,
 				C05ACC221F5FC4030082B0E2 /* Main.storyboard */,
+				56F368AF1F8E6FFC007880D2 /* Setting.storyboard */,
 				567B6D371F681D5C00E849D4 /* Map */,
 				567B6D361F681D5100E849D4 /* Login */,
 				5620B9DF1F78024A00C1936D /* TutorialPage */,
 				5620B9D31F73806100C1936D /* Rank */,
+				56F368B31F8E7157007880D2 /* Setting */,
 				567B6D311F6695DF00E849D4 /* TabBarController.swift */,
 				C05ACC281F5FC4030082B0E2 /* Assets.xcassets */,
 				C05ACC2A1F5FC4030082B0E2 /* LaunchScreen.storyboard */,
@@ -339,6 +356,7 @@
 			files = (
 				C05ACC2C1F5FC4030082B0E2 /* LaunchScreen.storyboard in Resources */,
 				56DA68FF1F87399C0049763F /* GoogleService-Info.plist in Resources */,
+				56F368B01F8E6FFC007880D2 /* Setting.storyboard in Resources */,
 				C05ACC291F5FC4030082B0E2 /* Assets.xcassets in Resources */,
 				C05ACC241F5FC4030082B0E2 /* Main.storyboard in Resources */,
 			);
@@ -448,7 +466,9 @@
 			files = (
 				567B6D3D1F68503C00E849D4 /* GoogleLoginDelegate.swift in Sources */,
 				5665C41C1F6AD1C000C49FE2 /* Struct.swift in Sources */,
+				56F368B51F8F2A5A007880D2 /* FanPageWebViewController.swift in Sources */,
 				5665C41E1F6B7C8600C49FE2 /* MapUISetupExtension.swift in Sources */,
+				56F368B21F8E7133007880D2 /* SettingTableViewController.swift in Sources */,
 				567B6D321F6695DF00E849D4 /* PlayerInfo.swift in Sources */,
 				566D96401F691DC300FEAEC3 /* LoginUISetupExtension.swift in Sources */,
 				56BC313B1F62A1B80036B97B /* LoginViewController.swift in Sources */,
@@ -630,7 +650,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G9JF9YBU33;
 				INFOPLIST_FILE = "城市碰碰球-CityPonPon/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.BattleRoyale.Battle-Royale";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -648,7 +668,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G9JF9YBU33;
 				INFOPLIST_FILE = "城市碰碰球-CityPonPon/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.BattleRoyale.Battle-Royale";
 				PRODUCT_NAME = "$(TARGET_NAME)";

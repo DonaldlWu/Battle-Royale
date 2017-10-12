@@ -52,6 +52,7 @@ class MapViewController: UIViewController {
             updateMainPlayerCircle()
         }
     }
+    var mainPlayerColor = #colorLiteral(red: 0.02766584791, green: 0.4977956414, blue: 1, alpha: 1)
     
     var mainLayer: MGLFillStyleLayer?
     var scoreLayer: MGLFillStyleLayer?
@@ -113,7 +114,7 @@ class MapViewController: UIViewController {
     let moveToCurrentLoactionButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setImage(#imageLiteral(resourceName: "aperture"), for: .normal)
+        button.setImage(#imageLiteral(resourceName: "compass"), for: .normal)
         
         button.backgroundColor = #colorLiteral(red: 0.8694403768, green: 0.8642715216, blue: 0.8734138608, alpha: 1).withAlphaComponent(0.7)
         button.layer.cornerRadius = 20

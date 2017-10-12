@@ -1,0 +1,1479 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13526" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QHm-23-URN">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment version="4352" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--設定-->
+        <scene sceneID="pnW-zw-LVD">
+            <objects>
+                <tableViewController id="CnL-i0-eyR" customClass="SettingTableViewController" customModule="城市碰碰球_CityPonPon" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="fH5-Fe-gl5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection headerTitle="使用者" id="jpk-Vy-Qwr">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="50" id="Vlf-xp-7aM">
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Vlf-xp-7aM" id="cyy-j0-yhG">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="名稱" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R0u-0p-396">
+                                                    <rect key="frame" x="26" y="13" width="41" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YXN-q7-V8e">
+                                                    <rect key="frame" x="207.5" y="24" width="0.0" height="0.0"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="R0u-0p-396" firstAttribute="leading" secondItem="cyy-j0-yhG" secondAttribute="leadingMargin" constant="10" id="DpN-z7-isi"/>
+                                                <constraint firstItem="YXN-q7-V8e" firstAttribute="centerX" secondItem="cyy-j0-yhG" secondAttribute="centerX" constant="20" id="hCh-kN-zYL"/>
+                                                <constraint firstItem="YXN-q7-V8e" firstAttribute="centerY" secondItem="cyy-j0-yhG" secondAttribute="centerY" id="jdq-O2-mcA"/>
+                                                <constraint firstItem="R0u-0p-396" firstAttribute="centerY" secondItem="cyy-j0-yhG" secondAttribute="centerY" id="mkm-M7-aG8"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="100" id="Bq5-vi-Rii">
+                                        <rect key="frame" x="0.0" y="105.5" width="375" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Bq5-vi-Rii" id="ZFm-el-vbG">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="照片" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wor-Cz-5zB">
+                                                    <rect key="frame" x="26" y="38" width="41" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cye-yJ-WPQ">
+                                                    <rect key="frame" x="162.5" y="5" width="90" height="90"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="90" id="bC6-ch-wuJ"/>
+                                                        <constraint firstAttribute="height" constant="90" id="dVS-eh-fHp"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="wor-Cz-5zB" firstAttribute="leading" secondItem="ZFm-el-vbG" secondAttribute="leadingMargin" constant="10" id="YEV-Cm-QC1"/>
+                                                <constraint firstItem="wor-Cz-5zB" firstAttribute="centerY" secondItem="ZFm-el-vbG" secondAttribute="centerY" id="b1K-ub-UPd"/>
+                                                <constraint firstItem="cye-yJ-WPQ" firstAttribute="centerX" secondItem="ZFm-el-vbG" secondAttribute="centerX" constant="20" id="uXz-jB-3gl"/>
+                                                <constraint firstItem="cye-yJ-WPQ" firstAttribute="centerY" secondItem="ZFm-el-vbG" secondAttribute="centerY" id="zA6-n6-gK5"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="50" id="pF6-xX-yo4">
+                                        <rect key="frame" x="0.0" y="205.5" width="375" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pF6-xX-yo4" id="NAB-no-Nvk">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="球球造型" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OBG-Ot-9NP">
+                                                    <rect key="frame" x="26" y="13" width="82" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6rJ-mX-5Mr">
+                                                    <rect key="frame" x="207.5" y="24" width="0.0" height="0.0"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0mQ-kN-Sdq">
+                                                    <rect key="frame" x="157.5" y="5" width="100" height="40"/>
+                                                    <color key="backgroundColor" red="0.2192100585" green="0.49009829760000001" blue="0.96867722270000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="1sM-EN-u4a"/>
+                                                        <constraint firstAttribute="width" constant="100" id="RiW-db-jO0"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="OBG-Ot-9NP" firstAttribute="centerY" secondItem="NAB-no-Nvk" secondAttribute="centerY" id="4h4-4a-uOd"/>
+                                                <constraint firstItem="0mQ-kN-Sdq" firstAttribute="centerY" secondItem="NAB-no-Nvk" secondAttribute="centerY" id="ByG-iX-mbN"/>
+                                                <constraint firstItem="OBG-Ot-9NP" firstAttribute="leading" secondItem="NAB-no-Nvk" secondAttribute="leadingMargin" constant="10" id="E2S-As-dwd"/>
+                                                <constraint firstItem="6rJ-mX-5Mr" firstAttribute="centerX" secondItem="NAB-no-Nvk" secondAttribute="centerX" constant="20" id="Y9p-Do-tO7"/>
+                                                <constraint firstItem="6rJ-mX-5Mr" firstAttribute="centerY" secondItem="NAB-no-Nvk" secondAttribute="centerY" id="ZCb-sW-bRX"/>
+                                                <constraint firstItem="0mQ-kN-Sdq" firstAttribute="centerX" secondItem="NAB-no-Nvk" secondAttribute="centerX" constant="20" id="bXE-cP-bRZ"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="關於" id="Yaw-xy-Ubf">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="NMM-LZ-avw">
+                                        <rect key="frame" x="0.0" y="311.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NMM-LZ-avw" id="qXU-4L-sQ5">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="隱私權政策" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cvj-zA-Wi8">
+                                                    <rect key="frame" x="26" y="9" width="102" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Cvj-zA-Wi8" firstAttribute="centerY" secondItem="qXU-4L-sQ5" secondAttribute="centerY" id="VY7-yj-YO9"/>
+                                                <constraint firstItem="Cvj-zA-Wi8" firstAttribute="leading" secondItem="qXU-4L-sQ5" secondAttribute="leadingMargin" constant="10" id="o51-0j-jjF"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="WXD-Fg-x1a" kind="show" id="t0F-bA-5wr"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="TFG-fy-LJC">
+                                        <rect key="frame" x="0.0" y="355.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TFG-fy-LJC" id="vQi-x6-hkb">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="作者" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XaL-1l-0bV">
+                                                    <rect key="frame" x="26" y="9" width="41" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="XaL-1l-0bV" firstAttribute="centerY" secondItem="vQi-x6-hkb" secondAttribute="centerY" id="BxP-Eg-tcF"/>
+                                                <constraint firstItem="XaL-1l-0bV" firstAttribute="leading" secondItem="vQi-x6-hkb" secondAttribute="leadingMargin" constant="10" id="tlK-TD-lK1"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="追蹤我們" id="yec-v3-P2j">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Wx6-fT-KQs">
+                                        <rect key="frame" x="0.0" y="455.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Wx6-fT-KQs" id="gF7-jt-WWG">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="粉絲專頁" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XHE-cV-5M0">
+                                                    <rect key="frame" x="26" y="9" width="82" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="XHE-cV-5M0" firstAttribute="leading" secondItem="gF7-jt-WWG" secondAttribute="leadingMargin" constant="10" id="Pa9-vG-gaI"/>
+                                                <constraint firstItem="XHE-cV-5M0" firstAttribute="centerY" secondItem="gF7-jt-WWG" secondAttribute="centerY" id="QWY-is-x82"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="tO8-Uk-RfS" kind="show" id="1Yw-pN-YB6"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="CnL-i0-eyR" id="tNK-sH-GKK"/>
+                            <outlet property="delegate" destination="CnL-i0-eyR" id="zYq-6e-Bdg"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="設定" id="zlf-xI-nbu"/>
+                    <connections>
+                        <outlet property="nameLabel" destination="YXN-q7-V8e" id="ZQb-bL-Igr"/>
+                        <outlet property="playerImageView" destination="cye-yJ-WPQ" id="3Tu-CA-oxE"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rUC-ma-h5E" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="831" y="1630"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="ypr-PJ-856">
+            <objects>
+                <tableViewController id="WXD-Fg-x1a" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ud5-BC-e0E">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <sections>
+                            <tableViewSection id="QwJ-mZ-Azk">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="3000" id="SUf-TX-URQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="3000"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SUf-TX-URQ" id="83r-3J-jpH">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="2999.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4JS-lG-XRg">
+                                                    <rect key="frame" x="5" y="5" width="365" height="2989.5"/>
+                                                    <subviews>
+                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z9P-p0-DgJ">
+                                                            <rect key="frame" x="5" y="5" width="355" height="2979.5"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <attributedString key="attributedText">
+                                                                <fragment>
+                                                                    <string key="content">Privacy Policy
+</string>
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="18" name=".SFNSText"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment>
+                                                                    <string key="content">
+This privacy policy </string>
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content="(">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name=".PingFangTC-Regular"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content="&quot;Policy&quot;">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=")">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name=".PingFangTC-Regular"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=" describes how Mobile Application Developer ">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content="(">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name=".PingFangTC-Regular"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content="&quot;Mobile Application Developer&quot;">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=",">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name=".PingFangTC-Regular"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=" &quot;we&quot;">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=",">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name=".PingFangTC-Regular"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=" &quot;us&quot; or &quot;our&quot;">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=")">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name=".PingFangTC-Regular"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=" collects">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=",">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name=".PingFangTC-Regular"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=" protects and uses the personally identifiable information ">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content="(">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name=".PingFangTC-Regular"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content="&quot;Personal Information&quot;">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=")">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name=".PingFangTC-Regular"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=" you ">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content="(">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name=".PingFangTC-Regular"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content="&quot;User&quot;">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=",">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name=".PingFangTC-Regular"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=" &quot;you&quot; or &quot;your&quot;">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=")">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name=".PingFangTC-Regular"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=" may provide in the ">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content="城市碰碰球(">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name=".PingFangTC-Regular"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content="CityPonPon">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=")">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name=".PingFangTC-Regular"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=" mobile application and any of its products or services ">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content="(">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name=".PingFangTC-Regular"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content="collectively">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=",">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name=".PingFangTC-Regular"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=" &quot;Mobile Application&quot; or &quot;Services&quot;">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=")">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name=".PingFangTC-Regular"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment>
+                                                                    <string key="content">. It also describes the choices available to you regarding our use of your personal information and how you can access and update this information. This Policy does not apply to the practices of companies that we do not own or control</string>
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=",">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name=".PingFangTC-Regular"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment>
+                                                                    <string key="content"> or to individuals that we do not employ or manage.
+
+</string>
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content="Collection of personal information">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="18" name=".SFNSText"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment>
+                                                                    <string key="content">
+
+We receive and store any information you knowingly provide to us when you create an account</string>
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=",">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name=".PingFangTC-Regular"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=" publish content">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=",">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name=".PingFangTC-Regular"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=" fill any online forms in the Mobile Application.  When required this information may include your email address">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=",">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name=".PingFangTC-Regular"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=" name">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=",">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name=".PingFangTC-Regular"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content="  or other Personal Information. You can choose not to provide us with certain information">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=",">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name=".PingFangTC-Regular"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment>
+                                                                    <string key="content"> but then you may not be able to take advantage of some of the Mobile Application's features.
+
+</string>
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content="Collection of non-personal information">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="18" name=".SFNSText"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment>
+                                                                    <string key="content">
+
+When you open the Mobile Application our servers automatically record information that your device sends. This data may include information such as your device's IP address and location</string>
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=",">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name=".PingFangTC-Regular"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=" device name and version">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=",">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name=".PingFangTC-Regular"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=" operating system type and version">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=",">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name=".PingFangTC-Regular"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=" language preferences">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=",">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name=".PingFangTC-Regular"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=" information you search for in our Mobile Application">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=",">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name=".PingFangTC-Regular"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=" access times and dates">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=",">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name=".PingFangTC-Regular"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment>
+                                                                    <string key="content"> and other statistics.
+
+</string>
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content="Use of collected information">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="18" name=".SFNSText"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment>
+                                                                    <string key="content">
+
+Any of the information we collect from you may be used to  personalize your experience</string>
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=";">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name=".PingFangTC-Regular"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=" improve our Mobile Application">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=";">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name=".PingFangTC-Regular"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=" improve customer service and respond to queries and emails of our customers">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=";">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name=".PingFangTC-Regular"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment>
+                                                                    <string key="content"> run and operate our Mobile Application and Services. Non-personal information collected is used only to identify potential cases of abuse and establish statistical information regarding Mobile Application traffic and usage. This statistical information is not otherwise aggregated in such a way that would identify any particular user of the system.
+
+</string>
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content="Children">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="18" name=".SFNSText"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment>
+                                                                    <string key="content">
+
+We do not knowingly collect any personal information from children under the age of 13. If you are under the age of 13</string>
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=",">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name=".PingFangTC-Regular"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment>
+                                                                    <string key="content"> please do not submit any personal information through our Mobile Application or Service. We encourage parents and legal guardians to monitor their children's Internet usage and to help enforce this Policy by instructing their children never to provide personal information through our Mobile Application or Service without their permission. If you have reason to believe that a child under the age of 13 has provided personal information to us through our Mobile Application or Service</string>
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=",">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name=".PingFangTC-Regular"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment>
+                                                                    <string key="content"> please contact us.
+
+</string>
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content="Newsletters">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="18" name=".SFNSText"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment>
+                                                                    <string key="content">
+
+We offer electronic newsletters to which you may voluntarily subscribe at any time. You may choose to stop receiving our newsletter or marketing emails by following the unsubscribe instructions included in these emails or by contacting us. However you will continue to receive essential transactional emails.
+
+</string>
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content="Advertisement">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="18" name=".SFNSText"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment>
+                                                                    <string key="content">
+
+We may display online advertisements and we may share aggregated and non-identifying information about our customers that we collect through the registration process or through online surveys and promotions with certain advertisers. We do not share personally identifiable information about individual customers with advertisers. In some instances</string>
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=",">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name=".PingFangTC-Regular"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment>
+                                                                    <string key="content"> we may use this aggregated and non-identifying information to deliver tailored advertisements to the intended audience.
+
+</string>
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content="Links to other mobile applications">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="18" name=".SFNSText"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment>
+                                                                    <string key="content">
+
+Our Mobile Application contains links to other mobile applications that are not owned or controlled by us. Please be aware that we are not responsible for the privacy practices of such other mobile applications or third parties. We encourage you to be aware when you leave our Mobile Application and to read the privacy statements of each and every mobile application that may collect personal information.
+
+</string>
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content="Information security">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="18" name=".SFNSText"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment>
+                                                                    <string key="content">
+
+We secure information you provide on computer servers in a controlled</string>
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=",">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name=".PingFangTC-Regular"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=" secure environment">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=",">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name=".PingFangTC-Regular"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=" protected from unauthorized access">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=",">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name=".PingFangTC-Regular"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=" use">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=",">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name=".PingFangTC-Regular"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=" or disclosure. We maintain reasonable administrative">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=",">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name=".PingFangTC-Regular"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=" technical">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=",">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name=".PingFangTC-Regular"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=" and physical safeguards in an effort to protect against unauthorized access">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=",">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name=".PingFangTC-Regular"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=" use">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=",">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name=".PingFangTC-Regular"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=" modification">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=",">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name=".PingFangTC-Regular"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=" and disclosure of personal information in its control and custody. However">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=",">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name=".PingFangTC-Regular"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=" no data transmission over the Internet or wireless network can be guaranteed. Therefore">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=",">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name=".PingFangTC-Regular"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=" while we strive to protect your personal information">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=",">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name=".PingFangTC-Regular"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=" you acknowledge that ">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content="(">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name=".PingFangTC-Regular"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content="i">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=")">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name=".PingFangTC-Regular"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=" there are security and privacy limitations of the Internet which are beyond our control">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=";">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name=".PingFangTC-Regular"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=" ">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content="(">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name=".PingFangTC-Regular"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content="ii">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=")">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name=".PingFangTC-Regular"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=" the security">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=",">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name=".PingFangTC-Regular"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=" integrity">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=",">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name=".PingFangTC-Regular"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=" and privacy of any and all information and data exchanged between you and our Mobile Application cannot be guaranteed">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=";">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name=".PingFangTC-Regular"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=" and ">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content="(">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name=".PingFangTC-Regular"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content="iii">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=")">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name=".PingFangTC-Regular"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=" any such information and data may be viewed or tampered with in transit by a third-party">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=",">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name=".PingFangTC-Regular"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment>
+                                                                    <string key="content"> despite best efforts.
+
+</string>
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content="Data breach">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="18" name=".SFNSText"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment>
+                                                                    <string key="content">
+
+In the event we become aware that the security of the Mobile Application has been compromised or users Personal Information has been disclosed to unrelated third parties as a result of external activity</string>
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=",">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name=".PingFangTC-Regular"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=" including">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=",">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name=".PingFangTC-Regular"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=" but not limited to">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=",">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name=".PingFangTC-Regular"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=" security attacks or fraud">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=",">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name=".PingFangTC-Regular"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=" we reserve the right to take reasonably appropriate measures">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=",">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name=".PingFangTC-Regular"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=" including">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=",">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name=".PingFangTC-Regular"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=" but not limited to">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=",">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name=".PingFangTC-Regular"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=" investigation and reporting">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=",">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name=".PingFangTC-Regular"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=" as well as notification to and cooperation with law enforcement authorities. In the event of a data breach">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=",">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name=".PingFangTC-Regular"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment>
+                                                                    <string key="content"> we will make reasonable efforts to notify affected individuals if we believe that there is a reasonable risk of harm to the user as a result of the breach or if notice is otherwise required by law. When we do we will send you an email.
+
+</string>
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content="Legal disclosure">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="18" name=".SFNSText"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment>
+                                                                    <string key="content">
+
+In the event we go through a business transition</string>
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=",">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name=".PingFangTC-Regular"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=" such as a merger or acquisition by another company">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=",">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name=".PingFangTC-Regular"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=" or sale of all or a portion of its assets">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=",">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name=".PingFangTC-Regular"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment>
+                                                                    <string key="content"> your user account and personal data will likely be among the assets transferred.
+
+</string>
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content="Changes and amendments">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="18" name=".SFNSText"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment>
+                                                                    <string key="content">
+
+We reserve the right to modify this privacy policy relating to the Mobile Application or Services at any time</string>
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=",">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name=".PingFangTC-Regular"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment>
+                                                                    <string key="content"> effective upon posting of an updated version of this Policy in the Mobile Application. When we do we will  revise the updated date at the bottom of this page. Continued use of the Mobile Application after any such changes shall constitute your consent to such changes. Policy was created with https://www.WebsitePolicies.com
+
+</string>
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content="Acceptance of this policy">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="18" name=".SFNSText"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment>
+                                                                    <string key="content">
+
+You acknowledge that you have read this Policy and agree to all its terms and conditions. By using the Mobile Application or its Services you agree to be bound by this Policy. If you do not agree to abide by the terms of this Policy</string>
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=",">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name=".PingFangTC-Regular"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment>
+                                                                    <string key="content"> you are not authorized to use or access the Mobile Application and its Services.
+
+</string>
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content="Contacting us">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="18" name=".SFNSText"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment>
+                                                                    <string key="content">
+
+If you have any questions about this Policy</string>
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=",">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name=".PingFangTC-Regular"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment>
+                                                                    <string key="content"> please contact us.
+
+This document was last updated on October 4</string>
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=",">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name=".PingFangTC-Regular"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                                <fragment content=" 2017">
+                                                                    <attributes>
+                                                                        <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                                    </attributes>
+                                                                </fragment>
+                                                            </attributedString>
+                                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                        </textView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstItem="z9P-p0-DgJ" firstAttribute="leading" secondItem="4JS-lG-XRg" secondAttribute="leading" constant="5" id="DQU-Ak-ASp"/>
+                                                        <constraint firstAttribute="trailing" secondItem="z9P-p0-DgJ" secondAttribute="trailing" constant="5" id="ShJ-3Z-DZY"/>
+                                                        <constraint firstItem="z9P-p0-DgJ" firstAttribute="top" secondItem="4JS-lG-XRg" secondAttribute="top" constant="5" id="WvZ-aw-NCo"/>
+                                                        <constraint firstAttribute="bottom" secondItem="z9P-p0-DgJ" secondAttribute="bottom" constant="5" id="hzh-Ol-Cm9"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                            <integer key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="4JS-lG-XRg" firstAttribute="top" secondItem="83r-3J-jpH" secondAttribute="top" constant="5" id="ARx-Rq-BbM"/>
+                                                <constraint firstAttribute="trailing" secondItem="4JS-lG-XRg" secondAttribute="trailing" constant="5" id="KdG-1N-FXT"/>
+                                                <constraint firstAttribute="bottom" secondItem="4JS-lG-XRg" secondAttribute="bottom" constant="5" id="yJ6-Sn-tLF"/>
+                                                <constraint firstItem="4JS-lG-XRg" firstAttribute="leading" secondItem="83r-3J-jpH" secondAttribute="leading" constant="5" id="yoy-sc-SzW"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="WXD-Fg-x1a" id="ext-Ef-Qd8"/>
+                            <outlet property="delegate" destination="WXD-Fg-x1a" id="ldV-ST-zZt"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="of3-va-wrM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2119" y="1956"/>
+        </scene>
+        <!--Fan Page Web View Controller-->
+        <scene sceneID="Of4-zM-LLF">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="tO8-Uk-RfS" customClass="FanPageWebViewController" customModule="城市碰碰球_CityPonPon" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3lP-4e-nur">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fFm-wy-Cpb">
+                                <rect key="frame" x="0.0" y="116" width="375" height="551"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="fFm-wy-Cpb" firstAttribute="leading" secondItem="XMb-gM-fan" secondAttribute="leading" id="1Iv-Re-XFs"/>
+                            <constraint firstItem="XMb-gM-fan" firstAttribute="trailing" secondItem="fFm-wy-Cpb" secondAttribute="trailing" id="L9u-6T-hkg"/>
+                            <constraint firstItem="XMb-gM-fan" firstAttribute="bottom" secondItem="fFm-wy-Cpb" secondAttribute="bottom" id="QKo-xP-5gA"/>
+                            <constraint firstItem="fFm-wy-Cpb" firstAttribute="top" secondItem="XMb-gM-fan" secondAttribute="top" id="a0Y-8D-zBI"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="XMb-gM-fan"/>
+                    </view>
+                    <connections>
+                        <outlet property="fabPageWebView" destination="fFm-wy-Cpb" id="CyX-Or-7Bo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OU2-YO-wTO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1338" y="2447"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="oSb-y4-drS">
+            <objects>
+                <navigationController id="QHm-23-URN" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="settings" id="YN8-hh-ebL">
+                        <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-10"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="B2B-cz-otz">
+                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="CnL-i0-eyR" kind="relationship" relationship="rootViewController" id="aE4-vK-Q4K"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7wa-EC-HT3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-321" y="1630"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="settings" width="24" height="24"/>
+    </resources>
+</document>
