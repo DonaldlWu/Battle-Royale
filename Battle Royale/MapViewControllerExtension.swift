@@ -51,7 +51,7 @@ extension MapViewController: CLLocationManagerDelegate {
         ref = Database.database().reference()
         if let coord = currentLocation?.coordinate, let radius = mainPlayerRadius, let style = mapView.style, let userUid = Auth.auth().currentUser?.uid  {
             let mainShape = updateShapes(coords: [coord], radiusMeter: Double(radius))
-            self.addLayer(to: style, with: "mainPlayer", mainPlayerColor, shapes: mainShape, source: &self.mainSource, layer: &self.mainLayer)
+            self.addLayer(to: style, with: "mainPlayer", MapViewController.mainPlayerColor, shapes: mainShape, source: &self.mainSource, layer: &self.mainLayer)
          
                 let lat = coord.latitude
                 let lon = coord.longitude
@@ -70,7 +70,7 @@ extension MapViewController: CLLocationManagerDelegate {
             // mapbox update layer
             if let style = self.mapView.style {
                self.addLayer(to: style, with: "scorePoints", #colorLiteral(red: 0.9272366166, green: 0.2351297438, blue: 0.103588976, alpha: 1).withAlphaComponent(0.5), shapes: scoreShapes, source: &self.scoreSource, layer: &self.scoreLayer)
-                self.addLayer(to: style, with: "mainPlayer", mainPlayerColor, shapes: mainShape, source: &self.mainSource, layer: &self.mainLayer)
+                self.addLayer(to: style, with: "mainPlayer", MapViewController.mainPlayerColor, shapes: mainShape, source: &self.mainSource, layer: &self.mainLayer)
             }
             // game start then compute player  and score/other players distance
             if start == true {

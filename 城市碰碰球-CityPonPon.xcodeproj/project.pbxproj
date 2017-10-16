@@ -11,6 +11,9 @@
 		5620B9D51F76222900C1936D /* TapHideButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5620B9D41F76222700C1936D /* TapHideButtonExtension.swift */; };
 		5620B9E11F78028200C1936D /* FetchImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5620B9E01F78028200C1936D /* FetchImageExtension.swift */; };
 		5620B9E31F78151000C1936D /* DLImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5620B9E21F78150F00C1936D /* DLImageExtension.swift */; };
+		564E94EC1F91E325000A3241 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C05ACC2D1F5FC4030082B0E2 /* Info.plist */; };
+		564E94EE1F91EDB5000A3241 /* ColorPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564E94ED1F91EDB5000A3241 /* ColorPickerViewController.swift */; };
+		564E94F01F94F0D6000A3241 /* ColorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564E94EF1F94F0D6000A3241 /* ColorController.swift */; };
 		5665C4161F6A9CE900C49FE2 /* AfterFetchDataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5665C4151F6A9CE900C49FE2 /* AfterFetchDataExtension.swift */; };
 		5665C4181F6AAC5F00C49FE2 /* TimerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5665C4171F6AAC5F00C49FE2 /* TimerExtension.swift */; };
 		5665C41C1F6AD1C000C49FE2 /* Struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5665C41B1F6AD1C000C49FE2 /* Struct.swift */; };
@@ -25,6 +28,7 @@
 		567B6D331F6695DF00E849D4 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567B6D311F6695DF00E849D4 /* TabBarController.swift */; };
 		567B6D391F681DF300E849D4 /* TutorialTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567B6D381F681DF300E849D4 /* TutorialTableViewController.swift */; };
 		567B6D3D1F68503C00E849D4 /* GoogleLoginDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567B6D3C1F68503C00E849D4 /* GoogleLoginDelegate.swift */; };
+		569B61C81F8F9F6F00098C04 /* EditProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569B61C71F8F9F6F00098C04 /* EditProfileTableViewController.swift */; };
 		56B1278C1F87EA8200DF05D9 /* RankTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B1278B1F87EA8200DF05D9 /* RankTableViewCell.swift */; };
 		56BC313B1F62A1B80036B97B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BC313A1F62A1B80036B97B /* LoginViewController.swift */; };
 		56BC31421F630C440036B97B /* PropertyKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BC31411F630C440036B97B /* PropertyKeys.swift */; };
@@ -34,7 +38,6 @@
 		56DA68FF1F87399C0049763F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 56DA68FD1F87387B0049763F /* GoogleService-Info.plist */; };
 		56F368B01F8E6FFC007880D2 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56F368AF1F8E6FFC007880D2 /* Setting.storyboard */; };
 		56F368B21F8E7133007880D2 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F368B11F8E7133007880D2 /* SettingTableViewController.swift */; };
-		56F368B51F8F2A5A007880D2 /* FanPageWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F368B41F8F2A5A007880D2 /* FanPageWebViewController.swift */; };
 		BFAB659647F5791637E488AC /* Pods_______CityPonPon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDA6253FA679A1899DED3469 /* Pods_______CityPonPon.framework */; };
 		C05ACC1F1F5FC4030082B0E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05ACC1E1F5FC4030082B0E2 /* AppDelegate.swift */; };
 		C05ACC211F5FC4030082B0E2 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05ACC201F5FC4030082B0E2 /* MapViewController.swift */; };
@@ -62,6 +65,8 @@
 		5620B9D41F76222700C1936D /* TapHideButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapHideButtonExtension.swift; sourceTree = "<group>"; };
 		5620B9E01F78028200C1936D /* FetchImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchImageExtension.swift; sourceTree = "<group>"; };
 		5620B9E21F78150F00C1936D /* DLImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DLImageExtension.swift; sourceTree = "<group>"; };
+		564E94ED1F91EDB5000A3241 /* ColorPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerViewController.swift; sourceTree = "<group>"; };
+		564E94EF1F94F0D6000A3241 /* ColorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorController.swift; sourceTree = "<group>"; };
 		5665C4151F6A9CE900C49FE2 /* AfterFetchDataExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterFetchDataExtension.swift; sourceTree = "<group>"; };
 		5665C4171F6AAC5F00C49FE2 /* TimerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerExtension.swift; sourceTree = "<group>"; };
 		5665C41B1F6AD1C000C49FE2 /* Struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Struct.swift; sourceTree = "<group>"; };
@@ -74,6 +79,7 @@
 		567B6D311F6695DF00E849D4 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		567B6D381F681DF300E849D4 /* TutorialTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialTableViewController.swift; sourceTree = "<group>"; };
 		567B6D3C1F68503C00E849D4 /* GoogleLoginDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleLoginDelegate.swift; sourceTree = "<group>"; };
+		569B61C71F8F9F6F00098C04 /* EditProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileTableViewController.swift; sourceTree = "<group>"; };
 		56B1278B1F87EA8200DF05D9 /* RankTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankTableViewCell.swift; sourceTree = "<group>"; };
 		56BC313A1F62A1B80036B97B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		56BC31411F630C440036B97B /* PropertyKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyKeys.swift; sourceTree = "<group>"; };
@@ -84,7 +90,6 @@
 		56DA68FD1F87387B0049763F /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		56F368AF1F8E6FFC007880D2 /* Setting.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		56F368B11F8E7133007880D2 /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
-		56F368B41F8F2A5A007880D2 /* FanPageWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FanPageWebViewController.swift; sourceTree = "<group>"; };
 		C05ACC1B1F5FC4030082B0E2 /* 城市碰碰球-CityPonPon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "城市碰碰球-CityPonPon.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C05ACC1E1F5FC4030082B0E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C05ACC201F5FC4030082B0E2 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -92,7 +97,7 @@
 		C05ACC261F5FC4030082B0E2 /* Battle_Royale.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Battle_Royale.xcdatamodel; sourceTree = "<group>"; };
 		C05ACC281F5FC4030082B0E2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C05ACC2B1F5FC4030082B0E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		C05ACC2D1F5FC4030082B0E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C05ACC2D1F5FC4030082B0E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../城市碰碰球-CityPonPon/Info.plist"; sourceTree = "<group>"; };
 		C05ACC321F5FC4030082B0E2 /* 城市碰碰球-CityPonPonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "城市碰碰球-CityPonPonTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C05ACC361F5FC4030082B0E2 /* Battle_RoyaleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Battle_RoyaleTests.swift; sourceTree = "<group>"; };
 		C05ACC381F5FC4030082B0E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -174,8 +179,10 @@
 		56F368B31F8E7157007880D2 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
+				56F368AF1F8E6FFC007880D2 /* Setting.storyboard */,
 				56F368B11F8E7133007880D2 /* SettingTableViewController.swift */,
-				56F368B41F8F2A5A007880D2 /* FanPageWebViewController.swift */,
+				569B61C71F8F9F6F00098C04 /* EditProfileTableViewController.swift */,
+				564E94ED1F91EDB5000A3241 /* ColorPickerViewController.swift */,
 			);
 			name = Setting;
 			sourceTree = "<group>";
@@ -206,13 +213,13 @@
 				56C3DC8C1F837DB7001CBF6C /* Battle Royale.entitlements */,
 				C05ACC1E1F5FC4030082B0E2 /* AppDelegate.swift */,
 				C05ACC221F5FC4030082B0E2 /* Main.storyboard */,
-				56F368AF1F8E6FFC007880D2 /* Setting.storyboard */,
 				567B6D371F681D5C00E849D4 /* Map */,
 				567B6D361F681D5100E849D4 /* Login */,
 				5620B9DF1F78024A00C1936D /* TutorialPage */,
 				5620B9D31F73806100C1936D /* Rank */,
 				56F368B31F8E7157007880D2 /* Setting */,
 				567B6D311F6695DF00E849D4 /* TabBarController.swift */,
+				564E94EF1F94F0D6000A3241 /* ColorController.swift */,
 				C05ACC281F5FC4030082B0E2 /* Assets.xcassets */,
 				C05ACC2A1F5FC4030082B0E2 /* LaunchScreen.storyboard */,
 				56BC31411F630C440036B97B /* PropertyKeys.swift */,
@@ -356,6 +363,7 @@
 			files = (
 				C05ACC2C1F5FC4030082B0E2 /* LaunchScreen.storyboard in Resources */,
 				56DA68FF1F87399C0049763F /* GoogleService-Info.plist in Resources */,
+				564E94EC1F91E325000A3241 /* Info.plist in Resources */,
 				56F368B01F8E6FFC007880D2 /* Setting.storyboard in Resources */,
 				C05ACC291F5FC4030082B0E2 /* Assets.xcassets in Resources */,
 				C05ACC241F5FC4030082B0E2 /* Main.storyboard in Resources */,
@@ -466,7 +474,6 @@
 			files = (
 				567B6D3D1F68503C00E849D4 /* GoogleLoginDelegate.swift in Sources */,
 				5665C41C1F6AD1C000C49FE2 /* Struct.swift in Sources */,
-				56F368B51F8F2A5A007880D2 /* FanPageWebViewController.swift in Sources */,
 				5665C41E1F6B7C8600C49FE2 /* MapUISetupExtension.swift in Sources */,
 				56F368B21F8E7133007880D2 /* SettingTableViewController.swift in Sources */,
 				567B6D321F6695DF00E849D4 /* PlayerInfo.swift in Sources */,
@@ -477,17 +484,20 @@
 				5620B9E11F78028200C1936D /* FetchImageExtension.swift in Sources */,
 				567B6D331F6695DF00E849D4 /* TabBarController.swift in Sources */,
 				5665C4181F6AAC5F00C49FE2 /* TimerExtension.swift in Sources */,
+				564E94EE1F91EDB5000A3241 /* ColorPickerViewController.swift in Sources */,
 				567432B71F7820DA00E97632 /* CustomAnnotationModels.swift in Sources */,
 				567B6D271F66644100E849D4 /* (null) in Sources */,
 				561A51871F853C800007DE6B /* TimeFilterToMapboxStyle.swift in Sources */,
 				C05ACC211F5FC4030082B0E2 /* MapViewController.swift in Sources */,
 				567B6D391F681DF300E849D4 /* TutorialTableViewController.swift in Sources */,
 				56B1278C1F87EA8200DF05D9 /* RankTableViewCell.swift in Sources */,
+				564E94F01F94F0D6000A3241 /* ColorController.swift in Sources */,
 				5665C4161F6A9CE900C49FE2 /* AfterFetchDataExtension.swift in Sources */,
 				C05ACC271F5FC4030082B0E2 /* Battle_Royale.xcdatamodeld in Sources */,
 				56BC31421F630C440036B97B /* PropertyKeys.swift in Sources */,
 				567B6D2B1F66696F00E849D4 /* (null) in Sources */,
 				567289581F88B62B00D27606 /* PageViewExtension.swift in Sources */,
+				569B61C81F8F9F6F00098C04 /* EditProfileTableViewController.swift in Sources */,
 				56D536061F69277200F4B492 /* PasswordsLoginExtension.swift in Sources */,
 				56D536081F69717400F4B492 /* FBLoginDelegate.swift in Sources */,
 				567B6D2F1F6695CA00E849D4 /* RankTableViewController.swift in Sources */,

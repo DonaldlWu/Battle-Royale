@@ -41,7 +41,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         // configure
         UILabel.appearance().textAlignment = .center
         
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        
+        
         return true
+        
     }
     
     
@@ -65,6 +70,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             print("Firebase sign in")
             
         }
+        
+        
 
     }
     

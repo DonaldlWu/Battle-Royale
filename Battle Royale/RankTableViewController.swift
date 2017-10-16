@@ -65,6 +65,7 @@ class RankTableViewController: UITableViewController {
         }
         GIDSignIn.sharedInstance().signOut()
         FBSDKLoginManager().logOut()
+        
         performSegue(withIdentifier: PropertKeys.unwindToLogin, sender: nil)
     }
     
@@ -116,6 +117,7 @@ class RankTableViewController: UITableViewController {
         cell.playerImage.sd_setImage(with: player.imageURL, placeholderImage: #imageLiteral(resourceName: "Unknown"))
         cell.playerImage.clipsToBounds = true
         cell.playerImage.layer.cornerRadius = cell.playerImage.frame.height / 2
+        cell.playerImage.contentMode = .scaleAspectFill
        // cell.backgroundColor = UIColor.clear
         
     }

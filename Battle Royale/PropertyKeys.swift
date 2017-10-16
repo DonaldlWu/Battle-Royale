@@ -19,4 +19,8 @@ struct PropertKeys {
     static let loginToTutorialSegue = "LoginToTutorialSegue"
     static let tutorialToTabBarSegue = "TutorialToTabBarSegue"
     static let containerViewSegue = "ContainerViewSegue"
+    static let fanPage = "fanPage"
+    static let editProfileSetting = "editProfileSetting"
+    static let loginViewController = "loginViewController"
+    static let unwindToSettingPageWithSegue = "unwindToSettingPageWithSegue"
 }

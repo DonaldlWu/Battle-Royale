@@ -52,7 +52,7 @@ class MapViewController: UIViewController {
             updateMainPlayerCircle()
         }
     }
-    var mainPlayerColor = #colorLiteral(red: 0.02766584791, green: 0.4977956414, blue: 1, alpha: 1)
+    static var mainPlayerColor = #colorLiteral(red: 0.02766584791, green: 0.4977956414, blue: 1, alpha: 1)
     
     var mainLayer: MGLFillStyleLayer?
     var scoreLayer: MGLFillStyleLayer?
@@ -158,6 +158,8 @@ class MapViewController: UIViewController {
         mapView.showsUserLocation = true
         mapView.attributionButton.isHidden = true
         mapView.logoView.isHidden = true
+        
+        
         
         mapView.delegate = self
         
