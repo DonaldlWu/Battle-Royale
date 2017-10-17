@@ -106,7 +106,7 @@ extension MapViewController: MGLMapViewDelegate {
                 path.add(currentCoord)
                 let polyline = GMSPolyline(path: path)
                 let distance =  polyline.path?.length(of: .geodesic) ?? 0
-                if distance < Double(radius * 50) {
+                if distance < Double(radius * 10 + 500) {
                     newCoords.append(coord)
                 }
                 

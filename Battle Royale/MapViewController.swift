@@ -52,7 +52,7 @@ class MapViewController: UIViewController {
             updateMainPlayerCircle()
         }
     }
-    static var mainPlayerColor = #colorLiteral(red: 0.02766584791, green: 0.4977956414, blue: 1, alpha: 1)
+    static var mainPlayerColor = UIColor()
     
     var mainLayer: MGLFillStyleLayer?
     var scoreLayer: MGLFillStyleLayer?
@@ -142,7 +142,7 @@ class MapViewController: UIViewController {
         locationManager.requestLocation()
         locationManager.startUpdatingLocation()
         
-        
+        loadUserColor()
         
         // update location every 2 sec
         //        runLocationUpdateTimer(with: 2)
@@ -357,6 +357,13 @@ class MapViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    func loadUserColor() {
+    
+        let colorToChoose = SettingTableViewController().colorsToChoose
+        let colorIndex = ColorController().read()
+        MapViewController.mainPlayerColor = colorToChoose[colorIndex]
     }
     
     override func didReceiveMemoryWarning() {
