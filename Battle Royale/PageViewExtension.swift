@@ -47,9 +47,12 @@ extension TutorialTableViewController: UIPageViewControllerDataSource, UIPageVie
         let page1: UIViewController! = storyboard.instantiateViewController(withIdentifier: "Page1")
         let page2: UIViewController! = storyboard.instantiateViewController(withIdentifier: "Page2")
         let page3: UIViewController! = storyboard.instantiateViewController(withIdentifier: "Page3")
+        let page4: UIViewController! = storyboard.instantiateViewController(withIdentifier: "Page4")
         pages.append(page1)
         pages.append(page2)
         pages.append(page3)
+        pages.append(page4)
+
         
         // Create the page container
         pageContainer = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)

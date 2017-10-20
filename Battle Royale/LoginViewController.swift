@@ -62,7 +62,11 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
     
     
     
-    let googleButton = GIDSignInButton()
+    let googleButton: GIDSignInButton = {
+        let button = GIDSignInButton()
+        button.style = .standard
+        return button
+    }()
     
     let accountTextfield: UITextField = {
         let textfield = UITextField()

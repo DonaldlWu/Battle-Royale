@@ -36,6 +36,7 @@ class RankTableViewController: UITableViewController {
     func fetchAllPlayerSocre() {
         ref = Database.database().reference()
         ref.child("users").observe(.value, with: { (snapshot) in
+            print("user")
             var newPlayers = [Player]()
             let allUsers = snapshot.children
             for user in allUsers {

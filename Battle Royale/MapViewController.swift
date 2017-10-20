@@ -25,7 +25,7 @@ class MapViewController: UIViewController {
     var currentLocation: CLLocation? {
         didSet {
             setCurrentLocation()
-           
+            
             
         }
     }
@@ -39,12 +39,11 @@ class MapViewController: UIViewController {
     var ref: DatabaseReference!
     var allUid = [String]()
     var OtherPlayerCoords = [CLLocationCoordinate2D]()
-    var allScoreCoords = [CLLocationCoordinate2D]()
     
+    var scoreCoords: [ScoreCircle] = []
     var score = 0
     var start = false
     var hideButton = false
-    var number = 0
     
     var otherPlayers: [PlayerCircle] = []
     var mainPlayerRadius: Int? {
@@ -54,17 +53,7 @@ class MapViewController: UIViewController {
     }
     static var mainPlayerColor = UIColor()
     
-    var mainLayer: MGLFillStyleLayer?
-    var scoreLayer: MGLFillStyleLayer?
-    
-    var otherPlayersLayer: MGLFillStyleLayer?
-    var mainSource: MGLShapeSource?
-    var scoreSource: MGLShapeSource?
-    
-    var otherPlayersSource: MGLShapeSource?
-    
     let storage = Storage.storage()
-    
     
     let button: UIButton = {
         let button = UIButton()
@@ -147,7 +136,7 @@ class MapViewController: UIViewController {
         // update location every 2 sec
         //        runLocationUpdateTimer(with: 2)
         
-//         mapView setup
+        //         mapView setup
         
         self.mapView = timeFilterMapboxStyleImport()
         mapView.translatesAutoresizingMaskIntoConstraints = false
@@ -172,10 +161,6 @@ class MapViewController: UIViewController {
         
         mapView.addGestureRecognizer(doubleTap)
         
-       
-        
-        
-        
         // divide fetch from firebase to 2 completion
         // otherPlayers and scorePoints
         
@@ -187,26 +172,29 @@ class MapViewController: UIViewController {
             self.otherPlayers = otherPlayers
             let otherPlayerShapes = self.updateOtherPlayerShapes(otherPlayers)
             
-            
             // mapbox update layer
             if let style = self.mapView.style {
-                self.addLayer(to: style, with: "otherPlayer", #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1).withAlphaComponent(0.5), shapes: otherPlayerShapes, source: &self.otherPlayersSource, layer: &self.otherPlayersLayer)
+                self.addLayer(to: style, with: "otherPlayer", #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1).withAlphaComponent(0.5), shapes: otherPlayerShapes)
             }
         })
         
         // firebase score coordinate update then:
-        fetchAllScoreCoordinates(completion: { (allScoreCoords) in
-            self.allScoreCoords = allScoreCoords
-            
-            let allScoreCoordsFiltered = self.filterCoords(allScoreCoords)
-            let scoreShapes = self.updateShapes(coords:allScoreCoordsFiltered , radiusMeter: 50)
-            // mapbox update layer
-            if let style = self.mapView.style {
-                self.addLayer(to: style, with: "scorePoints", #colorLiteral(red: 0.9272366166, green: 0.2351297438, blue: 0.103588976, alpha: 1).withAlphaComponent(0.5), shapes: scoreShapes, source: &self.scoreSource, layer: &self.scoreLayer)
-            }
-        })
         
-
+            self.fetchAllScoreCoordinates(completion: { (scoreCoords) in
+                print(scoreCoords.count)
+                self.scoreCoords = scoreCoords
+                let allScoreCoordsFiltered = self.filterCoords(scoreCoords)
+                let scoreShapes = self.updateShapes(coords:allScoreCoordsFiltered , radiusMeter: 50)
+                // mapbox update layer
+            
+                    if let style = self.mapView.style {
+                        self.addLayer(to: style, with: "scorePoints", #colorLiteral(red: 0.9272366166, green: 0.2351297438, blue: 0.103588976, alpha: 1).withAlphaComponent(0.5), shapes: scoreShapes)
+                        
+                    
+                }
+            })
+        
+        
     }
     override func viewDidAppear(_ animated: Bool) {
         dayNightUIFilter()
@@ -278,13 +266,14 @@ class MapViewController: UIViewController {
             newAllUid = []
             for uid in snapshot.children {
                 if let uid = uid as? DataSnapshot {
-                    DispatchQueue.main.async {
-                        newAllUid.append(uid.key)
-                        
-                        completion(newAllUid)
-                    }
+                    
+                    newAllUid.append(uid.key)
+                    
+                    
+                    
                 }
             }
+            completion(newAllUid)
         })
     }
     func fetchMainPlayersCoords(completion: @escaping (_ mainPlayerRadius: Int) -> ()) {
@@ -320,12 +309,14 @@ class MapViewController: UIViewController {
                         
                         let otherPlayer = PlayerCircle(snapshot: player)
                         newOtherPlayers.append(otherPlayer)
-                        completion(newOtherPlayers)
+                        
                     }
                 }
             }
+            completion(newOtherPlayers)
         }
         ref.child("coordinates").child("players").observe(.value) { (snapshot) in
+            
             var newOtherPlayers = [PlayerCircle]()
             let players = snapshot.children
             for player in players {
@@ -334,33 +325,35 @@ class MapViewController: UIViewController {
                         
                         let otherPlayer = PlayerCircle(snapshot: player)
                         newOtherPlayers.append(otherPlayer)
-                        completion(newOtherPlayers)
+                        
                     }
                 }
             }
+            completion(newOtherPlayers)
         }
         
     }
     
     
-    func fetchAllScoreCoordinates(completion: @escaping ([CLLocationCoordinate2D]) -> ()) {
+    func fetchAllScoreCoordinates(completion: @escaping ([ScoreCircle]) -> ()) {
         ref = Database.database().reference()
+        
         ref.child("coordinates").child("scoreCoordinates").observe(.value) { (snapshot) in
-            var allNewCoordinates = [CLLocationCoordinate2D]()
+            var allNewCoordinates = [ScoreCircle]()
             let coordinates = snapshot.children
             for coordinate in coordinates {
-                if let coordinate = coordinate as? DataSnapshot {
-                    if let coordinateValue = coordinate.value as? [Double] {
-                        allNewCoordinates.append(CLLocationCoordinate2D(latitude: coordinateValue[0], longitude: coordinateValue[1]))
-                        completion(allNewCoordinates)
-                    }
-                }
+                
+                guard let coordinate = coordinate as? DataSnapshot else {return}
+                let coord = ScoreCircle(snapshot: coordinate)
+                
+                allNewCoordinates.append(coord)
             }
+            completion(allNewCoordinates)
         }
     }
     
     func loadUserColor() {
-    
+        
         let colorToChoose = SettingTableViewController().colorsToChoose
         let colorIndex = ColorController().read()
         MapViewController.mainPlayerColor = colorToChoose[colorIndex]

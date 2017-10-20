@@ -66,48 +66,44 @@ extension MapViewController: MGLMapViewDelegate {
     }
 
     
-    func addLayer(to style: MGLStyle,with identifier: String, _ color: UIColor, shapes: [MGLPolygon], source: inout MGLShapeSource?, layer:inout MGLFillStyleLayer?) {
+    func addLayer(to style: MGLStyle,with identifier: String, _ color: UIColor, shapes: [MGLPolygon] ) {
         
+        let newsource = MGLShapeSource(identifier: identifier, shapes: shapes)
+        let newlayer = MGLFillStyleLayer(identifier: identifier, source: newsource)
         
-        let newsource = MGLShapeSource(identifier: "\(identifier)-\(number)", shapes: shapes, options: nil)
-
-        let newlayer = MGLFillStyleLayer(identifier: "\(identifier)-\(number)", source: newsource)
-        
-        newlayer.sourceLayerIdentifier = "\(identifier)-\(number)"
+        newlayer.sourceLayerIdentifier = identifier
         newlayer.fillColor = MGLStyleValue(rawValue: color)
 
-        style.addSource(newsource)
-         if let building = style.layer(withIdentifier: "building") {
-            // You can insert a layer below an existing style layer
-            style.insertLayer(newlayer, below: building)
-        } else {
-            // or you can simply add it above all layers
-           style.addLayer(newlayer)
-        }
-        if let source = source, let layer = layer {
-            style.removeLayer(layer)
-            style.removeSource(source)
-        }
-        number += 1
-        layer = newlayer
-        source = newsource
+            if let building = style.layer(withIdentifier: "building") {
+                // You can insert a layer below an existing style layer
+                if let removeLayer = style.layer(withIdentifier: identifier), let removeSource = style.source(withIdentifier: identifier) {
+                    style.removeLayer(removeLayer)
+                    style.removeSource(removeSource)
+                }
+                style.addSource(newsource)
+                style.insertLayer(newlayer, below: building)
+            } else {
+                // or you can simply add it above all layers
+                style.addSource(newsource)
+                style.addLayer(newlayer)
+            }
     }
     
     func mapView(_ mapView: MGLMapView, didFinishLoading style: MGLStyle) {
     }
     
-    func filterCoords(_ coords: [CLLocationCoordinate2D]) -> [CLLocationCoordinate2D]{
+    func filterCoords(_ coords: [ScoreCircle]) -> [CLLocationCoordinate2D]{
         var newCoords: [CLLocationCoordinate2D] = []
         for coord in coords {
             
             if let currentCoord = currentLocation?.coordinate, let radius = mainPlayerRadius {
                 let path = GMSMutablePath()
-                path.add(coord)
+                path.add(coord.coord)
                 path.add(currentCoord)
                 let polyline = GMSPolyline(path: path)
                 let distance =  polyline.path?.length(of: .geodesic) ?? 0
                 if distance < Double(radius * 10 + 500) {
-                    newCoords.append(coord)
+                    newCoords.append(coord.coord)
                 }
                 
             }

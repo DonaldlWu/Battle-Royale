@@ -51,7 +51,7 @@ extension MapViewController: CLLocationManagerDelegate {
         ref = Database.database().reference()
         if let coord = currentLocation?.coordinate, let radius = mainPlayerRadius, let style = mapView.style, let userUid = Auth.auth().currentUser?.uid  {
             let mainShape = updateShapes(coords: [coord], radiusMeter: Double(radius))
-            self.addLayer(to: style, with: "mainPlayer", MapViewController.mainPlayerColor, shapes: mainShape, source: &self.mainSource, layer: &self.mainLayer)
+            self.addLayer(to: style, with: "mainPlayer", MapViewController.mainPlayerColor, shapes: mainShape)
          
                 let lat = coord.latitude
                 let lon = coord.longitude
@@ -64,17 +64,24 @@ extension MapViewController: CLLocationManagerDelegate {
         if let coord = self.currentLocation?.coordinate, let radius = self.mainPlayerRadius {
             
             // update socre coords in X distance
-            let allScoreCoordsFiltered = filterCoords(allScoreCoords)
+            let allScoreCoordsFiltered = filterCoords(scoreCoords)
             let scoreShapes = self.updateShapes(coords:allScoreCoordsFiltered , radiusMeter: 50)
             let mainShape = self.updateShapes(coords: [coord], radiusMeter: Double(radius))
             // mapbox update layer
             if let style = self.mapView.style {
-               self.addLayer(to: style, with: "scorePoints", #colorLiteral(red: 0.9272366166, green: 0.2351297438, blue: 0.103588976, alpha: 1).withAlphaComponent(0.5), shapes: scoreShapes, source: &self.scoreSource, layer: &self.scoreLayer)
-                self.addLayer(to: style, with: "mainPlayer", MapViewController.mainPlayerColor, shapes: mainShape, source: &self.mainSource, layer: &self.mainLayer)
+               self.addLayer(to: style, with: "scorePoints", #colorLiteral(red: 0.9272366166, green: 0.2351297438, blue: 0.103588976, alpha: 1).withAlphaComponent(0.5), shapes: scoreShapes)
+                self.addLayer(to: style, with: "mainPlayer", MapViewController.mainPlayerColor, shapes: mainShape)
             }
             // game start then compute player  and score/other players distance
             if start == true {
-                scoreDistance(distanceLimit: Double(50 + mainPlayerRadius!), coords: allScoreCoords)
+                var scoreCoords: [CLLocationCoordinate2D] {
+                    var coords = [CLLocationCoordinate2D]()
+                    for coord in self.scoreCoords {
+                        coords.append(coord.coord)
+                    }
+                    return coords
+                }
+                scoreDistance(distanceLimit: Double(50 + mainPlayerRadius!), coords: scoreCoords)
                 otherPlayerDistance(coords: otherPlayers)
             }
             if let userUid = Auth.auth().currentUser?.uid {
@@ -86,9 +93,9 @@ extension MapViewController: CLLocationManagerDelegate {
     }
     func scoreDistance(distanceLimit: Double, coords: [CLLocationCoordinate2D]) {
         let currentCoord = currentLocation?.coordinate
-        var allScoreCoordinatesIndex = -1
+        var scoreCoordIndex = -1
         for coord in coords {
-            allScoreCoordinatesIndex += 1
+            scoreCoordIndex += 1
             let path = GMSMutablePath()
             path.add(coord)
             path.add(currentCoord!)
@@ -103,11 +110,12 @@ extension MapViewController: CLLocationManagerDelegate {
 
                 scoreLabel.text = "\(score)  ⦿"
                 // delete score coordinate and add a random one
-                allScoreCoords.remove(at: allScoreCoordinatesIndex)
-                allScoreCoords.insert(self.randomCoordinate(radius: 300, from: currentCoord!), at: allScoreCoordinatesIndex)
+                scoreCoords.remove(at: scoreCoordIndex)
+                let newRandomCoord = ScoreCircle(coord: self.randomCoordinate(radius: 300, from: currentCoord!), index: scoreCoordIndex)
+                scoreCoords.insert(newRandomCoord, at: scoreCoordIndex)
                 ref = Database.database().reference()
-                let allScoreCoordinatesDoubleType = allScoreCoords.map{ [$0.latitude, $0.longitude]}
-                ref.child("coordinates").child("scoreCoordinates").setValue(allScoreCoordinatesDoubleType)
+              
+                ref.child("coordinates").child("scoreCoordinates").child("\(scoreCoordIndex)").updateChildValues(["lat" : Double(newRandomCoord.coord.latitude), "lon": Double(newRandomCoord.coord.longitude)])
             }
         }
     }
@@ -136,7 +144,7 @@ extension MapViewController: CLLocationManagerDelegate {
                     if let uid = coord.uid {
                         ref.child("coordinates").child("players").child(uid).removeValue()
                     }
-                } else {
+                } else if mainPlayerRadius < coordRadius{
                     
                     self.mainPlayerRadius = 10
                     endCount()
